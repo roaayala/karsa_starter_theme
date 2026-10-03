@@ -1,14 +1,16 @@
-@import 'tailwindcss';
-@import './theme.css';
-@import './utilities.css';
-@import './custom.css' layer(utilities);
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@import "tailwindcss";
+@import "./_theme.css";
+@import "./_utilities.css";
+@import "./_custom.css" layer(utilities);
 
 @source '../../vendor/tailpress/framework/**/*.php';
 @source '../../vendor/tailpress/framework/**/**/*.php';
 
 @utility container {
-    margin-inline: auto;
-    padding-inline: 2rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
 }
 
 /*
