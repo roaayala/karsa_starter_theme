@@ -34,6 +34,7 @@ function karsa_tailpress_setup(): TailPress\Framework\Theme
       'align-wide',
       'wp-block-styles',
       'responsive-embeds',
+      'editor-styles',
       'html5' => [
         'search-form',
         'comment-form',

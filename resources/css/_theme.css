@@ -1,15 +1,51 @@
 @theme {
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 600px;
-  --breakpoint-md: 782px;
-  --breakpoint-lg: 960px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1440px;
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 37.5rem;
+  --breakpoint-md: 48.875rem;
+  --breakpoint-lg: 60rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 90rem;
 
-  --color-primary: var(--wp--preset--color--primary);
-  --color-secondary: var(--wp--preset--color--secondary);
-  --color-dark: var(--wp--preset--color--dark);
-  --color-light: var(--wp--preset--color--light);
+  --font-sans: var(--wp--preset--font-family--plus-jakarta-sans);
+
+  --color-primary: var(--wp--preset--color--blue-600);
+  --color-on-primary: var(--wp--preset--color--white);
+  --color-primary-container: var(--wp--preset--color--blue-100);
+  --color-on-primary-container: var(--wp--preset--color--blue-900);
+
+  --color-secondary: var(--wp--preset--color--neutral-700);
+  --color-on-secondary: var(--wp--preset--color--white);
+  --color-secondary-container: var(--wp--preset--color--neutral-200);
+  --color-on-secondary-container: var(--wp--preset--color--neutral-900);
+
+  --color-surface: var(--wp--preset--color--white);
+  --color-surface-dim: var(--wp--preset--color--neutral-100);
+  --color-surface-bright: var(--wp--preset--color--white);
+  --color-on-surface: var(--wp--preset--color--neutral-900);
+  --color-on-surface-variant: var(--wp--preset--color--neutral-600);
+  --color-surface-container-lowest: var(--wp--preset--color--white);
+  --color-surface-container-low: var(--wp--preset--color--neutral-50);
+  --color-surface-container: var(--wp--preset--color--neutral-100);
+  --color-surface-container-high: var(--wp--preset--color--neutral-200);
+  --color-surface-container-highest: var(--wp--preset--color--neutral-300);
+
+  --color-outline: var(--wp--preset--color--neutral-400);
+  --color-outline-variant: var(--wp--preset--color--neutral-200);
+
+  --radius-shape-none: var(--wp--custom--shape--none, 0px);
+  --radius-shape-xs: var(--wp--custom--shape--extra-small, 4px);
+  --radius-shape-sm: var(--wp--custom--shape--small, 8px);
+  --radius-shape-md: var(--wp--custom--shape--medium, 12px);
+  --radius-shape-lg: var(--wp--custom--shape--large, 16px);
+  --radius-shape-xl: var(--wp--custom--shape--extra-large, 28px);
+  --radius-shape-full: var(--wp--custom--shape--full, 9999px);
+
+  --shadow-elevation-0: var(--wp--custom--elevation--0, none);
+  --shadow-elevation-1: var(--wp--custom--elevation--1);
+  --shadow-elevation-2: var(--wp--custom--elevation--2);
+  --shadow-elevation-3: var(--wp--custom--elevation--3);
+  --shadow-elevation-4: var(--wp--custom--elevation--4);
+  --shadow-elevation-5: var(--wp--custom--elevation--5);
 
   --text-xs: var(--wp--preset--font-size--xs, 0.75rem);
   --text-sm: var(--wp--preset--font-size--sm, 0.875rem);

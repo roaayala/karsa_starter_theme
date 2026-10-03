@@ -27,6 +27,10 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-zinc-200, currentColor);
+    border-color: var(--color-outline, currentColor);
+  }
+
+  body {
+    @apply font-sans text-on-surface-variant;
   }
 }
