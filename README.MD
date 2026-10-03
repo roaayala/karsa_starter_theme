@@ -11,5 +11,4 @@ root
 - resources
 - src
 - template-parts
-
 ```
