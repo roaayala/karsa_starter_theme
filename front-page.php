@@ -1,7 +1,7 @@
 <?php
 get_header();
 
-$hero_image_id = 22;
+// $hero_image_id = 22;
 $hero_image_url = isset($hero_image_id)
   ? wp_get_attachment_image_url($hero_image_id, 'large')
   : get_template_directory_uri() . "/assets/images/common-fallback-undraw.png";
@@ -16,32 +16,33 @@ $hero_image_url = isset($hero_image_id)
   <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Background"
     class="absolute inset-0 w-full h-full object-cover -z-10" fetchpriority="high" loading="eager">
 
-  <!-- <div class="absolute inset-0 -z-5 bg-surface/10 backdrop-blur-sm" aria-hidden="true">
-  </div> -->
 
-  <div class="container py-24 grid grid-cols-12">
+  <div class="container py-16 grid grid-cols-12 gap-4 ">
     <div
-      class="col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 p-8 rounded-shape-lg bg-white/80 backdrop-blur-sm">
-      <div class="flex flex-col gap-4">
+      class="col-span-12 xs:col-start-2 xs:col-end-12 sm:col-span-8 md:col-span-6 lg:col-span-5 xl:col-span-4 p-8 rounded-shape-lg bg-white/80 backdrop-blur-sm flex flex-col gap-6  shadow-elevation-1">
+      <div class="flex flex-col gap-3">
         <div class="flex flex-col gap-2">
-          <h1 class="text-4xl xs:text-5xl">
+          <h1>
             <?php bloginfo('name') ?>
           </h1>
-          <p class="text-xl">
-            Rumah subsidi dengan fasilitas lengkap, nyaman dan strategis di Kota Samarinda
+          <p>
+            Rumah subsidi dengan fasilitas lengkap, nyaman dan strategis di Kota Samarinda.
           </p>
         </div>
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-0">
           <span class="">Mulai dari</span>
           <span class="flex gap-2 items-end">
-            <span class="font-bold text-on-surface text-4xl xs:text-5xl">182</span> juta.
+            <span class="font-bold text-on-surface text-3xl xs:text-4xl sm:text-5xl">182</span> juta.
           </span>
         </div>
-        <div class="">
-          <a href="#" class="">
-            Hubungi kami
-          </a>
-        </div>
+
+
+      </div>
+
+      <div class="">
+        <a href="#" class="inline-flex bg-primary text-on-primary py-2 px-4 rounded-shape-xs">
+          Hubungi kami
+        </a>
       </div>
     </div>
   </div>
