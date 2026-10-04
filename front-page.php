@@ -4,42 +4,46 @@ get_header();
 $hero_image_id = 22;
 $hero_image_url = isset($hero_image_id)
   ? wp_get_attachment_image_url($hero_image_id, 'large')
-  : get_template_directory_uri() . "/assets/images/hero-fallback-undraw.png";
+  : get_template_directory_uri() . "/assets/images/common-fallback-undraw.png";
 
 ?>
 
 
 <!-- HERO -->
 
-<section class="overflow-hidden">
-  <div class="py-16 md:py-32 container grid md:grid-cols-2">
+<section class="relative overflow-hidden flex items-center justify-center">
 
-    <div class="flex flex-col gap-4">
-      <div class="flex flex-col gap-2">
-        <h1>
-          <?php bloginfo('name') ?>
-        </h1>
-        <p class="text-xl">
-          Rumah subsidi denga fasilitas lengkap, nyaman dan strategis di Kota Samarinda
-        </p>
-      </div>
-      <div class="flex flex-col">
-        <span class="">Mulai dari</span>
-        <span class="">
-          <span class="font-bold text-3xl sm:text-4xl md:text-5xl">182</span> juta.
-        </span>
-      </div>
-      <div class="">
-        <a href="#" class="">
-          Hubungi kami
-        </a>
+  <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Background"
+    class="absolute inset-0 w-full h-full object-cover -z-10" fetchpriority="high" loading="eager">
+
+  <!-- <div class="absolute inset-0 -z-5 bg-surface/10 backdrop-blur-sm" aria-hidden="true">
+  </div> -->
+
+  <div class="container py-24 grid grid-cols-12">
+    <div
+      class="col-span-12 sm:col-span-8 md:col-span-6 lg:col-span-4 p-8 rounded-shape-lg bg-white/80 backdrop-blur-sm">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+          <h1 class="text-4xl xs:text-5xl">
+            <?php bloginfo('name') ?>
+          </h1>
+          <p class="text-xl">
+            Rumah subsidi dengan fasilitas lengkap, nyaman dan strategis di Kota Samarinda
+          </p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="">Mulai dari</span>
+          <span class="flex gap-2 items-end">
+            <span class="font-bold text-on-surface text-4xl xs:text-5xl">182</span> juta.
+          </span>
+        </div>
+        <div class="">
+          <a href="#" class="">
+            Hubungi kami
+          </a>
+        </div>
       </div>
     </div>
-
-    <div class="rounded-shape-xl overflow-hidden">
-      <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Image" class="object-cover">
-    </div>
-
   </div>
 </section>
 
