@@ -9,7 +9,6 @@
 [] single.php
 [] archive.php
 [] search.php
-[] home.php
 [] front-page.php
 [] 404.php
 [] searchform.php

@@ -1,8 +1,8 @@
-import { createIcons } from "lucide";
+import { Award, createIcons, MapPin, ThumbsUp } from "lucide";
 
 const initLucideIcons = () => {
   createIcons({
-    icons: {},
+    icons: { Award, MapPin, ThumbsUp },
   });
 };
 

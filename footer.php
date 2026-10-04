@@ -1,27 +1,20 @@
-<?php
-/**
- * Theme footer template.
- *
- * @package TailPress
- */
-?>
-        </main>
-
-        <?php do_action('tailpress_content_end'); ?>
+</main>
+<footer id="footer">
+    <div class="container">
+        <p class="copyright">
+            &copy; 2026 New Mahakam Grande by PT Ingria Pratama Capitalindo Tbk. | Designed & Developed by <a
+                href="https://portfolio-kamu.com" target="_blank">Nama</a>.
+        </p>
+        <p class="disclaimer">
+            <small><em>*Situs web ini dibuat semata-mata untuk tujuan pembelajaran dan studi portofolio, bukan merupakan
+                    situs resmi perusahaan.</em></small>
+        </p>
     </div>
+</footer>
 
-    <?php do_action('tailpress_content_after'); ?>
-
-    <footer id="colophon" class="bg-light/50 mt-12" role="contentinfo">
-        <div class="container mx-auto py-12">
-            <?php do_action('tailpress_footer'); ?>
-            <div class="text-sm text-zinc-700">
-                &copy; <?php echo esc_html(date_i18n('Y')); ?> - <?php bloginfo('name'); ?>
-            </div>
-        </div>
-    </footer>
 </div>
 
 <?php wp_footer(); ?>
 </body>
+
 </html>
