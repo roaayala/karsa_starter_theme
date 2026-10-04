@@ -3,7 +3,7 @@
 
 <!-- FEATURED -->
 <section>
-  <div class="container">
+  <div class="container grid md:grid-cols-3 gap-4">
     <div>
       <i data-lucide="award"></i>
       <h3>Harga Terbaik</h3>
