@@ -8,30 +8,39 @@ $hero_image_url = isset($hero_image_id)
 
 ?>
 
+
 <!-- HERO -->
-<section>
-  <div class="container">
-    <div>
-      <div>
-        <h1><?php bloginfo('name') ?></h1>
-        <p><?php bloginfo('description') ?></p>
-      </div>
 
-      <div>
-        Mulai dari <span>182</span> juta.
-      </div>
+<section class="overflow-hidden">
+  <div class="py-16 md:py-32 container grid md:grid-cols-2">
 
-      <div>
-        <a href="#">Hubungi kami</a>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
+        <h1>
+          <?php bloginfo('name') ?>
+        </h1>
+        <p class="text-xl">
+          Rumah subsidi denga fasilitas lengkap, nyaman dan strategis di Kota Samarinda
+        </p>
+      </div>
+      <div class="flex flex-col">
+        <span class="">Mulai dari</span>
+        <span class="">
+          <span class="font-bold text-3xl sm:text-4xl md:text-5xl">182</span> juta.
+        </span>
+      </div>
+      <div class="">
+        <a href="#" class="">
+          Hubungi kami
+        </a>
       </div>
     </div>
 
-    <div>
-      <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Image">
+    <div class="rounded-shape-xl overflow-hidden">
+      <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Image" class="object-cover">
     </div>
 
   </div>
-
 </section>
 
 <!-- SHORT INTRO -->
