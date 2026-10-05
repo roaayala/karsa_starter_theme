@@ -75,6 +75,12 @@
       @apply bg-primary
       text-on-primary
       border-primary;
+
+      &.btn--inverse {
+        @apply bg-on-primary
+        text-primary
+        border-on-primary;
+      }
     }
 
     &.btn--secondary {
@@ -90,7 +96,7 @@
     }
 
     > .btn-label {
-      @apply text-sm;
+      @apply font-medium text-sm;
     }
   }
 }

@@ -2,12 +2,12 @@
   <div class="container flex flex-col gap-8">
 
     <div>
-      <h2 class="text-center">
+      <h2 class="md:text-center">
         Akses Mudah di Pusat Pertumbuhan Samarinda
       </h2>
     </div>
 
-    <div class="grid grid-cols-12 items-center gap-8">
+    <div class="grid grid-cols-12 items-center gap-6 md:gap-8">
 
       <div class="col-span-12 md:col-span-6 lg:col-span-7 xl:col-span-8 overflow-hidden rounded-shape-lg h-60 md:h-80">
         <iframe
@@ -17,8 +17,7 @@
       </div>
 
 
-      <div class="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 flex flex-col gap-4
- 
+      <div class="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 flex flex-col gap-4 md:gap-6
       ">
         <div class="flex flex-col gap-1">
           <h3 class="font-bold text-xl md:text-2xl">Alamat & Kantor Pemasaran</h3>
