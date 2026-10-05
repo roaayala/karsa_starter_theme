@@ -52,32 +52,17 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
       ]
     ] ?>
 
-    <div class="grid md:grid-cols-3 gap-4 md:gap-6">
-      <?php foreach ($card_contents as $content): ?>
-        <div class="p-4 sm:p-6 
-      bg-surface-container 
-      rounded-shape-lg 
-      flex md:flex-col
-      gap-3
-      hover:shadow-elevation-1
-      ">
-          <div>
-            <span class="inline-flex p-3 
-          bg-primary-container 
-          text-on-primary-container
-          rounded-shape-md">
-              <i data-lucide="<?= esc_attr($content['icon']) ?>"></i>
-            </span>
-          </div>
+    <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
 
-          <div class="flex flex-col gap-1">
-            <h3 class="font-bold text-lg"><?= esc_html($content['title']) ?></h3>
-            <p class="text-sm text-on-surface-variant/80 leading-[1.6]">
-              <?= esc_html($content['description']) ?>
-            </p>
-          </div>
-        </div>
-      <?php endforeach; ?>
+      <?php
+      foreach ($card_contents as $content):
+        get_template_part('template-parts/components/cards/card', 'info', [
+          'icon' => $content['icon'],
+          'title' => $content['title'],
+          'description' => $content['description']
+        ]);
+      endforeach;
+      ?>
 
 
 
