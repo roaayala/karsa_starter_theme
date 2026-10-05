@@ -11,6 +11,19 @@
   }
 }
 
+@utility container-content {
+  max-width: var(--wp--style--global--content-size);
+  @apply px-4 mx-auto;
+
+  @media (width >= theme(--breakpoint-sm)) {
+    @apply px-8;
+  }
+
+  @media (width >= theme(--breakpoint-md)) {
+    @apply px-0;
+  }
+}
+
 @utility alignfull {
   width: 100vw;
   max-width: 100vw;

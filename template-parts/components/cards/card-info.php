@@ -15,7 +15,8 @@ $description = (!empty($args['description']))
 ?>
 
 <div class="p-4 sm:p-6 
-      bg-surface-container 
+      bg-surface 
+      border border-outline/25
       rounded-shape-lg 
       flex flex-col
       gap-3
@@ -23,8 +24,8 @@ $description = (!empty($args['description']))
       ">
   <div>
     <span class="inline-flex p-3 
-          bg-primary-container 
-          text-on-primary-container
+          bg-surface-container 
+          text-on-surface-container
           rounded-shape-md">
       <i data-lucide="<?= esc_attr($icon) ?>"></i>
     </span>
@@ -34,7 +35,7 @@ $description = (!empty($args['description']))
     <h3 class="font-bold text-lg">
       <?= esc_html($title) ?>
     </h3>
-    <p class="text-sm text-on-surface-variant/80 leading-[1.6]">
+    <p class="text-sm text-on-surface-variant/80 leading-normal">
       <?= esc_html($description) ?>
     </p>
   </div>

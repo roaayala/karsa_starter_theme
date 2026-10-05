@@ -77,6 +77,12 @@
       border-primary;
     }
 
+    &.btn--secondary {
+      @apply bg-secondary
+      text-on-secondary
+      border-secondary;
+    }
+
     > .btn-icon {
       > svg {
         @apply h-4 w-4;
