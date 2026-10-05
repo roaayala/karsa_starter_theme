@@ -1,5 +1,5 @@
 <section class="container">
-  <div class="py-16 bg-primary overflow-hidden rounded-shape-lg">
+  <div class="py-16 md:py-24 bg-primary overflow-hidden rounded-shape-lg">
     <div class="max-w-[20rem] xs:max-w-[24rem] md:max-w-[36rem] lg:max-w-[45rem] mx-auto flex flex-col gap-6">
       <h2 class="font-bold text-on-primary text-center text-3xl sm:text-4xl lg:text-5xl">Tertarik dengan Properti Kami?
       </h2>
