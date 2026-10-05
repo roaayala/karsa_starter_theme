@@ -8,12 +8,15 @@ $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
   <img src="<?= esc_url($hero_image_url) ?>" alt="Hero Background"
     class="absolute inset-0 w-full h-full object-cover -z-10" fetchpriority="high" loading="eager">
 
-  <div class="container py-16 grid grid-cols-12 gap-4 ">
-    <div class="col-span-12 xs:col-start-2 xs:col-end-12 sm:col-span-8 md:col-span-6 lg:col-span-5 xl:col-span-4 
-      p-8 
+  <div class="container py-16 flex justify-center sm:justify-start">
+    <div class=" 
+      p-6 sm:p-8
       rounded-shape-lg 
-      bg-white/80 backdrop-blur-sm 
-      flex flex-col gap-6 
+      bg-white/80 
+      max-w-[20rem]
+      flex flex-col 
+      gap-6 
+      hover:shadow-elevation-1
       ">
       <div class="flex flex-col gap-3">
         <div class="flex flex-col gap-2">
