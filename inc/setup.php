@@ -9,6 +9,34 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
+$tgmp_file = get_template_directory() . '/inc/src/class-tgm-plugin-activation.php';
+
+if (file_exists($tgmp_file)) {
+  require_once $tgmp_file;
+
+  $plugins = [
+    [
+      'name' => 'Advanced Custom Fields',
+      'slug' => 'advanced-custom-fields',
+      'required' => true,
+    ],
+    [
+      'name' => 'ACF Galerie 4',
+      'slug' => 'acf-galerie-4',
+      'required' => true,
+    ],
+  ];
+
+  $config = [
+    'id' => 'karsa-tgmpa',
+    'has_notices' => true,
+    'dismissable' => true,
+    'is_automatic' => true,
+  ];
+
+  tgmpa($plugins, $config);
+}
+
 function karsa_tailpress_setup(): TailPress\Framework\Theme
 {
   return TailPress\Framework\Theme::instance()
@@ -47,5 +75,5 @@ function karsa_tailpress_setup(): TailPress\Framework\Theme
 
 karsa_tailpress_setup();
 
-// font
+
 

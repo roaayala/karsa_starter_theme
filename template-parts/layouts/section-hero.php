@@ -1,6 +1,10 @@
 <?php
+
+use TailPress\Pagination;
 $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
   : get_template_directory_uri() . "/assets/images/common-fallback-undraw.png";
+
+
 ?>
 
 <section class="relative overflow-hidden flex items-center justify-center">
