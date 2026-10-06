@@ -2,7 +2,7 @@
 get_header();
 
 
-$hero_image_url = wp_get_attachment_image_url(22, 'large');
+$hero_image_url = wp_get_attachment_image_url(40, 'large');
 get_template_part(
   'template-parts/layouts/section',
   'hero',
