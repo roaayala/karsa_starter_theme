@@ -1,4 +1,4 @@
-<section class="py-16">
+<section class="py-16 bg-surface-container-low">
   <div class="container flex flex-col gap-8">
 
     <div>

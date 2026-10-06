@@ -16,7 +16,8 @@ get_template_part('template-parts/layouts/section', 'unit');
 
 get_template_part('template-parts/layouts/section', 'address');
 
-get_template_part('template-parts/layouts/section', 'cta');
+$cta_image_url = wp_get_attachment_image_url(22, 'large');
+get_template_part('template-parts/layouts/section', 'cta', ['cta_image_url' => $cta_image_url]);
 
 
 

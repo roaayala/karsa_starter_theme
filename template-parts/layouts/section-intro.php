@@ -3,7 +3,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
   : get_template_directory_uri() . "/assets/images/common-fallback-2-undraw.png";
 ?>
 
-<section class="bg-surface">
+<section class="bg-surface-container-low">
   <div class="container py-16 flex flex-col gap-8">
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
