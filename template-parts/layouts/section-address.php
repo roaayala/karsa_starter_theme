@@ -21,7 +21,7 @@
       <div class="col-span-12 md:col-span-6 lg:col-span-5 xl:col-span-4 flex flex-col gap-4 md:gap-6
       ">
         <div class="flex flex-col gap-1">
-          <h3 class="font-bold text-xl md:text-2xl">Alamat & Kantor Pemasaran</h3>
+          <h3 class="font-semibold text-xl md:text-2xl">Alamat & Kantor Pemasaran</h3>
           <p class="text-on-surface-variant/80 text-sm md:text-base leading-normal">
             Jalan Ringroad, Nomor 2, Kelurahan Lok Bahu, Kecamatan Sungai Kunjang, Kota Samarinda, Provinsi
             Kalimantan

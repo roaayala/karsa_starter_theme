@@ -10,7 +10,7 @@ $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
   <div class="container py-16 grid md:grid-cols-12 items-center gap-8">
     <div class="min-w-0 md:col-span-5 lg:col-span-5 flex flex-col gap-6">
       <div class="flex flex-col gap-3">
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-2">
           <h1>
             <?php bloginfo('name') ?>
           </h1>

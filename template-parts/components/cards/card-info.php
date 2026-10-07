@@ -32,7 +32,7 @@ $description = (!empty($args['description']))
   </div>
 
   <div class="flex flex-col gap-1">
-    <h3 class="font-bold text-lg">
+    <h3 class="font-semibold text-lg">
       <?= esc_html($title) ?>
     </h3>
     <p class="text-sm text-on-surface-variant/80 leading-normal">
