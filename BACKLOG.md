@@ -10,6 +10,7 @@
 [] archive.php
 [] search.php
 [] front-page.php
+
 [] 404.php
 [] searchform.php
 [] comments.php

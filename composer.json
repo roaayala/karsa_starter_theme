@@ -1,7 +1,7 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "tailpress/tailpress",
-  "description": "The Tailwind CSS powered WordPress boilerplate theme.",
+  "name": "karsa/karsa-start",
+  "description": "A WordPress starter theme made with based on TailPress.",
   "type": "project",
   "license": "MIT",
   "authors": [
@@ -13,7 +13,10 @@
   "autoload": {
     "psr-4": {
       "TailPress\\": "inc/src/"
-    }
+    },
+    "files": [
+      "inc/src/class-tgm-plugin-activation.php"
+    ]
   },
   "require": {
     "php": ">=8.0.2",
@@ -21,7 +24,8 @@
     "automattic/jetpack-autoloader": "^2.10"
   },
   "require-dev": {
-    "tailpress/cli": "^5.0"
+    "tailpress/cli": "^5.0",
+    "symfony/var-dumper": "^7.4"
   },
   "config": {
     "allow-plugins": {

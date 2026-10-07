@@ -1,7 +1,6 @@
 <?php
 
-namespace TailPress;
-
+namespace TailPress\Pagination;
 use WP_Query;
 
 class Pagination

@@ -2,18 +2,15 @@
 /**
  * Tailpress Framework Initialization & Theme Setup
  *
- * @package KarsaStarterTheme
+ * @package KarsaStart
  */
 
 if (!defined('ABSPATH')) {
   exit;
 }
 
-$tgmp_file = get_template_directory() . '/inc/src/class-tgm-plugin-activation.php';
-
-if (file_exists($tgmp_file)) {
-  require_once $tgmp_file;
-
+function karsa_register_required_plugins()
+{
   $plugins = [
     [
       'name' => 'Advanced Custom Fields',
@@ -28,7 +25,7 @@ if (file_exists($tgmp_file)) {
   ];
 
   $config = [
-    'id' => 'karsa-tgmpa',
+    'id' => 'karsa-start-tgmpa',
     'has_notices' => true,
     'dismissable' => true,
     'is_automatic' => true,
@@ -36,8 +33,9 @@ if (file_exists($tgmp_file)) {
 
   tgmpa($plugins, $config);
 }
+add_action('tgmpa_register', 'karsa_register_required_plugins');
 
-function karsa_tailpress_setup(): TailPress\Framework\Theme
+function tailpress_setup(): TailPress\Framework\Theme
 {
   return TailPress\Framework\Theme::instance()
     ->assets(
@@ -53,8 +51,8 @@ function karsa_tailpress_setup(): TailPress\Framework\Theme
     )
     ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
     ->menus(fn($manager) => $manager
-      ->add('primary', __('Primary Menu', 'karsa_starter_theme'))
-      ->add('footer', __('Footer Menu', 'karsa_starter_theme')))
+      ->add('primary', __('Primary Menu', 'karsa_start'))
+      ->add('footer', __('Footer Menu', 'karsa_start')))
     ->themeSupport(fn($manager) => $manager->add([
       'title-tag',
       'custom-logo',
@@ -73,7 +71,12 @@ function karsa_tailpress_setup(): TailPress\Framework\Theme
     ]));
 }
 
-karsa_tailpress_setup();
+tailpress_setup();
 
+function karsa_start_setup()
+{
+  load_theme_textdomain('karsa_start', get_template_directory() . '/languages');
+}
 
+add_action('after_setup_theme', 'karsa_start_setup');
 

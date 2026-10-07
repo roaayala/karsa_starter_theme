@@ -1,8 +1,8 @@
 <?php
 /**
- * Main Theme Functions Loader
+ * Function Loader
  *
- * @package KarsaStarterTheme
+ * @package KarsaStart
  */
 
 if (!defined('ABSPATH')) {
