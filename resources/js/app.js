@@ -5,11 +5,19 @@ import {
   Phone,
   SquareArrowOutUpRight,
   ThumbsUp,
+  CircleAlert,
 } from "lucide";
 
 const initLucideIcons = () => {
   createIcons({
-    icons: { Award, MapPin, ThumbsUp, Phone, SquareArrowOutUpRight },
+    icons: {
+      Award,
+      MapPin,
+      ThumbsUp,
+      Phone,
+      SquareArrowOutUpRight,
+      CircleAlert,
+    },
   });
 };
 
