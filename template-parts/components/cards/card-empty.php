@@ -4,7 +4,7 @@
  */
 
 $icon = $args['icon'] ?? 'circle-alert';
-$message = $args['message'] ?? __('Belum ada unit yang tersedia saat ini.', 'karsa_start');
+$message = $args['message'] ?? __('Nothing on this post!', 'karsa_start');
 
 ?>
 

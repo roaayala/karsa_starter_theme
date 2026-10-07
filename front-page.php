@@ -14,8 +14,9 @@ get_template_part('template-parts/layouts/section', 'intro', ['intro_image_url' 
 
 
 
-get_template_part('template-parts/layouts/section', 'unit', [
+get_template_part('template-parts/layouts/section', 'post', [
   'title' => __('Daftar Unit', 'karsa_start'),
+  'target_post_type' => 'unit',
   'limit' => 6
 ]);
 
