@@ -1,21 +1,22 @@
 <?php
 /**
- * Single post template file.
+ * Template: Single
  *
- * @package TailPress
+ * @package KarsaStart
  */
 
 get_header();
 ?>
 
-<div class="container my-8 mx-auto">
+<div class="container">
     <?php if (have_posts()): ?>
-        <?php while (have_posts()): the_post(); ?>
-            <?php get_template_part('template-parts/content', 'single'); ?>
+        <?php while (have_posts()):
+            the_post(); ?>
 
-            <?php if (comments_open() || get_comments_number()): ?>
-                <?php comments_template(); ?>
-            <?php endif; ?>
+            <article>
+                <h1><?php the_title() ?></h1>
+            </article>
+
         <?php endwhile; ?>
     <?php endif; ?>
 </div>
