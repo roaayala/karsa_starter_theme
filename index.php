@@ -3,7 +3,9 @@ get_header();
 ?>
 
 <div class="container">
-	Index
+	<?php if (is_front_page()): ?>
+		Index
+	<?php endif ?>
 </div>
 
 <?php

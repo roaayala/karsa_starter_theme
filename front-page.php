@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Template: Front Page
+ */
+
 get_header();
 
 

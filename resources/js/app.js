@@ -6,6 +6,8 @@ import {
   SquareArrowOutUpRight,
   ThumbsUp,
   CircleAlert,
+  X,
+  Menu,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -17,6 +19,8 @@ const initLucideIcons = () => {
       Phone,
       SquareArrowOutUpRight,
       CircleAlert,
+      Menu,
+      X,
     },
   });
 };
@@ -24,13 +28,22 @@ const initLucideIcons = () => {
 document.addEventListener("DOMContentLoaded", initLucideIcons);
 
 window.addEventListener("load", function () {
-  let mainNavigation = document.getElementById("primary-navigation");
-  let mainNavigationToggle = document.getElementById("primary-menu-toggle");
+  const primaryMenuMobile = document.getElementById("primary-menu-mobile");
+  const primaryMenuMobileToggle = document.getElementById(
+    "primary-menu-mobile-toggle",
+  );
 
-  if (mainNavigation && mainNavigationToggle) {
-    mainNavigationToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      mainNavigation.classList.toggle("hidden");
+  if (primaryMenuMobile && primaryMenuMobileToggle) {
+    const primaryMenuMobileMenuIcon = primaryMenuMobileToggle.querySelector(
+      "#primary-menu-menu-icon",
+    );
+    const primaryMenuMobileCloseIcon = primaryMenuMobileToggle.querySelector(
+      "#primary-menu-close-icon",
+    );
+    primaryMenuMobileToggle.addEventListener("click", () => {
+      primaryMenuMobile.classList.toggle("hidden");
+      primaryMenuMobileMenuIcon.classList.toggle("hidden");
+      primaryMenuMobileCloseIcon.classList.toggle("hidden");
     });
   }
 });

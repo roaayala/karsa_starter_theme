@@ -33,7 +33,7 @@ items-center
           </a>
         </h3>
 
-        <div class="text-on-surface-variant/80 text-sm xs:text-base leading-normal">
+        <div class="text-on-surface-variant/80 text-base leading-normal">
           <?php the_excerpt(); ?>
         </div>
       </div>

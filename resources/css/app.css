@@ -59,16 +59,17 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-shape-sm
+    rounded-shape-md
     border border-transparent
-    min-h-10 min-w-10;
+    min-h-10
+    cursor-pointer;
 
     &:hover {
       @apply shadow-elevation-1;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
-      @apply p-2;
+      @apply p-2 aspect-square;
     }
 
     &.btn--primary {
@@ -87,16 +88,42 @@
       @apply bg-secondary
       text-on-secondary
       border-secondary;
+
+      &.btn--outline {
+        @apply bg-transparent
+       text-on-surface;
+      }
     }
 
     > .btn-icon {
       > svg {
-        @apply h-4 w-4;
+        @apply stroke-3 h-4 w-4;
       }
     }
 
     > .btn-label {
       @apply font-medium text-sm;
+    }
+  }
+
+  .primary-menu-mobile__container {
+    @apply pb-4 md:hidden;
+
+    .menu {
+      @apply flex flex-col gap-4;
+    }
+
+    .menu-item {
+      @apply bg-transparent 
+        text-on-surface-variant/80 hover:text-primary;
+
+      &.current-menu-item {
+        @apply text-primary
+        border-b-primary;
+      }
+      > a {
+        @apply block;
+      }
     }
   }
 }

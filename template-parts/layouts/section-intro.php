@@ -26,7 +26,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
 
 
         <div>
-          <a href="#" class="btn btn--primary">
+          <a href="/tentang-kami" class="btn btn--primary">
 
             <span class="btn-label">Selengkapnya</span>
           </a>
