@@ -13,7 +13,7 @@
 
     <div id="page" class="min-h-screen flex flex-col">
 
-        <header id="header" class="shadow-elevation-1">
+        <header id="header" class="sticky top-0 z-100 bg-surface shadow-elevation-2">
             <div class="container py-2 flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                     <div class="flex gap-2 items-center">
@@ -25,12 +25,19 @@
                                 </a>
                             </div>
                         <?php else: ?>
-                            <a class="font-bold text-lg text-on-surface-variant hover:text-on-surface"
+                            <a class="hidden font-bold text-lg text-on-surface-variant hover:text-on-surface"
                                 href="<?= esc_url(home_url()) ?>">
                                 <?php bloginfo('name') ?>
                             </a>
                         <?php endif ?>
                     </div>
+
+                    <?php wp_nav_menu([
+                        'theme_location' => 'primary',
+                        'container' => 'nav',
+                        'container_id' => 'primary-menu-dekstop',
+                        'container_class' => 'primary-menu-desktop__container'
+                    ]) ?>
 
                     <div class="md:hidden flex items-center">
                         <button id="primary-menu-mobile-toggle"

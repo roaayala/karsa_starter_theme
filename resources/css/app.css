@@ -106,23 +106,40 @@
     }
   }
 
+  .primary-menu-desktop__container {
+    @apply hidden md:flex;
+
+    .menu {
+      @apply flex items-center gap-4;
+    }
+
+    .menu-item {
+      @apply text-on-surface-variant/80 hover:text-primary;
+
+      &.current-menu-item {
+        @apply text-primary;
+      }
+      > a {
+        @apply font-medium;
+      }
+    }
+  }
+
   .primary-menu-mobile__container {
     @apply pb-4 md:hidden;
 
     .menu {
-      @apply flex flex-col gap-4;
+      @apply flex flex-col gap-3;
     }
 
     .menu-item {
-      @apply bg-transparent 
-        text-on-surface-variant/80 hover:text-primary;
+      @apply text-on-surface-variant/80 hover:text-primary;
 
       &.current-menu-item {
-        @apply text-primary
-        border-b-primary;
+        @apply text-primary;
       }
       > a {
-        @apply block;
+        @apply font-medium block;
       }
     }
   }
