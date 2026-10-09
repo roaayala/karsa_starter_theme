@@ -1,7 +1,8 @@
 <?php
-
 /**
  * Template: Front Page
+ * 
+ * @package KarsaStart
  */
 
 get_header();

@@ -1,7 +1,8 @@
 <?php
-
 /**
  * Template: Index
+ * 
+ * @package KarsaStart
  */
 
 get_header();

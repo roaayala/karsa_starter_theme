@@ -38,7 +38,7 @@
         { "name": "Neutral 700", "slug": "neutral-700", "color": "#334155" },
         { "name": "Neutral 800", "slug": "neutral-800", "color": "#1e293b" },
         { "name": "Neutral 900", "slug": "neutral-900", "color": "#0f172a" },
-        { "name": "Neutral 950", "slug": "slate-950", "color": "#020617" },
+        { "name": "Neutral 950", "slug": "neutral-950", "color": "#020617" },
         { "name": "Blue 50", "slug": "blue-50", "color": "#eff6ff" },
         { "name": "Blue 100", "slug": "blue-100", "color": "#dbeafe" },
         { "name": "Blue 200", "slug": "blue-200", "color": "#bfdbfe" },
@@ -79,27 +79,27 @@
         {
           "name": "Large",
           "slug": "lg",
-          "size": "1.125rem"
+          "size": "1.25rem"
         },
         {
           "name": "Extra Large",
           "slug": "xl",
-          "size": "1.25rem"
+          "size": "1.5rem"
         },
         {
           "name": "2XL",
           "slug": "2xl",
-          "size": "1.5rem"
+          "size": "1.75rem"
         },
         {
           "name": "3XL",
           "slug": "3xl",
-          "size": "1.875rem"
+          "size": "2.125rem"
         },
         {
           "name": "4XL",
           "slug": "4xl",
-          "size": "2.25rem"
+          "size": "2.5rem"
         },
         {
           "name": "5XL",
@@ -109,22 +109,22 @@
         {
           "name": "6XL",
           "slug": "6xl",
-          "size": "3.75rem"
+          "size": "3.5rem"
         },
         {
           "name": "7XL",
           "slug": "7xl",
-          "size": "4.5rem"
+          "size": "4.25rem"
         },
         {
           "name": "8XL",
           "slug": "8xl",
-          "size": "6rem"
+          "size": "5rem"
         },
         {
           "name": "9XL",
           "slug": "9xl",
-          "size": "8rem"
+          "size": "6rem"
         }
       ]
     }

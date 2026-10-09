@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Single
+ * Template: Single Page
  *
  * @package KarsaStart
  */
