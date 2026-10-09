@@ -1,9 +1,8 @@
 <?php
 
 /**
- * Template Part/Layout: Section Targeted Post
- * 
- * 
+ * Layouts: Post Query
+ * @package KarsaStart
  */
 
 $section_title = $args['title'] ?? __('Post List', 'karsa_start');
@@ -22,7 +21,7 @@ $query_args = [
 $the_query = new WP_Query($query_args);
 ?>
 
-<section class="py-16">
+<section class="py-8 bg-surface">
   <div class="container flex flex-col gap-8">
     <header>
       <h2 class="text-center"><?= esc_html($section_title) ?></h2>
@@ -34,7 +33,7 @@ $the_query = new WP_Query($query_args);
         <?php
         while ($the_query->have_posts()):
           $the_query->the_post();
-          get_template_part('template-parts/components/cards/card', 'default');
+          get_template_part('template-parts/components/cards/card', 'preview');
         endwhile; ?>
       </div>
     <?php else: ?>

@@ -1,10 +1,15 @@
 <?php
+/**
+ * Layout: Short Intro
+ * @package KarsaStart
+ */
+
 $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
   : get_template_directory_uri() . "/assets/images/common-fallback-2-undraw.png";
 ?>
 
-<section class="bg-surface-container-low">
-  <div class="container py-16 flex flex-col gap-8">
+<section class="bg-surface-dim">
+  <div class="container py-8 flex flex-col gap-8">
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="overflow-hidden rounded-shape-lg h-60 md:h-80 hover:shadow-elevation-1">
@@ -17,7 +22,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
           <h2>
             <?php bloginfo('name') ?>
           </h2>
-          <p class="text-on-surface-variant/80">
+          <p class="text-on-surface-subtle text-sm md:text-base">
             New Mahakam Grande adalah perumahan rakyat terjangkau karya Ingria Group di Samarinda yang menghadirkan
             bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap.
           </p>
@@ -56,16 +61,13 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
 
       <?php
       foreach ($card_contents as $content):
-        get_template_part('template-parts/components/cards/card', 'info', [
+        get_template_part('template-parts/components/cards/card', 'feature', [
           'icon' => $content['icon'],
           'title' => $content['title'],
           'description' => $content['description']
         ]);
       endforeach;
       ?>
-
-
-
     </div>
   </div>
 </section>

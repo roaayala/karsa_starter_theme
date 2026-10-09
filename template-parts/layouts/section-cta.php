@@ -7,7 +7,7 @@ $cta_image_url = (!empty($args['cta_image_url'])) ? $args['cta_image_url']
 ?>
 
 
-<section class="container py-16">
+<section class="container py-8">
 
 
   <div class="h-80 bg-primary/80 rounded-shape-lg overflow-hidden relative flex flex-col items-center justify-center">
@@ -17,7 +17,7 @@ $cta_image_url = (!empty($args['cta_image_url'])) ? $args['cta_image_url']
 
 
     <div class="max-w-[20rem] sm:max-w-[24rem] md:max-w-[36rem] lg:max-w-[45rem] mx-auto flex flex-col gap-6">
-      <h2 class="font-bold text-on-primary text-center text-3xl sm:text-4xl lg:text-5xl">Tertarik dengan Properti Kami?
+      <h2 class="font-bold text-on-primary text-center text-3xl md:text-4xl ">Tertarik dengan Properti Kami?
       </h2>
 
       <div class="text-center">

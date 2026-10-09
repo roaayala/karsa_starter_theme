@@ -13,7 +13,7 @@
 
     <div id="page" class="min-h-screen flex flex-col">
 
-        <header id="header" class="sticky top-0 z-100 bg-surface shadow-elevation-2">
+        <header id="header" class="sticky top-0 z-100 bg-surface shadow-elevation-1">
             <div class="container py-2 flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                     <div class="flex gap-2 items-center">

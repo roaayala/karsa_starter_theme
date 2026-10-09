@@ -8,29 +8,47 @@
 get_header();
 ?>
 
-<div class="container">
+<div class="container py-8
+flex flex-col gap-8
+">
 	<?php if (is_front_page()): ?>
 		<h1>Index</h1>
 	<?php endif ?>
 
-	<?php if (have_posts()): ?>
-		<?php while (have_posts()):
-			the_post(); ?>
+	<?php if (is_home() && !is_front_page()): ?>
+		<div class="relative rounded-shape-lg overflow-hidden flex items-center justify-center">
+			<img class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+				src="<?= esc_url(get_template_directory_uri() . '/assets/images/common-fallback-undraw.png') ?>"
+				alt="Index Thumbnail">
 
-			<?php if (is_front_page()): ?>
-				<h2>Article List</h2>
-			<?php else: ?>
-				<h1>Index</h1>
-			<?php endif ?>
+			<div class="absolute inset-0 -z-5 bg-primary/75"></div>
 
-			<article>
-				<h1>
-					<?php the_title() ?>
-				</h1>
-			</article>
-
-		<?php endwhile; ?>
+			<h1 class="text-center text-on-primary py-8 md:py-16">
+				<?php single_post_title(); ?>
+			</h1>
+		</div>
 	<?php endif; ?>
+
+	<section>
+		<?php if (have_posts()): ?>
+
+			<?php while (have_posts()):
+				the_post(); ?>
+
+				<article>
+					<h2>
+						<?php the_title() ?>
+					</h2>
+				</article>
+
+			<?php endwhile; ?>
+
+		<?php else: ?>
+			<?php get_template_part('template-parts/components/cards/card', 'empty', [
+				'message' => 'Belum ada artikel baru untuk saat ini!'
+			]) ?>
+		<?php endif; ?>
+	</section>
 </div>
 
 <?php

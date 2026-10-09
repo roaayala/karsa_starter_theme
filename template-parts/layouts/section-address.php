@@ -1,8 +1,15 @@
-<section class="py-16 bg-surface-container-low">
+<?php
+/**
+ * Layout: Address
+ * @package KarsaStart
+ */
+?>
+
+<section class="py-8 bg-surface-dim">
   <div class="container flex flex-col gap-8">
 
     <div>
-      <h2 class="md:text-center">
+      <h2 class="text-center">
         Akses Mudah di Pusat Pertumbuhan Samarinda
       </h2>
     </div>
@@ -22,7 +29,7 @@
       ">
         <div class="flex flex-col gap-1">
           <h3 class="font-semibold text-xl md:text-2xl">Alamat & Kantor Pemasaran</h3>
-          <p class="text-on-surface-variant/80 text-sm md:text-base leading-normal">
+          <p class="text-on-surface-subtle text-sm md:text-base">
             Jalan Ringroad, Nomor 2, Kelurahan Lok Bahu, Kecamatan Sungai Kunjang, Kota Samarinda, Provinsi
             Kalimantan
             Timur, 75243.

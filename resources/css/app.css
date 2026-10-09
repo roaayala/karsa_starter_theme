@@ -62,13 +62,13 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-shape-md
+    rounded-shape-sm
     border border-transparent
     min-h-10
     cursor-pointer;
 
     &:hover {
-      @apply shadow-elevation-1;
+      @apply hover:opacity-90;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
@@ -117,7 +117,7 @@
     }
 
     .menu-item {
-      @apply text-on-surface-variant/80 hover:text-primary;
+      @apply text-on-surface-subtle hover:text-primary;
 
       &.current-menu-item {
         @apply text-primary;
@@ -136,7 +136,7 @@
     }
 
     .menu-item {
-      @apply text-on-surface-variant/80 hover:text-primary;
+      @apply text-on-surface-subtle hover:text-primary;
 
       &.current-menu-item {
         @apply text-primary;

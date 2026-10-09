@@ -1,6 +1,7 @@
 <?php
 /**
- * Template Part: Card Default Component
+ * Component: Card Preview
+ * @package KarsaStart
  */
 
 $has_thumbnail = has_post_thumbnail();
@@ -27,13 +28,13 @@ items-center
   <div class="col-span-full md:col-span-6">
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
-        <h3 class="font-semibold xl:text-3xl">
+        <h3>
           <a href="<?php the_permalink() ?>">
             <?php the_title(); ?>
           </a>
         </h3>
 
-        <div class="text-on-surface-variant/80 text-base leading-normal">
+        <div class="text-on-surface-subtle [&>p]:text-sm md:[&>p]:text-base">
           <?php the_excerpt(); ?>
         </div>
       </div>
