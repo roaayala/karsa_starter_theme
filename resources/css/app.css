@@ -146,4 +146,15 @@
       }
     }
   }
+
+  .badge {
+    @apply px-2 py-1 inline-flex;
+
+    &.badge--primary {
+      @apply bg-primary-container text-on-primary-container;
+    }
+  }
+  .badge-label {
+    @apply text-xs leading-none;
+  }
 }
