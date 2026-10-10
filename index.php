@@ -32,7 +32,7 @@ flex flex-col gap-8
 	<?php endif; ?>
 
 	<section class="flex flex-col gap-4">
-		<h2><?php single_post_title() ?></h2>
+		<h2><?php single_post_title() ?> Terbaru</h2>
 
 		<div class="grid xs:grid-cols-2 md:grid-cols-3 gap-4">
 			<?php if (have_posts()): ?>
@@ -40,7 +40,7 @@ flex flex-col gap-8
 				<?php while (have_posts()):
 					the_post(); ?>
 
-					<?php get_template_part('template-parts/components/cards/card', 'article', ['with_excerpt' => true]) ?>
+					<?php get_template_part('template-parts/components/cards/card', 'article', ) ?>
 
 
 
@@ -54,9 +54,9 @@ flex flex-col gap-8
 		</div>
 
 
-		<nav class="flex justify-center" aria-label="Pagination">
-			<?= paginate_links(); ?>
-		</nav>
+
+		<?php get_template_part('template-parts/components/navigation') ?>
+
 	</section>
 
 </div>

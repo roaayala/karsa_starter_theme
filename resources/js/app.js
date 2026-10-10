@@ -8,6 +8,8 @@ import {
   CircleAlert,
   X,
   Menu,
+  MoveLeft,
+  MoveRight,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -21,6 +23,8 @@ const initLucideIcons = () => {
       CircleAlert,
       Menu,
       X,
+      MoveLeft,
+      MoveRight,
     },
   });
 };

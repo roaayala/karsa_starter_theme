@@ -48,7 +48,7 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
     </div>
 
     <div class="flex flex-col gap-1">
-      <h3 class="font-semibold text-lg hover:underline">
+      <h3 class="font-semibold text-lg hover:underline line-clamp-3">
         <a href="<?= esc_url(get_the_permalink()) ?>">
           <?= esc_html(get_the_title()) ?>
         </a>
