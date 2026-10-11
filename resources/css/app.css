@@ -109,43 +109,29 @@
     }
   }
 
-  .primary-menu-desktop__container {
-    @apply hidden md:flex;
-
-    .menu {
-      @apply flex items-center gap-4;
-    }
-
-    .menu-item {
-      @apply text-on-surface-subtle hover:text-primary;
-
-      &.current-menu-item,
-      &.current-menu-item-parent {
-        @apply text-primary;
-      }
-      > a {
-        @apply font-normal;
-      }
-    }
+  .primary-menu__container {
+    @apply absolute md:static
+    right-0 top-full
+    z-50
+    mt-2 md:mt-0
+    w-60 md:w-auto
+    p-4 md:p-0
+    bg-surface md:bg-transparent
+    border border-outline-variant md:border-none
+    shadow-md md:shadow-none
+    rounded-shape-lg md:rounded-none;
   }
 
-  .primary-menu-mobile__container {
-    @apply pb-4 md:hidden;
+  .menu {
+    @apply flex flex-col md:flex-row md:items-center gap-1 md:gap-3;
+  }
 
-    .menu {
-      @apply flex flex-col gap-2;
-    }
+  .menu-item {
+    @apply text-on-surface-subtle hover:text-primary;
 
-    .menu-item {
-      @apply text-on-surface-subtle hover:text-primary;
-
-      &.current-menu-item,
-      &.current-menu-item-parent {
-        @apply text-primary;
-      }
-      > a {
-        @apply font-normal block;
-      }
+    &.current-menu-item,
+    &.current-menu-item-parent {
+      @apply text-primary;
     }
   }
 

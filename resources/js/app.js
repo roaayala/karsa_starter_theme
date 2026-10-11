@@ -32,22 +32,23 @@ const initLucideIcons = () => {
 document.addEventListener("DOMContentLoaded", initLucideIcons);
 
 window.addEventListener("load", function () {
-  const primaryMenuMobile = document.getElementById("primary-menu-mobile");
-  const primaryMenuMobileToggle = document.getElementById(
-    "primary-menu-mobile-toggle",
-  );
+  const primaryMenuToggle = document.getElementById("primary-menu-toggle");
+  const primaryMenu = document.getElementById("primary-menu");
 
-  if (primaryMenuMobile && primaryMenuMobileToggle) {
-    const primaryMenuMobileMenuIcon = primaryMenuMobileToggle.querySelector(
-      "#primary-menu-menu-icon",
+  if (primaryMenuToggle && primaryMenu) {
+    const primaryMenuMenuIcon = document.getElementById(
+      "primary-menu-menu-icon",
     );
-    const primaryMenuMobileCloseIcon = primaryMenuMobileToggle.querySelector(
-      "#primary-menu-close-icon",
+    const primaryMenuCloseIcon = document.getElementById(
+      "primary-menu-close-icon",
     );
-    primaryMenuMobileToggle.addEventListener("click", () => {
-      primaryMenuMobile.classList.toggle("hidden");
-      primaryMenuMobileMenuIcon.classList.toggle("hidden");
-      primaryMenuMobileCloseIcon.classList.toggle("hidden");
-    });
+
+    if (primaryMenuMenuIcon && primaryMenuCloseIcon) {
+      primaryMenuToggle.addEventListener("click", () => {
+        primaryMenu.classList.toggle("hidden");
+        primaryMenuMenuIcon.classList.toggle("hidden");
+        primaryMenuCloseIcon.classList.toggle("hidden");
+      });
+    }
   }
 });

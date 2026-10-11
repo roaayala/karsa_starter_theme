@@ -1,6 +1,5 @@
 <?php
 
-
 $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
   : get_template_directory_uri() . "/assets/images/hero-fallback-undraw.png";
 

@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template: Global Header
+ * @package KarsaStart
+ */
+
+?>
+
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -32,26 +41,9 @@
                         <?php endif ?>
                     </div>
 
-                    <?php
-                    wp_nav_menu([
-                        'theme_location' => 'primary',
-                        'container_id' => 'primary-menu-dekstop',
-                        'container_class' => 'primary-menu-desktop__container'
-                    ]) ?>
+                    <?php get_template_part('template-parts/components/navigation', 'primary-menu'); ?>
 
-                    <div class="md:hidden flex items-center">
-                        <button id="primary-menu-mobile-toggle"
-                            class="inline-flex items-center cursor-pointer text-on-surface hover:text-on-surface">
-                            <i id="primary-menu-menu-icon" data-lucide="menu"></i>
-                            <i id="primary-menu-close-icon" data-lucide="x" class="hidden"></i>
-                        </button>
-                    </div>
                 </div>
-                <?php wp_nav_menu([
-                    'theme_location' => 'primary',
-                    'container_id' => 'primary-menu-mobile',
-                    'container_class' => 'primary-menu-mobile__container hidden'
-                ]) ?>
             </div>
         </header>
 
