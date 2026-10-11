@@ -13,19 +13,14 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
   : __('Thumbnail Fallback by Undraw', 'karsa_start');
 ?>
 
-<article class="
-grid grid-cols-12
-gap-4 sm:gap-6 lg:gap-8
-items-center
-">
-  <div class="col-span-full md:col-span-6 
-  rounded-shape-lg overflow-hidden">
+<article class="border border-outline-variant">
+  <div class="">
     <img class="w-full h-full aspect-video md:aspect-4/3 lg:aspect-video object-cover"
       src="<?= esc_url($thumbnail_url) ?>" alt="<?= esc_attr($thumbnail_alt) ?>">
   </div>
 
 
-  <div class="col-span-full md:col-span-6">
+  <div class="p-6">
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <h3>
