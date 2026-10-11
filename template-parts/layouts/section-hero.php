@@ -7,7 +7,7 @@ $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
 ?>
 
 <section>
-  <div class="container py-8 grid md:grid-cols-12 items-center gap-8">
+  <div class="container py-12 grid md:grid-cols-12 items-center gap-8">
     <div class="min-w-0 md:col-span-5 lg:col-span-5 flex flex-col gap-6">
       <div class="flex flex-col gap-3">
         <div class="flex flex-col gap-2">

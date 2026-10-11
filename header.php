@@ -13,7 +13,7 @@
 
     <div id="page" class="min-h-screen flex flex-col">
 
-        <header id="header" class="sticky top-0 z-100 bg-surface shadow-elevation-1">
+        <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline-variant">
             <div class="container py-2 flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                     <div class="flex gap-2 items-center">
@@ -32,16 +32,16 @@
                         <?php endif ?>
                     </div>
 
-                    <?php wp_nav_menu([
+                    <?php
+                    wp_nav_menu([
                         'theme_location' => 'primary',
-                        'container' => 'nav',
                         'container_id' => 'primary-menu-dekstop',
                         'container_class' => 'primary-menu-desktop__container'
                     ]) ?>
 
                     <div class="md:hidden flex items-center">
                         <button id="primary-menu-mobile-toggle"
-                            class="inline-flex items-center cursor-pointer text-on-surface-variant/80 hover:text-on-surface">
+                            class="inline-flex items-center cursor-pointer text-on-surface hover:text-on-surface">
                             <i id="primary-menu-menu-icon" data-lucide="menu"></i>
                             <i id="primary-menu-close-icon" data-lucide="x" class="hidden"></i>
                         </button>
@@ -49,7 +49,6 @@
                 </div>
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
-                    'container' => 'nav',
                     'container_id' => 'primary-menu-mobile',
                     'container_class' => 'primary-menu-mobile__container hidden'
                 ]) ?>

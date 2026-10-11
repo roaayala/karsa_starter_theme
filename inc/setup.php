@@ -70,13 +70,67 @@ function tailpress_setup(): TailPress\Framework\Theme
       ]
     ]));
 }
-
 tailpress_setup();
 
 function karsa_start_setup()
 {
   load_theme_textdomain('karsa_start', get_template_directory() . '/languages');
 }
-
 add_action('after_setup_theme', 'karsa_start_setup');
 
+
+// NAV MENU RELATED SETUP
+function karsa_nav_menu_args($args = '')
+{
+  $args['container'] = 'nav';
+  return $args;
+}
+add_filter('wp_nav_menu_args', 'karsa_nav_menu_args');
+
+function karsa_nav_menu_classes($classes, $item, $args)
+{
+  if (isset($args->theme_location) && $args->theme_location === 'primary') {
+
+    // for each defined CPT
+    if (is_singular('unit') || is_post_type_archive('unit')) {
+      if ($item->object_id === get_option('page_for_posts')) {
+        $classes = array_diff($classes, [
+          'current_page_parent',
+          'current-menu-parent',
+          'current-menu-ancestor'
+        ]);
+      }
+    }
+
+    // for all
+    $is_active_parent = !empty(array_intersect([
+      'current-menu-parent',
+      'current-menu-ancestor',
+      'current_page_parent'
+    ], $classes));
+
+    if ($is_active_parent) {
+      $classes[] = 'current-menu-item-parent';
+    }
+  }
+
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'karsa_nav_menu_classes', 10, 3);
+
+function karsa_nav_menu_link_attributes($atts, $item, $args)
+{
+  $has_class = $atts['class'] ?? '';
+  $atts['class'] = trim($has_class . ' menu-link');
+
+  return $atts;
+}
+add_filter('nav_menu_link_attributes', 'karsa_nav_menu_link_attributes', 10, 3);
+
+function karsa_nav_menu_item_title($title, $menu_item, $args, $depth)
+{
+  $title = "<span class='menu-link__label'>{$title}</span>";
+
+  return $title;
+}
+add_filter('nav_menu_item_title', 'karsa_nav_menu_item_title', 10, 4);

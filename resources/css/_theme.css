@@ -6,7 +6,7 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 90rem;
 
-  --font-sans: var(--wp--preset--font-family--plus-jakarta-sans);
+  --font-sans: var(--wp--preset--font-family--work-sans);
 
   --color-surface: var(--wp--preset--color--white);
   --color-surface-dim: var(--wp--preset--color--neutral-100);
@@ -47,30 +47,29 @@
   --shadow-elevation-5: var(--wp--custom--elevation--5);
 
   --text-xs: var(--wp--preset--font-size--xs);
-  --text-xs--line-height: 1rem;
+  /* --text-xs--line-height: 1; */
   --text-sm: var(--wp--preset--font-size--sm);
-  --text-sm--line-height: 1.25rem;
+  /* --text-sm--line-height: 1.25; */
   --text-base: var(--wp--preset--font-size--base);
-  --text-base--line-height: 1.5rem;
+  --text-base--line-height: 1.5;
   --text-lg: var(--wp--preset--font-size--lg);
-
-  --text-lg--line-height: 1.75rem;
+  --text-lg--line-height: 1.2;
   --text-xl: var(--wp--preset--font-size--xl);
-  --text-xl--line-height: 2rem;
+  --text-xl--line-height: 1.2;
   --text-2xl: var(--wp--preset--font-size--2-xl);
-  --text-2xl--line-height: 2.25rem;
+  --text-2xl--line-height: 1.2;
   --text-3xl: var(--wp--preset--font-size--3-xl);
-  --text-3xl--line-height: 2.5rem;
+  --text-3xl--line-height: 1.2;
   --text-4xl: var(--wp--preset--font-size--4-xl);
-  --text-4xl--line-height: 3rem;
+  --text-4xl--line-height: 1.2;
   --text-5xl: var(--wp--preset--font-size--5-xl);
-  --text-5xl--line-height: 3.25rem;
+  --text-5xl--line-height: 1;
   --text-6xl: var(--wp--preset--font-size--6-xl);
-  --text-6xl--line-height: 3.75rem;
+  --text-6xl--line-height: 1;
   --text-7xl: var(--wp--preset--font-size--7-xl);
-  --text-7xl--line-height: 4.5rem;
+  --text-7xl--line-height: 1;
   --text-8xl: var(--wp--preset--font-size--8-xl);
-  --text-8xl--line-height: 5.25rem;
+  --text-8xl--line-height: 1;
   --text-9xl: var(--wp--preset--font-size--9-xl);
-  --text-9xl--line-height: 6.25rem;
+  --text-9xl--line-height: 1;
 }

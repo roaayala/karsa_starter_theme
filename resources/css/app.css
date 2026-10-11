@@ -1,4 +1,4 @@
-@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource-variable/work-sans";
 
 @import "tailwindcss";
 @import "./_theme.css";
@@ -31,27 +31,27 @@
   }
 
   h1 {
-    @apply text-3xl  md:text-4xl;
+    @apply text-5xl;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl;
+    @apply text-4xl;
   }
 
   h3 {
-    @apply text-xl md:text-2xl;
+    @apply text-3xl;
   }
 
   h4 {
-    @apply text-lg md:text-xl;
+    @apply text-2xl;
   }
 
   h5 {
-    @apply text-base md:text-lg;
+    @apply text-xl;
   }
 
   h6 {
-    @apply text-sm md:text-base;
+    @apply text-lg;
   }
   p {
     @apply text-base;
@@ -62,7 +62,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-shape-sm
+    rounded-shape-none
     border border-transparent
     min-h-10
     cursor-pointer;
@@ -119,11 +119,12 @@
     .menu-item {
       @apply text-on-surface-subtle hover:text-primary;
 
-      &.current-menu-item {
+      &.current-menu-item,
+      &.current-menu-item-parent {
         @apply text-primary;
       }
       > a {
-        @apply font-medium;
+        @apply font-normal;
       }
     }
   }
@@ -132,17 +133,18 @@
     @apply pb-4 md:hidden;
 
     .menu {
-      @apply flex flex-col gap-3;
+      @apply flex flex-col gap-2;
     }
 
     .menu-item {
       @apply text-on-surface-subtle hover:text-primary;
 
-      &.current-menu-item {
+      &.current-menu-item,
+      &.current-menu-item-parent {
         @apply text-primary;
       }
       > a {
-        @apply font-medium block;
+        @apply font-normal block;
       }
     }
   }
