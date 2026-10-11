@@ -93,7 +93,7 @@ function karsa_nav_menu_classes($classes, $item, $args)
 
     // for each defined CPT
     if (is_singular('unit') || is_post_type_archive('unit')) {
-      if ($item->object_id === get_option('page_for_posts')) {
+      if ((int) $item->object_id === (int) get_option('page_for_posts')) {
         $classes = array_diff($classes, [
           'current_page_parent',
           'current-menu-parent',
