@@ -8,27 +8,25 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
   : get_template_directory_uri() . "/assets/images/common-fallback-2-undraw.png";
 ?>
 
-<section class="bg-surface-dim">
-  <div class="container py-8 flex flex-col gap-8">
-
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="overflow-hidden rounded-shape-lg h-60 md:h-80 hover:shadow-elevation-1">
-        <img src="<?= esc_url($intro_image_url) ?>" alt="Intro Image" class="w-full h-full object-cover"
+<section class="bg-surface-container">
+  <div class="container py-16 flex flex-col gap-8">
+    <div class="grid md:grid-cols-12 items-center bg-surface">
+      <div class="min-w-0 h-full md:col-span-6">
+        <img src="<?= esc_url($intro_image_url) ?>" alt="Intro Image" class="aspect-video w-full h-full object-cover"
           fetchpriority="high" loading="eager">
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 p-6 lg:p-8 md:col-span-6">
         <div class="flex flex-col gap-2">
           <h2>
             <?php bloginfo('name') ?>
           </h2>
-          <p class="text-on-surface-subtle text-sm md:text-base">
+          <p class="text-on-surface-subtle ">
             New Mahakam Grande adalah perumahan rakyat terjangkau karya Ingria Group di Samarinda yang menghadirkan
             bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap.
           </p>
 
         </div>
-
 
         <div>
           <a href="/tentang-kami" class="btn btn--primary">
@@ -57,7 +55,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
       ]
     ] ?>
 
-    <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+    <div class="grid md:grid-cols-3 gap-4">
 
       <?php
       foreach ($card_contents as $content):

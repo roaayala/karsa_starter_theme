@@ -100,12 +100,12 @@
 
     > .btn-icon {
       > svg {
-        @apply stroke-3 h-4 w-4;
+        @apply stroke-2 h-4 w-4;
       }
     }
 
     > .btn-label {
-      @apply font-medium text-sm;
+      @apply font-normal text-sm;
     }
   }
 

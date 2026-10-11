@@ -19,23 +19,21 @@ $description = (!empty($args['description']))
 
 ?>
 
-<div class="p-4 sm:p-6 
+<div class="p-6
       bg-surface
-      rounded-shape-lg 
-      flex flex-col
-      gap-3
+      border border-outline-variant
       ">
-  <div>
+  <div class="mb-3">
     <span class="inline-flex p-3 
           bg-surface-container-high
           text-on-surface
-          rounded-shape-md">
-      <i data-lucide="<?= esc_attr($icon) ?>"></i>
+         ">
+      <i data-lucide="<?= esc_attr($icon) ?>" class="h-6 w-6"></i>
     </span>
   </div>
 
-  <div class="flex flex-col gap-1">
-    <h3 class="text-lg">
+  <div>
+    <h3 class="text-base mb-1">
       <?= esc_html($title) ?>
     </h3>
     <p class="text-sm text-on-surface-subtle">
