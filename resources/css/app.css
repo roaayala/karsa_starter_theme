@@ -31,27 +31,27 @@
   }
 
   h1 {
-    @apply text-5xl;
+    @apply text-4xl xs:text-5xl;
   }
 
   h2 {
-    @apply text-4xl;
+    @apply text-3xl xs:text-4xl;
   }
 
   h3 {
-    @apply text-3xl;
+    @apply text-2xl xs:text-3xl;
   }
 
   h4 {
-    @apply text-2xl;
+    @apply text-xl xs:text-2xl;
   }
 
   h5 {
-    @apply text-xl;
+    @apply text-lg xs:text-xl;
   }
 
   h6 {
-    @apply text-lg;
+    @apply text-base xs:text-lg;
   }
   p {
     @apply text-base;
@@ -115,15 +115,14 @@
     z-50
     mt-2 md:mt-0
     w-60 md:w-auto
-    p-4 md:p-0
+    p-6 md:p-0
     bg-surface md:bg-transparent
     border border-outline-variant md:border-none
-    shadow-md md:shadow-none
-    rounded-shape-lg md:rounded-none;
+    shadow-lg md:shadow-none;
   }
 
   .menu {
-    @apply flex flex-col md:flex-row md:items-center gap-1 md:gap-3;
+    @apply flex flex-col md:flex-row md:items-center gap-3;
   }
 
   .menu-item {
