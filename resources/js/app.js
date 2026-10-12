@@ -10,6 +10,10 @@ import {
   Menu,
   MoveLeft,
   MoveRight,
+  VectorPolygon,
+  Home,
+  BedDouble,
+  Bath,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -25,6 +29,10 @@ const initLucideIcons = () => {
       X,
       MoveLeft,
       MoveRight,
+      VectorPolygon,
+      Home,
+      BedDouble,
+      Bath,
     },
   });
 };

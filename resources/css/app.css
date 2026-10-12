@@ -135,11 +135,14 @@
   }
 
   .badge {
-    @apply px-2 py-1 inline-flex;
+    @apply px-2 py-1 inline-flex items-end gap-1.5;
 
-    &.badge--primary {
-      @apply bg-primary-container text-on-primary-container;
+    &.badge--ghost {
+      @apply p-0 text-on-surface-subtle;
     }
+  }
+  .badge-icon {
+    @apply leading-none w-4 h-4;
   }
   .badge-label {
     @apply text-xs leading-none;
