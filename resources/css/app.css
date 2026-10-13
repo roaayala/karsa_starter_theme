@@ -62,7 +62,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-corner-sm
+    rounded-corner-md
     border border-transparent
     min-h-10
     cursor-pointer;
@@ -136,16 +136,24 @@
   }
 
   .badge {
-    @apply px-3 py-1.5 inline-flex items-center gap-2 rounded-corner-sm;
+    @apply px-3 py-1.5 inline-flex items-center gap-2 rounded-corner-sm min-h-8;
 
     &.badge--neutral {
-      @apply bg-surface-container;
+      @apply bg-surface-container text-on-surface;
+    }
+
+    &.badge--primary {
+      @apply bg-primary text-on-primary;
+
+      &.inverse {
+        @apply bg-on-primary text-primary;
+      }
     }
   }
   .badge-icon {
-    @apply text-on-surface leading-none w-4.5 h-4.5;
+    @apply leading-none w-4 h-4;
   }
   .badge-label {
-    @apply text-on-surface text-xs leading-none;
+    @apply text-xs leading-none;
   }
 }

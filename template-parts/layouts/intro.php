@@ -56,7 +56,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
       ];
       ?>
 
-      <div class="grid lg:grid-cols-3 gap-4">
+      <div class="grid md:grid-cols-3 gap-4">
         <?php
         foreach ($card_contents as $content):
           get_template_part('template-parts/components/cards/card', 'feature', [
