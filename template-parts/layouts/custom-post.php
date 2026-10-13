@@ -68,7 +68,7 @@ $the_query = new WP_Query($query_args);
                   <?php endif; ?>
                 </div>
 
-                <div class="pt-2">
+                <div class="mt-2">
                   <a href="<?php the_permalink(); ?>" class="btn btn--primary btn--inverse">
                     <span class="btn-label">Detail Unit</span>
                   </a>
