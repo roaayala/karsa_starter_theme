@@ -10,9 +10,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
 
 <section class="py-16 bg-surface-dim">
   <div class="container">
-    <div class="bg-surface-bright 
-    p-6 rounded-corner-xl
-   flex flex-col gap-6
+    <div class="flex flex-col gap-6
     ">
       <div class="grid md:grid-cols-12 md:items-center gap-4 md:gap-6">
         <div class="aspect-video md:aspect-5/4 lg:aspect-video md:col-span-6 rounded-corner-lg overflow-hidden">
@@ -58,7 +56,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
       ];
       ?>
 
-      <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+      <div class="grid lg:grid-cols-3 gap-4">
         <?php
         foreach ($card_contents as $content):
           get_template_part('template-parts/components/cards/card', 'feature', [
