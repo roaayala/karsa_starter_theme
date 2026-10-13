@@ -55,9 +55,10 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
           'title' => 'Fasilitas Lengkap',
           'description' => 'Terintegrasi dengan berbagai sarana kebutuhan dasar, seperti: klinik serta apotek, area niaga serta pertokoan dan sarana pendidikan.'
         ]
-      ] ?>
-      <div>
+      ];
+      ?>
 
+      <div class="grid md:grid-cols-3 gap-4 md:gap-6">
         <?php
         foreach ($card_contents as $content):
           get_template_part('template-parts/components/cards/card', 'feature', [
