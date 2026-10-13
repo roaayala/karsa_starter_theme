@@ -18,7 +18,7 @@ $query_args = [
 $the_query = new WP_Query($query_args);
 ?>
 
-<section class="py-16 bg-surface">
+<section class="py-16 bg-surface-bright">
   <div class="container flex flex-col gap-6">
 
 

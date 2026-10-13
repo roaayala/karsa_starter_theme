@@ -136,16 +136,16 @@
   }
 
   .badge {
-    @apply px-2 py-1 inline-flex items-end gap-1.5;
+    @apply px-3 py-1.5 inline-flex items-center gap-2 rounded-corner-sm;
 
-    &.badge--ghost {
-      @apply p-0 text-on-surface-subtle;
+    &.badge--neutral {
+      @apply bg-surface-container;
     }
   }
   .badge-icon {
-    @apply leading-none w-4 h-4;
+    @apply text-on-surface leading-none w-4.5 h-4.5;
   }
   .badge-label {
-    @apply text-xs leading-none;
+    @apply text-on-surface text-xs leading-none;
   }
 }

@@ -28,12 +28,18 @@ $thumbnail_alt = $has_thumbnail
   : __('Thumbnail Fallback', 'karsa_start');
 ?>
 
-<article
-  class="group relative flex flex-col sm:grid sm:grid-cols-12 bg-surface border border-outline-variant overflow-hidden transition-all duration-300">
+<article class="flex flex-col sm:grid sm:grid-cols-12 
+  bg-surface-bright
+  border border-outline/50 hover:border-outline
+  p-4
+  rounded-corner-2xl
+  overflow-hidden 
+  transition-all duration-300">
 
   <div class="relative sm:col-span-6  sm:aspect-auto overflow-hidden bg-surface-variant">
-    <img
-      class="h-full w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+    <img class="
+      rounded-corner-lg
+      h-full w-full aspect-4/3 object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
       src="<?= esc_url($thumbnail_url) ?>" alt="<?= esc_attr($thumbnail_alt) ?>">
 
     <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10 pointer-events-none">
@@ -63,30 +69,30 @@ $thumbnail_alt = $has_thumbnail
       </h3>
 
       <!-- Property Specs / Badges -->
-      <div class="flex flex-wrap items-center gap-2 pt-1">
+      <div class="flex flex-wrap items-center gap-3">
         <?php if ($unit_area): ?>
-          <div class="badge badge--ghost">
+          <div class="badge badge--neutral">
             <i data-lucide="home" class="badge-icon"></i>
             <span class="badge-label"><?= esc_html($unit_area) ?> m²</span>
           </div>
         <?php endif; ?>
 
         <?php if ($land_area): ?>
-          <div class="badge badge--ghost">
+          <div class="badge badge--neutral">
             <i data-lucide="vector-polygon" class="badge-icon"></i>
             <span class="badge-label"><?= esc_html($land_area) ?> m²</span>
           </div>
         <?php endif; ?>
 
         <?php if ($bedroom): ?>
-          <div class="badge badge--ghost">
+          <div class="badge badge--neutral">
             <i data-lucide="bed-double" class="badge-icon"></i>
             <span class="badge-label"><?= esc_html($bedroom) ?> KT</span>
           </div>
         <?php endif; ?>
 
         <?php if ($bathroom): ?>
-          <div class="badge badge--ghost">
+          <div class="badge badge--neutral">
             <i data-lucide="bath" class="badge-icon"></i>
             <span class="badge-label"><?= esc_html($bathroom) ?> KM</span>
           </div>
