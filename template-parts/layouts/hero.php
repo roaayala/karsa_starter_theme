@@ -36,7 +36,7 @@ $hero_image_url = (!empty($args['hero_image_url'])) ? $args['hero_image_url']
         <div class="flex flex-col gap-1 text-on-surface leading-none">
           <span>Mulai dari</span>
           <span>
-            <span class="font-bold text-4xl xs:text-5xl">182</span> juta
+            <span class="font-bold text-4xl lg:text-5xl">182</span> juta
           </span>
         </div>
         <div>
