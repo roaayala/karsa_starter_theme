@@ -33,14 +33,16 @@
   --color-outline: var(--wp--preset--color--neutral-400);
 
   /* RADIUS */
-  --radius-corner-none: var(--wp--custom--corner--none);
-  --radius-corner-xs: var(--wp--custom--corner--xs);
-  --radius-corner-sm: var(--wp--custom--corner--sm);
-  --radius-corner-md: var(--wp--custom--corner--md);
-  --radius-corner-lg: var(--wp--custom--corner--lg);
-  --radius-corner-xl: var(--wp--custom--corner--xl);
-  --radius-corner-2xl: var(--wp--custom--corner--2-xl);
-  --radius-corner-full: var(--wp--custom--corner--full);
+  --radius-none: var(--wp--custom--corner--none);
+  --radius-xs: var(--wp--custom--corner--xs);
+  --radius-sm: var(--wp--custom--corner--sm);
+  --radius-md: var(--wp--custom--corner--md);
+  --radius-lg: var(--wp--custom--corner--lg);
+  --radius-xl: var(--wp--custom--corner--xl);
+  --radius-2xl: var(--wp--custom--corner--2-xl);
+  --radius-3xl: var(--wp--custom--corner--3-xl);
+  --radius-4xl: var(--wp--custom--corner--4-xl);
+  --radius-full: var(--wp--custom--corner--full);
 
   --text-xs: var(--wp--preset--font-size--xs);
   /* --text-xs--line-height: 1; */
@@ -49,15 +51,15 @@
   --text-base: var(--wp--preset--font-size--base);
   --text-base--line-height: 1.5;
   --text-lg: var(--wp--preset--font-size--lg);
-  --text-lg--line-height: 1.2;
+  --text-lg--line-height: 1.1;
   --text-xl: var(--wp--preset--font-size--xl);
-  --text-xl--line-height: 1.2;
+  --text-xl--line-height: 1.1;
   --text-2xl: var(--wp--preset--font-size--2-xl);
-  --text-2xl--line-height: 1.2;
+  --text-2xl--line-height: 1.1;
   --text-3xl: var(--wp--preset--font-size--3-xl);
-  --text-3xl--line-height: 1.2;
+  --text-3xl--line-height: 1.1;
   --text-4xl: var(--wp--preset--font-size--4-xl);
-  --text-4xl--line-height: 1.2;
+  --text-4xl--line-height: 1.1;
   --text-5xl: var(--wp--preset--font-size--5-xl);
   --text-5xl--line-height: 1;
   --text-6xl: var(--wp--preset--font-size--6-xl);

@@ -13,7 +13,7 @@ $intro_image_url = (!empty($args['intro_image_url'])) ? $args['intro_image_url']
     <div class="flex flex-col gap-6
     ">
       <div class="grid md:grid-cols-12 md:items-center gap-4 md:gap-6">
-        <div class="aspect-video md:aspect-5/4 lg:aspect-video md:col-span-6 rounded-corner-lg overflow-hidden">
+        <div class="aspect-video md:aspect-5/4 lg:aspect-video md:col-span-6 rounded-2xl overflow-hidden">
           <img src="<?= esc_url($intro_image_url) ?>" alt="Intro Image" class="w-full h-full object-cover"
             fetchpriority="high" loading="eager">
         </div>

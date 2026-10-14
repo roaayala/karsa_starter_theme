@@ -46,7 +46,7 @@ $the_query = new WP_Query($query_args);
               : __('Thumbnail Fallback', 'karsa_start');
             ?>
 
-            <article class="relative flex flex-col justify-end min-h-100 rounded-corner-lg overflow-hidden p-6">
+            <article class="relative flex flex-col justify-end min-h-100 rounded-2xl overflow-hidden p-6 shadow-md">
 
               <img class="absolute inset-0 w-full h-full object-cover z-0 " src="<?= esc_url($thumbnail_url) ?>"
                 alt="<?= esc_attr($thumbnail_alt) ?>">

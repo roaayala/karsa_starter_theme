@@ -21,11 +21,12 @@ $description = (!empty($args['description']))
 
 <div class="p-6
       bg-surface-bright
-      rounded-corner-lg
+      rounded-2xl
       border border-outline/50 hover:border-outline
+      shadow-md
       ">
   <div class="mb-4">
-    <i data-lucide="<?= esc_attr($icon) ?>" class="h-12 w-12 stroke-2 p-3 bg-surface-container rounded-corner-md"></i>
+    <i data-lucide="<?= esc_attr($icon) ?>" class="h-12 w-12 stroke-2 p-3 bg-surface-container rounded-xl"></i>
     </span>
   </div>
 

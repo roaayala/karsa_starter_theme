@@ -62,13 +62,18 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-corner-md
+    rounded-lg
     border border-transparent
-    min-h-10
-    cursor-pointer;
+    h-10
+    cursor-pointer
+    text-base;
 
     &:hover {
       @apply hover:opacity-90;
+    }
+
+    > .btn-icon {
+      @apply h-5 w-5 leading-none;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
@@ -85,27 +90,10 @@
         text-primary
         border-on-primary;
       }
-    }
-
-    &.btn--secondary {
-      @apply bg-secondary
-      text-on-secondary
-      border-secondary;
 
       &.btn--outline {
-        @apply bg-transparent
-       text-on-surface;
+        @apply bg-transparent hover:bg-primary text-primary hover:text-on-primary;
       }
-    }
-
-    > .btn-icon {
-      > svg {
-        @apply stroke-2 h-4 w-4;
-      }
-    }
-
-    > .btn-label {
-      @apply font-normal text-sm;
     }
   }
 
@@ -116,10 +104,10 @@
     mt-2 md:mt-0
     w-60 md:w-auto
     p-6 md:p-0
-    rounded-corner-lg md:rounded-none
+    rounded-2xl md:rounded-none
     bg-surface-bright md:bg-transparent
-    border border-outline md:border-none
-    shadow-lg md:shadow-none;
+    border border-outline/50 hover:border-outline md:border-none
+    shadow-md md:shadow-none;
   }
 
   .menu {
@@ -133,27 +121,5 @@
     &.current-menu-item-parent {
       @apply text-primary;
     }
-  }
-
-  .badge {
-    @apply px-3 py-1.5 inline-flex items-center gap-2 rounded-corner-sm min-h-8;
-
-    &.badge--neutral {
-      @apply bg-surface-container text-on-surface;
-    }
-
-    &.badge--primary {
-      @apply bg-primary text-on-primary;
-
-      &.inverse {
-        @apply bg-on-primary text-primary;
-      }
-    }
-  }
-  .badge-icon {
-    @apply leading-none w-4 h-4;
-  }
-  .badge-label {
-    @apply text-xs leading-none;
   }
 }
