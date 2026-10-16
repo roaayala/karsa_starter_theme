@@ -1,55 +1,175 @@
 <?php
 /**
- * Template: Page About Us
+ * Template Name: About Us
  * @package KarsaStart
  */
 
-?>
+get_header(); ?>
 
-<div class="container">
+<?php if (have_posts()):
+  while (have_posts()):
+    the_post(); ?>
 
-  <?php
-  if (have_posts()):
-    while (have_posts()):
-      the_post(); ?>
 
-      <article class="py-16 flex flex-col gap-8">
+    <section class="py-12 md:py-20 bg-surface-bright border-b border-outline-variant/60">
+      <div class="container grid lg:grid-cols-12 gap-8 items-center">
 
-        <div class="grid gap-8 md:grid-cols-12 items-center">
-          <div class="md:col-span-6 lg:col-span-7 xl:col-span-8 flex flex-col gap-4">
-
-            <div class=" flex flex-col gap-2">
-              <span class="self-start py-1 px-3 normal-case font-normal text-xs bg-surface-container rounded-full">Tentang
-                Kami</span>
-              <h1>
-                PT. Ingria Pratama Capitalindo
-              </h1>
-            </div>
-
-            <div class=" text-on-surface-subtle">
-
-              <p class="mb-4">PT. Ingria Pratama Capitalindo merupakan sebuah perseroan terbatas
-                yang aktif dalam bidang jasa konstruksi
-                dan perdagangan.</p>
-              <p> Perusahaan telah memiliki beberapa portfolio konstruksi di berbagai lokasi
-                strategis di
-                Indonesia seperti di Bandung, Samarinda, Tangerang, Karawang, Bekasi, dan Sumedang. Sebagai perusahaan
-                konstruksi yang berusaha menjadi Top of Mind untuk perumahan rakyat, PT Ingria Pratama Capitalindo terus
-                mengedepankan prinsip kualitas, integritas, dan kolaborasi keseluruhan.</p>
-
-            </div>
-
-          </div>
-
-          <img
-            class="md:col-span-6 lg:col-span-5 xl:col-span-4 aspect-video md:aspect-3/4 lg:aspect-square object-center object-cover border border-outline/50 shadow-md rounded-2xl"
-            src="<?= esc_url(get_template_directory_uri() . "/assets/images/fallback-1-undraw.png") ?>" alt="Section Image">
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <span class="text-xs font-semibold text-primary uppercase tracking-wider">Profil Perusahaan</span>
+          <h1 class="text-h1 font-bold text-on-surface">PT. Ingria Pratama Capitalindo</h1>
+          <p class="text-base md:text-lg text-on-surface-subtle leading-relaxed">
+            Perseroan terbatas yang aktif dalam bidang jasa konstruksi dan perdagangan. Kami berkomitmen menjadi pengembang
+            terdepan dalam penyediaan perumahan rakyat yang berkualitas, berintegritas, dan terjangkau di berbagai lokasi
+            strategis Indonesia.
+          </p>
         </div>
 
-      </article>
+        <div class="lg:col-span-5">
+          <div class="relative aspect-4/3 rounded-shape-lg overflow-hidden shadow-md">
+            <?php if (has_post_thumbnail()): ?>
+              <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover']); ?>
+            <?php else: ?>
+              <img src="<?= esc_url(get_template_directory_uri() . '/assets/images/fallback-1-undraw.png'); ?>"
+                alt="PT Ingria Pratama Capitalindo" class="w-full h-full object-cover">
+            <?php endif; ?>
+          </div>
+        </div>
 
-      <?php
-    endwhile;
-  endif; ?>
+      </div>
+    </section>
 
-</div>
+    <!-- 2. STATS & MILESTONES SECTION -->
+    <section class="py-12 bg-surface border-b border-outline-variant/60">
+      <div class="container">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+          <div class="flex flex-col gap-1 p-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">10+</span>
+            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Tahun Pengalaman</span>
+          </div>
+
+          <div class="flex flex-col gap-1 p-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">5.000+</span>
+            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Unit Terbangun</span>
+          </div>
+
+          <div class="flex flex-col gap-1 p-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">8+</span>
+            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Lokasi Proyek</span>
+          </div>
+
+          <div class="flex flex-col gap-1 p-4">
+            <span class="text-3xl md:text-4xl font-bold text-primary">100%</span>
+            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Legalitas Aman</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. VISI & MISI SECTION -->
+    <section class="py-16 md:py-24 bg-surface-bright">
+      <div class="container flex flex-col gap-12">
+
+        <div class="text-center max-w-2xl mx-auto flex flex-col gap-2">
+          <span class="text-xs font-semibold text-primary uppercase tracking-wider">Arah & Tujuan</span>
+          <h2 class="text-h2 font-bold text-on-surface">Visi & Misi Perusahaan</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Visi Card -->
+          <div class="bg-surface p-8 rounded-shape-lg border border-outline-variant flex flex-col gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-shape-md bg-primary/10 text-primary flex items-center justify-center">
+              <i data-lucide="eye" class="w-6 h-6 stroke-[1.75]"></i>
+            </div>
+            <h3 class="text-h3 font-bold text-on-surface">Visi</h3>
+            <p class="text-on-surface-subtle leading-relaxed">
+              Menjadi pengembang hunian terdepan dan pilihan utama (*Top of Mind*) masyarakat Indonesia dalam penyediaan
+              perumahan rakyat yang aman, nyaman, dan bernilai investasi tinggi.
+            </p>
+          </div>
+
+          <!-- Misi Card -->
+          <div class="bg-surface p-8 rounded-shape-lg border border-outline-variant flex flex-col gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-shape-md bg-primary/10 text-primary flex items-center justify-center">
+              <i data-lucide="target" class="w-6 h-6 stroke-[1.75]"></i>
+            </div>
+            <h3 class="text-h3 font-bold text-on-surface">Misi</h3>
+            <ul class="flex flex-col gap-3 text-on-surface-subtle list-disc list-inside leading-relaxed">
+              <li>Membangun hunian berkualitas dengan standar konstruksi terbaik.</li>
+              <li>Mengembangkan kawasan perumahan di lokasi strategis & berkembang.</li>
+              <li>Mengedepankan transparansi legalitas dan kemudahan proses kepemilikan.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. CORE VALUES / KEUNGGULAN -->
+    <section class="py-16 md:py-24 bg-surface">
+      <div class="container flex flex-col gap-12">
+
+        <div class="text-center max-w-2xl mx-auto flex flex-col gap-2">
+          <span class="text-xs font-semibold text-primary uppercase tracking-wider">Prinsip Kami</span>
+          <h2 class="text-h2 font-bold text-on-surface">Komitmen & Nilai Utama</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1 -->
+          <div
+            class="p-6 rounded-shape-lg border border-outline-variant flex flex-col gap-3 hover:border-primary transition duration-200">
+            <i data-lucide="shield-check" class="w-8 h-8 text-primary stroke-[1.75]"></i>
+            <h3 class="text-h4 font-bold text-on-surface">Integritas</h3>
+            <p class="text-sm text-on-surface-subtle leading-relaxed">
+              Menjamin transparansi surat-surat, izin, dan legalitas bangunan di setiap proyek.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="p-6 rounded-shape-lg border border-outline-variant flex flex-col gap-3 hover:border-primary transition duration-200">
+            <i data-lucide="award" class="w-8 h-8 text-primary stroke-[1.75]"></i>
+            <h3 class="text-h4 font-bold text-on-surface">Kualitas Konstruksi</h3>
+            <p class="text-sm text-on-surface-subtle leading-relaxed">
+              Menggunakan material terpilih dan pengawasan ketat demi ketahanan bangunan jangka panjang.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="p-6 rounded-shape-lg border border-outline-variant flex flex-col gap-3 hover:border-primary transition duration-200">
+            <i data-lucide="users" class="w-8 h-8 text-primary stroke-[1.75]"></i>
+            <h3 class="text-h4 font-bold text-on-surface">Kolaborasi</h3>
+            <p class="text-sm text-on-surface-subtle leading-relaxed">
+              Bekerja sama dengan perbankan dan mitra terpercaya untuk mempermudah proses KPR konsumen.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. CTA SECTION -->
+    <section class="py-16 container">
+      <div
+        class="bg-primary text-on-primary rounded-shape-lg p-8 md:p-12 text-center flex flex-col items-center gap-6 shadow-lg">
+        <h2 class="text-h2 font-bold max-w-2xl">Siap Temukan Hunian Impian Anda Bersama Kami?</h2>
+        <p class="text-on-primary/80 max-w-xl text-sm md:text-base">
+          Jelajahi berbagai pilihan tipe unit perumahan berlokasi strategis yang sedang dikembangkan saat ini.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="<?= esc_url(home_url('/unit/')); ?>" class="btn btn--primary btn--inverse">
+            Lihat Daftar Unit
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <?php endwhile; endif; ?>
+
+<?php get_footer(); ?>

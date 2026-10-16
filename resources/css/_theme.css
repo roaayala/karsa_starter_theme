@@ -8,6 +8,8 @@
 
   --font-sans: var(--wp--preset--font-family--work-sans);
 
+  --color-overlay: var(--wp--preset--color--black);
+
   /* SURFACE */
   --color-surface: var(--wp--preset--color--neutral-50);
   --color-surface-dim: var(--wp--preset--color--neutral-100);

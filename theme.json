@@ -23,6 +23,7 @@
     "color": {
       "palette": [
         { "name": "White", "slug": "white", "color": "#ffffff" },
+        { "name": "Black", "slug": "blakc", "color": "#000000" },
         { "name": "Neutral 50", "slug": "neutral-50", "color": "#f8fafc" },
         { "name": "Neutral 100", "slug": "neutral-100", "color": "#f1f5f9" },
         { "name": "Neutral 200", "slug": "neutral-200", "color": "#e2e8f0" },
@@ -59,12 +60,12 @@
         {
           "name": "Extra Small",
           "slug": "xs",
-          "size": "0.75rem"
+          "size": "0.694rem"
         },
         {
           "name": "Small",
           "slug": "sm",
-          "size": "0.875rem"
+          "size": "0.833rem"
         },
         {
           "name": "Base",
@@ -74,22 +75,22 @@
         {
           "name": "Large",
           "slug": "lg",
-          "size": "1.25rem"
+          "size": "1.2rem"
         },
         {
           "name": "Extra Large",
           "slug": "xl",
-          "size": "1.5rem"
+          "size": "1.44rem"
         },
         {
           "name": "2XL",
           "slug": "2xl",
-          "size": "1.75rem"
+          "size": "1.728rem"
         },
         {
           "name": "3XL",
           "slug": "3xl",
-          "size": "2.125rem"
+          "size": "2.074rem"
         },
         {
           "name": "4XL",
@@ -99,27 +100,27 @@
         {
           "name": "5XL",
           "slug": "5xl",
-          "size": "3rem"
+          "size": "2.986rem"
         },
         {
           "name": "6XL",
           "slug": "6xl",
-          "size": "3.5rem"
+          "size": "3.583rem"
         },
         {
           "name": "7XL",
           "slug": "7xl",
-          "size": "4.25rem"
+          "size": "4.3rem"
         },
         {
           "name": "8XL",
           "slug": "8xl",
-          "size": "5.25rem"
+          "size": "5.16rem"
         },
         {
           "name": "9XL",
           "slug": "9xl",
-          "size": "6.25rem"
+          "size": "6.192rem"
         }
       ]
     }
