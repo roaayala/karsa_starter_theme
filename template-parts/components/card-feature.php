@@ -10,12 +10,12 @@ $description = !empty($args['description']) ? $args['description'] : __('Deskrip
 ?>
 
 <div
-  class="group p-6 bg-surface border border-outline/40 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 rounded-3xl">
+  class="group p-6 bg-surface border border-outline/20 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 rounded-3xl">
   <div class="flex flex-col gap-4">
 
     <!-- Icon Container -->
     <div
-      class="rounded-xl w-12 h-12 rounded-shape-md bg-primary-container text-on-primary-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
+      class="rounded-xl w-12 h-12 bg-primary-container text-on-primary-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
       <i data-lucide="<?= esc_attr($icon) ?>" class="w-6 h-6"></i>
     </div>
 
