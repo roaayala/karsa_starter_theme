@@ -8,7 +8,6 @@ $hero_image_url = (!empty($args['hero_image_url']))
   ? $args['hero_image_url']
   : get_template_directory_uri() . "/assets/images/fallback-1-undraw.png";
 
-
 ?>
 
 <section class="relative min-h-[70vh] flex items-center py-16 overflow-hidden">

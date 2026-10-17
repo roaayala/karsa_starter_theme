@@ -20,21 +20,19 @@ $description = (!empty($args['description']))
 ?>
 
 <div class="p-6
-      bg-surface-bright
-      rounded-2xl
-      border border-outline/50 hover:border-outline
+      bg-primary-container
       shadow-md
       ">
   <div class="mb-4">
-    <i data-lucide="<?= esc_attr($icon) ?>" class="h-12 w-12 stroke-2 p-3 bg-surface-container rounded-xl"></i>
+    <i data-lucide="<?= esc_attr($icon) ?>" class="h-12 w-12 stroke-2 p-3 bg-primary text-on-primary "></i>
     </span>
   </div>
 
-  <div>
-    <h3 class="font-semibold text-lg mb-2 text-on-surface">
+  <div class="flex flex-col gap-2">
+    <span class="font-semibold text-lg text-on-primary-container">
       <?= esc_html($title) ?>
-    </h3>
-    <p class="text-sm text-on-surface-subtle">
+    </span>
+    <p class="text-sm text-on-primary-container/60">
       <?= esc_html($description) ?>
     </p>
   </div>

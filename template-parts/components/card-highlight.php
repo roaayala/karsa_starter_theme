@@ -4,8 +4,6 @@
  * @package KarsaStart
  */
 
-$site_name = get_bloginfo('name');
-$tagline = get_bloginfo('description') ?: __('Perumahan Subsidi Modern', 'karsa_start');
 
 ?>
 
@@ -16,12 +14,12 @@ $tagline = get_bloginfo('description') ?: __('Perumahan Subsidi Modern', 'karsa_
     <div class="flex flex-col gap-1 border-b border-outline/60 pb-3">
       <span class="text-xs font-medium text-primary uppercase">Penawaran Spesial</span>
       <span class="font-bold text-4xl text-on-surface">
-        <?= esc_html($site_name); ?>
+        <?= esc_html(get_bloginfo('name')); ?>
       </span>
     </div>
 
     <div class="flex flex-col gap-1 mt-1">
-      <span class="text-xs text-on-surface-subtle uppercase ">Harga
+      <span class="text-xs text-on-surface-subtle uppercase">Harga
         unit mulai dari</span>
       <div class="flex items-baseline gap-1">
         <span class="font-bold text-primary text-4xl">182</span>
