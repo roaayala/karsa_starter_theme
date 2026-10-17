@@ -14,6 +14,7 @@ import {
   Home,
   BedDouble,
   Bath,
+  CheckCircle2,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -33,6 +34,7 @@ const initLucideIcons = () => {
       Home,
       BedDouble,
       Bath,
+      CheckCircle2,
     },
   });
 };
