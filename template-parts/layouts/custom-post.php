@@ -4,7 +4,7 @@
  * @package KarsaStart
  */
 
-$target_post_type = $args['target_post_type'] ?? 'unit';
+$target_post_type = $args['target_post_type'] ?? 'post';
 $limit = $args['limit'] ?? 6;
 $section_title = $args['title'] ?? __('Judul Section', 'karsa_start');
 $eyebrow = $args['eyebrow'] ?? __('CAPTION', 'karsa_start');
