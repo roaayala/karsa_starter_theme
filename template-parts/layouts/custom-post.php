@@ -33,7 +33,7 @@ $the_query = new WP_Query($query_args);
       </div>
 
       <?php if ($the_query->have_posts()): ?>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <?php while ($the_query->have_posts()):
             $the_query->the_post();
             $has_thumbnail = has_post_thumbnail();
@@ -46,7 +46,7 @@ $the_query = new WP_Query($query_args);
               : __('Thumbnail Fallback', 'karsa_start');
             ?>
 
-            <article class="relative flex flex-col justify-end min-h-100 rounded-2xl overflow-hidden p-6 shadow-md">
+            <article class="relative flex flex-col justify-end min-h-100 rounded-3xl overflow-hidden p-6 shadow-md">
 
               <img class="absolute inset-0 w-full h-full object-cover z-0 " src="<?= esc_url($thumbnail_url) ?>"
                 alt="<?= esc_attr($thumbnail_alt) ?>">

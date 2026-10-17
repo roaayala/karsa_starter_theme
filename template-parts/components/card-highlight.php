@@ -8,7 +8,7 @@
 ?>
 
 <div
-  class="w-full max-w-80 p-6 border border-outline/50 shadow-md bg-surface-bright/90 backdrop-blur-md rounded-shape-lg text-on-surface">
+  class="w-full max-w-80 p-8 border border-outline/50 shadow-md bg-surface-bright/90 backdrop-blur-md rounded-shape-lg text-on-surface rounded-3xl">
 
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-1 border-b border-outline/60 pb-3">
