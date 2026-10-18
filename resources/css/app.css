@@ -101,7 +101,7 @@
   }
 
   .badge {
-    @apply self-start inline-flex text-xs font-medium uppercase;
+    @apply self-start flex text-xs font-medium uppercase;
 
     &.badge--primary {
       @apply text-primary;

@@ -6,7 +6,16 @@
 
 $icon = !empty($args['icon']) ? $args['icon'] : 'award';
 $title = !empty($args['title']) ? $args['title'] : __('Judul Fitur', 'karsa_start');
-$description = !empty($args['description']) ? $args['description'] : __('Deskripsi singkat keunggulan atau fitur utama.', 'karsa_start');
+$description = !empty($args['description']) && is_string($args['description']) ? $args['description'] : null;
+
+$list_items = [];
+if (!empty($args['list_items']) && is_array($args['list_items'])) {
+  $list_items = $args['list_items'];
+}
+
+if (!empty($args['description']) && is_array($args['description'])) {
+  $list_items = $args['description'];
+}
 ?>
 
 <div
@@ -21,12 +30,25 @@ $description = !empty($args['description']) ? $args['description'] : __('Deskrip
 
     <!-- Text Group -->
     <div class="flex flex-col gap-2">
-      <h3 class="text-lg group-hover:text-primary transition-colors duration-200">
+      <span class="font-semibold text-xl text-on-surface group-hover:text-primary transition-colors duration-200">
         <?= esc_html($title) ?>
-      </h3>
-      <p class="text-sm text-on-surface-subtle leading-relaxed">
-        <?= esc_html($description) ?>
-      </p>
+      </span>
+      <?php if ($description): ?>
+        <p class="text-base text-on-surface-subtle">
+          <?= esc_html($description) ?>
+        </p>
+      <?php endif; ?>
+
+      <?php if (!empty($list_items)): ?>
+        <ul class="text-base text-on-surface-subtle flex flex-col gap-0">
+          <?php foreach ($list_items as $item): ?>
+            <li class="flex items-start ml-2 gap-4">
+              <span class="w-1 h-1 rounded-full bg-current shrink-0 mt-2"></span>
+              <span><?= esc_html($item) ?></span>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
     </div>
 
   </div>

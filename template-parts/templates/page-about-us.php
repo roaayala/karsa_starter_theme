@@ -23,41 +23,33 @@ get_header(); ?>
     get_template_part('template-parts/layouts/stat-simple', null, ['stats' => $stats]); ?>
 
 
-    <!-- 3. VISI & MISI SECTION -->
-    <section class="py-16 md:py-24 bg-surface-bright">
+    <!-- 3. VISION AND MISSION -->
+    <section class="py-16 bg-surface-bright">
       <div class="container flex flex-col gap-12">
-
-        <div class="text-center max-w-2xl mx-auto flex flex-col gap-2">
-          <span class="text-xs font-semibold text-primary uppercase tracking-wider">Arah & Tujuan</span>
-          <h2 class="text-h2 font-bold text-on-surface">Visi & Misi Perusahaan</h2>
+        <div class="max-w-100 mx-auto flex flex-col gap-1">
+          <span class="badge badge--primary badge--ghost self-center">Arah & Tujuan</span>
+          <h2 class="text-center">Visi & Misi Perusahaan</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6">
 
-          <!-- Visi Card -->
-          <div class="bg-surface p-8 rounded-shape-lg border border-outline-variant flex flex-col gap-4 shadow-sm">
-            <div class="w-12 h-12 rounded-shape-md bg-primary/10 text-primary flex items-center justify-center">
-              <i data-lucide="eye" class="w-6 h-6 stroke-[1.75]"></i>
-            </div>
-            <h3 class="text-h3 font-bold text-on-surface">Visi</h3>
-            <p class="text-on-surface-subtle leading-relaxed">
-              Menjadi pengembang hunian terdepan dan pilihan utama (*Top of Mind*) masyarakat Indonesia dalam penyediaan
-              perumahan rakyat yang aman, nyaman, dan bernilai investasi tinggi.
-            </p>
-          </div>
+          <!-- VISION -->
+          <?php get_template_part('template-parts/components/card', 'feature', [
+            'icon' => 'eye',
+            'title' => __('Visi', 'karsa_start'),
+            'description' => __('Menjadi pengembang hunian terdepan dan pilihan utama masyarakat Indonesia dalam penyediaan perumahan rakyat yang aman, nyaman, dan bernilai investasi tinggi.', 'karsa_start')
+          ]); ?>
 
-          <!-- Misi Card -->
-          <div class="bg-surface p-8 rounded-shape-lg border border-outline-variant flex flex-col gap-4 shadow-sm">
-            <div class="w-12 h-12 rounded-shape-md bg-primary/10 text-primary flex items-center justify-center">
-              <i data-lucide="target" class="w-6 h-6 stroke-[1.75]"></i>
-            </div>
-            <h3 class="text-h3 font-bold text-on-surface">Misi</h3>
-            <ul class="flex flex-col gap-3 text-on-surface-subtle list-disc list-inside leading-relaxed">
-              <li>Membangun hunian berkualitas dengan standar konstruksi terbaik.</li>
-              <li>Mengembangkan kawasan perumahan di lokasi strategis & berkembang.</li>
-              <li>Mengedepankan transparansi legalitas dan kemudahan proses kepemilikan.</li>
-            </ul>
-          </div>
+          <!-- MISSION -->
+          <?php get_template_part('template-parts/components/card', 'feature', [
+            'icon' => 'target',
+            'title' => __('Misi', 'karsa_start'),
+            'list_items' => [
+              __('Membangun hunian berkualitas dengan standar konstruksi terbaik.', 'karsa_start'),
+              __('Mengembangkan kawasan perumahan di lokasi strategis & berkembang.', 'karsa_start'),
+              __('Mengedepankan transparansi legalitas dan kemudahan proses kepemilikan.', 'karsa_start')
+            ]
+          ]); ?>
 
         </div>
 

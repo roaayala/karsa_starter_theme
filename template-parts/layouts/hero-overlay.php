@@ -36,7 +36,7 @@ $hero_image_url = (!empty($args['hero_image_url']))
 
 
         <!-- Short description -->
-        <p class=" text-base lg:text-lg text-on-primary/80 leading-relaxed mb-6 lg:mb-8">
+        <p class=" text-base lg:text-lg text-on-primary/80 lg:leading-relaxed mb-6 lg:mb-8">
           <?= esc_html(get_bloginfo('name')); ?> hadir menawarkan rumah subsidi dengan kualitas bangunan unggulan,
           fasilitas
           lengkap, dan akses strategis di Samarinda.

@@ -56,7 +56,7 @@ $card_contents = $args['features'] ?? [
           </h2>
         </div>
 
-        <p class="text-on-surface-subtle leading-relaxed">
+        <p class="text-on-surface-subtle">
           New Mahakam Grande adalah perumahan rakyat terjangkau karya Ingria Group di Samarinda yang menghadirkan
           bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap untuk mendukung kehidupan keluarga Anda.
         </p>

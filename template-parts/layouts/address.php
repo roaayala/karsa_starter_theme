@@ -6,7 +6,7 @@
 ?>
 
 <section class="py-16 bg-surface-bright">
-  <div class="container flex flex-col gap-8">
+  <div class="container flex flex-col gap-12">
 
     <div class="text-center">
       <span class="text-xs font-medium uppercase text-primary">
@@ -30,7 +30,7 @@
       <div class="md:col-span-6 flex flex-col gap-6">
         <div class="flex flex-col gap-2">
           <h3 class="text-xl xl:text-2xl">Alamat & Kantor Pemasaran</h3>
-          <p class="text-base xl:text-lg text-basetext-on-surface-subtle leading-relaxed ">
+          <p class="text-base text-on-surface-subtle ">
             Jalan Ringroad, Nomor 2, Kelurahan Lok Bahu, Kecamatan Sungai Kunjang, Kota Samarinda, Provinsi
             Kalimantan
             Timur, 75243.

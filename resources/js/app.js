@@ -16,6 +16,8 @@ import {
   Bath,
   CheckCircle2,
   Building2,
+  Eye,
+  Target,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -37,6 +39,8 @@ const initLucideIcons = () => {
       Bath,
       CheckCircle2,
       Building2,
+      Eye,
+      Target,
     },
   });
 };
