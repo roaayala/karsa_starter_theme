@@ -47,7 +47,7 @@ $card_contents = $args['features'] ?? [
       </div>
 
       <!-- Right: Content Story -->
-      <div class="md:col-span-6 flex flex-col gap-4">
+      <div class="md:col-span-6 flex flex-col gap-2">
         <div class="flex flex-col gap-1">
           <span class="text-xs text-primary font-medium uppercase ">Mengenal
             <?= esc_html(get_bloginfo('name')); ?></span>
@@ -61,7 +61,7 @@ $card_contents = $args['features'] ?? [
           bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap untuk mendukung kehidupan keluarga Anda.
         </p>
 
-        <div class="mt-2">
+        <div class="mt-4">
           <a href="<?= esc_url(home_url('/tentang-kami')) ?>" class="btn btn--primary group">
             <span class="btn-label">Selengkapnya Tentang Kami</span>
             <i data-lucide="move-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
