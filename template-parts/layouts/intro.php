@@ -35,7 +35,7 @@ $card_contents = $args['features'] ?? [
 
       <!-- Left: Image Wrapper -->
       <div
-        class="relative aspect-video md:col-span-6 md:aspect-4/3 lg:aspect-video shadow-md rounded-2xl hover:rounded-4xl transition-all overflow-hidden">
+        class="relative  md:col-span-6 aspect-4/3 xs:aspect-video md:aspect-4/3 lg:aspect-video shadow-md rounded-2xl hover:rounded-4xl transition-all overflow-hidden">
         <img src="<?= esc_url($intro_image_url) ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>"
           class="w-full h-full object-cover" fetchpriority="high" loading="eager">
 

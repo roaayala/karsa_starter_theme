@@ -100,6 +100,18 @@
     }
   }
 
+  .badge {
+    @apply self-start inline-flex text-xs font-medium uppercase;
+
+    &.badge--primary {
+      @apply text-primary;
+
+      &.badge--ghost {
+        @apply p-0;
+      }
+    }
+  }
+
   .primary-menu__container {
     @apply absolute md:static
     right-0 top-full

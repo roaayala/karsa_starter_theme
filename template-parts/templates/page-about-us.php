@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About Us
+ * Template: About Us
  * @package KarsaStart
  */
 
@@ -10,33 +10,8 @@ get_header(); ?>
   while (have_posts()):
     the_post(); ?>
 
+    <?php get_template_part('template-parts/layouts/hero') ?>
 
-    <section class="py-12 md:py-20 bg-surface-bright border-b border-outline-variant/60">
-      <div class="container grid lg:grid-cols-12 gap-8 items-center">
-
-        <div class="lg:col-span-7 flex flex-col gap-4">
-          <span class="text-xs font-semibold text-primary uppercase tracking-wider">Profil Perusahaan</span>
-          <h1 class="text-h1 font-bold text-on-surface">PT. Ingria Pratama Capitalindo</h1>
-          <p class="text-base md:text-lg text-on-surface-subtle leading-relaxed">
-            Perseroan terbatas yang aktif dalam bidang jasa konstruksi dan perdagangan. Kami berkomitmen menjadi pengembang
-            terdepan dalam penyediaan perumahan rakyat yang berkualitas, berintegritas, dan terjangkau di berbagai lokasi
-            strategis Indonesia.
-          </p>
-        </div>
-
-        <div class="lg:col-span-5">
-          <div class="relative aspect-4/3 rounded-shape-lg overflow-hidden shadow-md">
-            <?php if (has_post_thumbnail()): ?>
-              <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover']); ?>
-            <?php else: ?>
-              <img src="<?= esc_url(get_template_directory_uri() . '/assets/images/fallback-1-undraw.png'); ?>"
-                alt="PT Ingria Pratama Capitalindo" class="w-full h-full object-cover">
-            <?php endif; ?>
-          </div>
-        </div>
-
-      </div>
-    </section>
 
     <!-- 2. STATS & MILESTONES SECTION -->
     <section class="py-12 bg-surface border-b border-outline-variant/60">

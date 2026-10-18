@@ -10,7 +10,7 @@ get_header();
 $hero_image_url = wp_get_attachment_image_url(40, 'large');
 get_template_part(
   'template-parts/layouts/hero',
-  null,
+  'overlay',
   ['hero_image_url' => $hero_image_url]
 );
 
