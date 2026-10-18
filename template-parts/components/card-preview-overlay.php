@@ -15,7 +15,7 @@ $thumbnail_alt = $has_thumbnail
 ?>
 
 <article
-  class="relative flex flex-col justify-end min-h-100 w-full rounded-3xl overflow-hidden p-6 shadow-sm hover:shadow-md border border-outline/20 hover:border-primary/20 transition-all duration-300">
+  class="relative flex flex-col justify-end min-h-100 w-full rounded-2xl hover:rounded-4xl overflow-hidden p-6 shadow-sm hover:shadow-md border border-outline/20 hover:border-primary/40 transition-all">
 
   <img class="absolute inset-0 w-full h-full object-cover z-0" src="<?= esc_url($thumbnail_url) ?>"
     alt="<?= esc_attr($thumbnail_alt) ?>">

@@ -20,8 +20,8 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
 
 ?>
 
-<article class="group bg-surface-bright border border-outline/20 hover:border-primary/20 shadow-sm hover:shadow-md
-  transition-all duration-300 rounded-3xl overflow-hidden">
+<article class="group bg-surface-bright border border-outline/20 hover:border-primary/40 shadow-sm hover:shadow-md
+  transition-all rounded-2xl hover:rounded-4xl overflow-hidden">
 
   <a href="<?= esc_url(get_the_permalink()) ?>">
     <img class="aspect-video object-cover object-center border border-outline/20" src="<?= esc_url($thumbnail_url) ?>"

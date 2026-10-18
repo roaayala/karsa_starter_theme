@@ -35,12 +35,12 @@ $card_contents = $args['features'] ?? [
 
       <!-- Left: Image Wrapper -->
       <div
-        class="relative aspect-video md:col-span-6 md:aspect-4/3 lg:aspect-video shadow-md rounded-3xl overflow-hidden">
+        class="relative aspect-video md:col-span-6 md:aspect-4/3 lg:aspect-video shadow-md rounded-2xl hover:rounded-4xl transition-all overflow-hidden">
         <img src="<?= esc_url($intro_image_url) ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>"
           class="w-full h-full object-cover" fetchpriority="high" loading="eager">
 
         <div
-          class="absolute bottom-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-2 rounded-full">
+          class="absolute bottom-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-1.5 rounded-full">
           <i data-lucide="building-2" class="w-4 h-4 text-primary"></i>
           <span class="text-xs text-on-surface">Karya Ingria Group</span>
         </div>
