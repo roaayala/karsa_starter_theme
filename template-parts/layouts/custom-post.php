@@ -1,14 +1,18 @@
 <?php
 /**
- * Layout: Post Query Section
+ * Layout: CPT Query
  * @package KarsaStart
  */
 
 $target_post_type = $args['target_post_type'] ?? 'post';
-$limit = $args['limit'] ?? 6;
-$section_title = $args['title'] ?? __('Judul Section', 'karsa_start');
-$eyebrow = $args['eyebrow'] ?? __('CAPTION', 'karsa_start');
+$limit = $args['limit'] ?? 3;
 $card_variant = $args['card_variant'] ?? 'preview-overlay';
+
+$archive_link = get_post_type_archive_link($target_post_type);
+
+$section_title = $args['title'] ?? __('Judul Section', 'karsa_start');
+$eyebrow = $args['eyebrow'] ?? __('Caption', 'karsa_start');
+$cta_label = $args['cta_label'] ?? __('Lihat Semua Artikel', 'karsa_start');
 
 $query_args = [
   'post_type' => $target_post_type,
@@ -19,14 +23,10 @@ $query_args = [
 ];
 
 $the_query = new WP_Query($query_args);
-
-// Dynamic Archive Link & CTA Label
-$archive_link = get_post_type_archive_link($target_post_type) ?: home_url('/' . $target_post_type . '/');
-$cta_label = $args['cta_label'] ?? ($target_post_type === 'unit' ? __('Lihat Semua Unit', 'karsa_start') : __('Lihat Semua Artikel', 'karsa_start'));
 ?>
 
 <section class="py-16 bg-surface-bright">
-  <div class="container flex flex-col gap-8 md:gap-10">
+  <div class="container flex flex-col gap-8">
 
     <!-- Section Header Bar -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-outline/40">
