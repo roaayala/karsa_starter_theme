@@ -72,7 +72,7 @@
     }
 
     > .btn-icon {
-      @apply h-4 w-4 leading-none stroke-[1.5];
+      @apply h-4 w-4 leading-none stroke-2;
     }
 
     > .btn-label {
