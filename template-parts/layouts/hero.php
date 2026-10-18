@@ -7,12 +7,12 @@
 
 ?>
 
-<section class="py-16 bg-surface-bright border-b border-outline/60">
+<section class="py-16 bg-surface-bright">
   <div class="container grid md:grid-cols-12 gap-8 items-center">
 
     <div class="md:col-span-6">
       <span class="badge badge--primary badge--ghost mb-1">Profil Perusahaan</span>
-      <h1 class="lg:text-5xl mb-2">PT. Ingria Pratama Capitalindo</h1>
+      <h1 class="lg:text-5xl mb-2 lg:mb-4">PT. Ingria Pratama Capitalindo</h1>
       <p class="text-base lg:text-lg text-on-surface-subtle leading-relaxed">
         Perseroan terbatas yang aktif dalam bidang jasa konstruksi dan perdagangan. Kami berkomitmen menjadi pengembang
         terdepan dalam penyediaan perumahan rakyat yang berkualitas, berintegritas, dan terjangkau di berbagai lokasi

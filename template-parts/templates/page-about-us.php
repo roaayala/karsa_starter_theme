@@ -8,39 +8,20 @@ get_header(); ?>
 
 <?php if (have_posts()):
   while (have_posts()):
-    the_post(); ?>
+    the_post();
 
-    <?php get_template_part('template-parts/layouts/hero') ?>
+    // HERO
+    get_template_part('template-parts/layouts/hero');
 
+    // STATS
+    $stats = [
+      ['label' => 'Tahun Pengalaman', 'value' => '10+'],
+      ['label' => 'Unit Terbangun', 'value' => '5.000+'],
+      ['label' => 'Lokasi Proyek', 'value' => '8+'],
+      ['label' => 'Legalitas Aman', 'value' => '100%']
+    ];
+    get_template_part('template-parts/layouts/stat-simple', null, ['stats' => $stats]); ?>
 
-    <!-- 2. STATS & MILESTONES SECTION -->
-    <section class="py-12 bg-surface border-b border-outline-variant/60">
-      <div class="container">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-
-          <div class="flex flex-col gap-1 p-4">
-            <span class="text-3xl md:text-4xl font-bold text-primary">10+</span>
-            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Tahun Pengalaman</span>
-          </div>
-
-          <div class="flex flex-col gap-1 p-4">
-            <span class="text-3xl md:text-4xl font-bold text-primary">5.000+</span>
-            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Unit Terbangun</span>
-          </div>
-
-          <div class="flex flex-col gap-1 p-4">
-            <span class="text-3xl md:text-4xl font-bold text-primary">8+</span>
-            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Lokasi Proyek</span>
-          </div>
-
-          <div class="flex flex-col gap-1 p-4">
-            <span class="text-3xl md:text-4xl font-bold text-primary">100%</span>
-            <span class="text-xs md:text-sm text-on-surface-subtle font-medium">Legalitas Aman</span>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <!-- 3. VISI & MISI SECTION -->
     <section class="py-16 md:py-24 bg-surface-bright">
