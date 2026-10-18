@@ -35,34 +35,34 @@ $card_contents = $args['features'] ?? [
 
       <!-- Left: Image Wrapper -->
       <div
-        class="relative  md:col-span-6 aspect-4/3 xs:aspect-video md:aspect-4/3 lg:aspect-video shadow-md rounded-2xl hover:rounded-4xl transition-all overflow-hidden">
+        class="relative md:col-span-6 aspect-4/3 xs:aspect-video md:aspect-4/3 lg:aspect-video shadow-lg rounded-2xl overflow-hidden">
         <img src="<?= esc_url($intro_image_url) ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>"
           class="w-full h-full object-cover" fetchpriority="high" loading="eager">
 
         <div
           class="absolute bottom-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-1.5 rounded-full">
           <i data-lucide="building-2" class="w-4 h-4 text-primary"></i>
-          <span class="text-xs text-on-surface">Karya Ingria Group</span>
+          <span class="text-xs text-on-surface leading-none">Karya Ingria Group</span>
         </div>
       </div>
 
       <!-- Right: Content Story -->
-      <div class="md:col-span-6 flex flex-col gap-2">
-        <div class="flex flex-col gap-1">
-          <span class="text-xs text-primary font-medium uppercase ">Mengenal
+      <div class="md:col-span-6">
+        <div class="flex flex-col gap-1 mb-2">
+          <span class="badge badge--primary badge--ghost">Mengenal
             <?= esc_html(get_bloginfo('name')); ?></span>
           <h2>
             Hunian Modern & Terjangkau di Kota Samarinda
           </h2>
         </div>
 
-        <p class="text-on-surface-subtle">
+        <p class="text-on-surface-subtle mb-4">
           New Mahakam Grande adalah perumahan rakyat terjangkau karya Ingria Group di Samarinda yang menghadirkan
           bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap untuk mendukung kehidupan keluarga Anda.
         </p>
 
-        <div class="mt-4">
-          <a href="<?= esc_url(home_url('/tentang-kami')) ?>" class="btn btn--primary group">
+        <div>
+          <a href=" <?= esc_url(home_url('/tentang-kami')) ?>" class="btn btn--primary group">
             <span class="btn-label">Selengkapnya Tentang Kami</span>
             <i data-lucide="move-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
           </a>
@@ -71,11 +71,8 @@ $card_contents = $args['features'] ?? [
 
     </div>
 
-    <!-- Soft Horizontal Divider -->
-    <!-- <hr class="border-t border-outline/40"> -->
-
     <!-- BOTTOM: Feature Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <?php foreach ($card_contents as $content): ?>
         <?php get_template_part('template-parts/components/card', 'feature', [
           'icon' => $content['icon'],

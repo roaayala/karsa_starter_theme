@@ -19,28 +19,28 @@ if (!empty($args['description']) && is_array($args['description'])) {
 ?>
 
 <div
-  class="group p-6 bg-surface-bright border border-outline/20 hover:border-primary/40 shadow-sm hover:shadow-md transition-all rounded-2xl hover:rounded-4xl">
-  <div class="flex flex-col gap-4">
+  class="group p-6 bg-surface-bright border border-outline/20 hover:border-primary/40 shadow-sm hover:shadow-md transition-all rounded-2xl">
+  <div class="flex flex-col">
 
     <!-- Icon Container -->
     <div
-      class="rounded-xl w-12 h-12 bg-primary-container text-on-primary-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
+      class="rounded-xl w-12 h-12 bg-primary-container text-on-primary-container flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200 mb-4">
       <i data-lucide="<?= esc_attr($icon) ?>" class="w-6 h-6"></i>
     </div>
 
     <!-- Text Group -->
     <div class="flex flex-col gap-2">
-      <span class="font-semibold text-xl text-on-surface group-hover:text-primary transition-colors duration-200">
+      <span class="font-semibold text-lg/[1.1] text-on-surface group-hover:text-primary transition-colors duration-200">
         <?= esc_html($title) ?>
       </span>
       <?php if ($description): ?>
-        <p class="text-base text-on-surface-subtle">
+        <p class="text-sm/[1.6] text-on-surface-subtle">
           <?= esc_html($description) ?>
         </p>
       <?php endif; ?>
 
       <?php if (!empty($list_items)): ?>
-        <ul class="text-base text-on-surface-subtle flex flex-col gap-0">
+        <ul class="text-sm/[1.6] text-on-surface-subtle flex flex-col gap-0">
           <?php foreach ($list_items as $item): ?>
             <li class="flex items-start ml-2 gap-4">
               <span class="w-1 h-1 rounded-full bg-current shrink-0 mt-2"></span>

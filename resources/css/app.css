@@ -18,7 +18,7 @@
   }
 
   body {
-    @apply font-sans text-on-surface-variant leading-normal;
+    @apply font-sans text-on-surface-variant leading-[1.6];
   }
 
   h2,
@@ -30,30 +30,30 @@
   }
 
   h1 {
-    @apply text-on-surface font-bold text-4xl;
+    @apply text-on-surface font-bold text-4xl/[1.1];
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-3xl/[1.1];
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-2xl/[1.1];
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-xl/[1.1];
   }
 
   h5 {
-    @apply text-lg;
+    @apply text-lg/[1.1];
   }
 
   h6 {
-    @apply text-base;
+    @apply text-base/[1.1];
   }
   p {
-    @apply text-base;
+    @apply text-base/[1.6];
   }
 }
 
@@ -64,8 +64,7 @@
     rounded-full
     border border-transparent
     h-10
-    cursor-pointer
-    text-base;
+    cursor-pointer;
 
     &:hover {
       @apply hover:opacity-90;
@@ -76,7 +75,7 @@
     }
 
     > .btn-label {
-      @apply text-sm;
+      @apply text-sm/none;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
@@ -101,7 +100,7 @@
   }
 
   .badge {
-    @apply self-start flex text-xs font-medium uppercase;
+    @apply self-start flex text-xs font-medium uppercase leading-none;
 
     &.badge--primary {
       @apply text-primary;

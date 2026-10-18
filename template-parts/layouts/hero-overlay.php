@@ -27,16 +27,12 @@ $hero_image_url = (!empty($args['hero_image_url']))
       <div class="md:col-span-6 lg:col-span-7 text-on-primary">
 
         <!-- Headline -->
-
-        <div class="flex flex-col gap-2 mb-3 lg:mb-4">
-          <h1 class="text-on-primary lg:text-5xl">
-            Hunian Asri & Terjangkau untuk Keluarga Anda
-          </h1>
-        </div>
-
+        <h1 class="text-on-primary mb-2">
+          Hunian Asri & Terjangkau untuk Keluarga Anda
+        </h1>
 
         <!-- Short description -->
-        <p class=" text-base lg:text-lg text-on-primary/80 lg:leading-relaxed mb-6 lg:mb-8">
+        <p class="text-base text-on-primary/80 mb-6">
           <?= esc_html(get_bloginfo('name')); ?> hadir menawarkan rumah subsidi dengan kualitas bangunan unggulan,
           fasilitas
           lengkap, dan akses strategis di Samarinda.
