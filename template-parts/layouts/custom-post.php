@@ -26,7 +26,7 @@ $the_query = new WP_Query($query_args);
 ?>
 
 <section class="py-16 bg-surface-bright">
-  <div class="container flex flex-col gap-8">
+  <div class="container flex flex-col gap-12">
 
     <!-- Section Header Bar -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-outline/40">
@@ -57,7 +57,7 @@ $the_query = new WP_Query($query_args);
         <?php endwhile; ?>
       </div>
     <?php else: ?>
-      <?php get_template_part('template-parts/components/cards/card', 'empty'); ?>
+      <?php get_template_part('template-parts/components/card', 'empty'); ?>
     <?php endif; ?>
 
     <?php wp_reset_postdata(); ?>

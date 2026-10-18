@@ -25,6 +25,8 @@ get_template_part('template-parts/layouts/custom-post', null, [
   'limit' => 3
 ]);
 
+get_template_part('template-parts/layouts/latest-post', null);
+
 get_template_part('template-parts/layouts/address');
 
 $cta_image_url = wp_get_attachment_image_url(22, 'large');
