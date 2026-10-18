@@ -4,15 +4,16 @@
  * @package KarsaStart
  */
 
-$target_post_type = $args['target_post_type'] ?? 'post';
+
 $limit = $args['limit'] ?? 3;
-$card_variant = $args['card_variant'] ?? 'preview-overlay';
-
-$archive_link = get_post_type_archive_link($target_post_type);
-
 $section_title = $args['title'] ?? __('Judul Section', 'karsa_start');
 $eyebrow = $args['eyebrow'] ?? __('Caption', 'karsa_start');
 $cta_label = $args['cta_label'] ?? __('Lihat Semua Artikel', 'karsa_start');
+
+$target_post_type = $args['target_post_type'] ?? 'post';
+$archive_link = get_post_type_archive_link($target_post_type);
+
+$card_variant = $args['card_variant'] ?? 'preview-overlay';
 
 $query_args = [
   'post_type' => $target_post_type,

@@ -10,7 +10,7 @@ $description = !empty($args['description']) ? $args['description'] : __('Deskrip
 ?>
 
 <div
-  class="group p-6 bg-surface border border-outline/20 hover:border-primary/20 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl">
+  class="group p-6 bg-surface-bright border border-outline/20 hover:border-primary/20 shadow-sm hover:shadow-md transition-all duration-300 rounded-3xl">
   <div class="flex flex-col gap-4">
 
     <!-- Icon Container -->

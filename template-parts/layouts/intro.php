@@ -27,7 +27,7 @@ $card_contents = $args['features'] ?? [
 ];
 ?>
 
-<section class="py-16 bg-surface-dim">
+<section class="py-16 bg-surface">
   <div class="container flex flex-col gap-12 ">
 
     <!-- TOP: Image & Story Split -->
