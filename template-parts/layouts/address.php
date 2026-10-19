@@ -6,11 +6,12 @@
 ?>
 
 <section class="py-16 bg-surface-bright">
-  <div class="container flex flex-col gap-12">
-
-    <div class="text-center">
-      <span class="text-xs font-medium uppercase text-primary">
-        Lokasi & Alamat
+  <div class="container flex flex-col gap-8">
+    <div class="text-center flex flex-col gap-1">
+      <span class="badge badge--primary badge--ghost self-center">
+        <span class="badge-label">
+          Lokasi & Alamat
+        </span>
       </span>
       <h2>
         Akses Mudah di Pusat Pertumbuhan Samarinda
@@ -19,8 +20,7 @@
 
     <div class="grid md:grid-cols-12 items-center gap-8">
 
-      <div
-        class="md:col-span-6 overflow-hidden rounded-2xl hover:rounded-4xl transition-all shadow-md aspect-4/3 xs:aspect-video">
+      <div class="md:col-span-6 overflow-hidden rounded-2xl shadow-lg aspect-4/3 xs:aspect-video">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.8576899326686!2d117.08680633322192!3d-0.4788196976413315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f257e8b5745%3A0x87efd6005444551d!2sNew%20Mahakam%20Grande%20Ringroad!5e1!3m2!1sen!2sid!4v1791091738115!5m2!1sen!2sid"
           width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -29,7 +29,7 @@
 
       <div class="md:col-span-6 flex flex-col gap-6">
         <div class="flex flex-col gap-2">
-          <h3 class="text-xl xl:text-2xl">Alamat & Kantor Pemasaran</h3>
+          <span class="font-semibold text-xl xl:text-2xl">Alamat & Kantor Pemasaran</span>
           <p class="text-base text-on-surface-subtle ">
             Jalan Ringroad, Nomor 2, Kelurahan Lok Bahu, Kecamatan Sungai Kunjang, Kota Samarinda, Provinsi
             Kalimantan
