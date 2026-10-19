@@ -121,13 +121,25 @@
   }
 
   .badge {
-    @apply self-start flex text-xs font-medium uppercase leading-none;
+    @apply self-start inline-flex items-center text-xs font-medium leading-none py-1 px-2 gap-2 rounded-sm border border-transparent;
+
+    > .badge-label {
+      @apply text-xs leading-none;
+    }
+
+    > .badge-icon {
+      @apply w-4 h-4 stroke-[1.75];
+    }
 
     &.badge--primary {
-      @apply text-primary;
+      @apply text-on-primary bg-primary border-primary;
+
+      &.badge--inverse {
+        @apply bg-on-primary text-primary border-on-primary;
+      }
 
       &.badge--ghost {
-        @apply p-0;
+        @apply p-0 uppercase text-primary bg-transparent border-transparent;
       }
     }
   }

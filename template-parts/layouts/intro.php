@@ -28,27 +28,26 @@ $card_contents = $args['features'] ?? [
 ?>
 
 <section class="py-16 bg-surface">
-  <div class="container flex flex-col gap-12 ">
+  <div class="container flex flex-col gap-8">
 
     <!-- TOP: Image & Story Split -->
     <div class="grid md:grid-cols-12 md:items-center gap-8">
 
       <!-- Left: Image Wrapper -->
       <div
-        class="relative md:col-span-6 aspect-4/3 xs:aspect-video md:aspect-4/3 lg:aspect-video shadow-lg rounded-2xl overflow-hidden">
+        class="relative md:col-span-6 aspect-4/3 xs:aspect-video md:aspect-4/3 xl:aspect-video shadow-lg rounded-2xl overflow-hidden">
         <img src="<?= esc_url($intro_image_url) ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>"
           class="w-full h-full object-cover" fetchpriority="high" loading="eager">
 
-        <div
-          class="absolute bottom-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-1.5 rounded-full">
-          <i data-lucide="building-2" class="w-4 h-4 text-primary"></i>
-          <span class="text-xs text-on-surface leading-none">Karya Ingria Group</span>
+        <div class="absolute bottom-4 left-4 badge badge--primary badge--inverse">
+          <i data-lucide="building-2" class="badge-icon"></i>
+          <span class="badge-label">Karya Ingria Group</span>
         </div>
       </div>
 
       <!-- Right: Content Story -->
       <div class="md:col-span-6">
-        <div class="flex flex-col gap-1 mb-2">
+        <div class="flex flex-col gap-2 mb-2">
           <span class="badge badge--primary badge--ghost">Mengenal
             <?= esc_html(get_bloginfo('name')); ?></span>
           <h2>
@@ -56,15 +55,15 @@ $card_contents = $args['features'] ?? [
           </h2>
         </div>
 
-        <p class="text-on-surface-subtle mb-4">
+        <p class="text-on-surface-subtle mb-6">
           New Mahakam Grande adalah perumahan rakyat terjangkau karya Ingria Group di Samarinda yang menghadirkan
           bangunan berkualitas, aman, nyaman, dan berfasilitas lengkap untuk mendukung kehidupan keluarga Anda.
         </p>
 
         <div>
           <a href=" <?= esc_url(home_url('/tentang-kami')) ?>" class="btn btn--primary group">
-            <span class="btn-label">Selengkapnya Tentang Kami</span>
-            <i data-lucide="move-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+            <span class="btn-label">Selengkapnya</span>
+            <i data-lucide="move-right" class="btn-icon transition-transform group-hover:translate-x-1"></i>
           </a>
         </div>
       </div>
