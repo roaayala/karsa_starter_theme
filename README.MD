@@ -71,38 +71,6 @@
 
 ## 🏗️ Folder & Component Architecture
 
-KarsaStart mengelompokkan `template-parts` ke dalam 3 tingkatan utama agar alur kerja tetap sederhana, cepat, dan mudah dipahami:
+KarsaStart mengelompokkan `template-parts` ke dalam 3 tingkatan utama agar alur kerja tetap sederhana, cepat, dan mudah dipahami: templates, layouts and components.
 
-```text
-karsastart/
-├── functions.php                # Entry point theme
-├── inc/                         # App Setup, WP Hooks, Enqueue, Custom Post Types, Helpers
-│   ├── setup.php
-│   ├── cpt-unit.php
-│   └── helpers.php
-│
-├── front-page.php               # Main WordPress Page Templates
-├── page-about.php
-├── archive-unit.php
-├── single-unit.php
-│
-└── template-parts/
-    ├── components/              # Reusable UI elements, atomics, and entity cards
-    │   ├── ui/
-    │   │   ├── button.php
-    │   │   └── badge.php
-    │   └── cards/
-    │       ├── card-empty.php
-    │       ├── card-feature.php
-    │       ├── card-unit.php
-    │       └── card-article.php
-    │
-    ├── layouts/                 # Macro UI sections & query blocks (Hero, Intro, Post Queries)
-    │   ├── layout-hero.php
-    │   ├── layout-intro.php
-    │   └── layout-post-query.php
-    │
-    └── template/                # Page-specific sections & slices
-        ├── about-vision-mission.php
-        └── contact-form-section.php
-```
+---
