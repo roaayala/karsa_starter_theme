@@ -15,7 +15,7 @@ $thumbnail_alt = $has_thumbnail
 ?>
 
 <article
-  class="relative flex flex-col justify-end min-h-100 w-full rounded-2xl hover:rounded-4xl overflow-hidden p-6 shadow-sm hover:shadow-md border border-outline/20 hover:border-primary/40 transition-all">
+  class="relative flex flex-col justify-end min-h-100 w-full rounded-2xl overflow-hidden p-6 shadow-sm hover:shadow-md border border-outline/10 transition-all">
 
   <img class="absolute inset-0 w-full h-full object-cover z-0" src="<?= esc_url($thumbnail_url) ?>"
     alt="<?= esc_attr($thumbnail_alt) ?>">
@@ -24,13 +24,13 @@ $thumbnail_alt = $has_thumbnail
 
   <!-- Card Content -->
   <div class="relative z-20 flex flex-col gap-6 text-center items-center">
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-1">
       <h3 class="text-on-primary line-clamp-2">
         <?= esc_html(get_the_title()); ?>
       </h3>
 
       <?php if (has_excerpt()): ?>
-        <p class="text-sm text-on-primary/80 line-clamp-2">
+        <p class="text-sm/[1.6] text-on-primary/80 line-clamp-2">
           <?= esc_html(get_the_excerpt()); ?>
         </p>
       <?php endif; ?>
