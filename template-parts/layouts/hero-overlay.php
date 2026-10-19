@@ -24,11 +24,11 @@ $hero_image_url = (!empty($args['hero_image_url']))
     <div class="grid md:grid-cols-12 gap-12 items-center">
 
       <!-- Left Column -->
-      <div class="md:col-span-6 lg:col-span-7 text-on-primary">
+      <div class="min-w-0 md:col-span-6 lg:col-span-7 text-on-primary">
 
         <!-- Headline -->
-        <h1 class="text-on-primary mb-2">
-          Hunian Asri & Terjangkau untuk Keluarga Anda
+        <h1 class="text-on-primary mb-3">
+          Hunian Asri dan Terjangkau untuk Keluarga Anda
         </h1>
 
         <!-- Short description -->
@@ -39,13 +39,13 @@ $hero_image_url = (!empty($args['hero_image_url']))
         </p>
 
         <!-- CTA Action Group -->
-        <div class="flex flex-col xs:flex-row gap-4">
-          <a href="#" target="_blank" class="btn btn--primary w-full xs:w-auto">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#" target="_blank" class="btn btn--primary w-full sm:w-auto">
             <i data-lucide="phone" class="btn-icon"></i>
             <span class="btn-label">Hubungi Kami</span>
           </a>
 
-          <a href="#" class="btn btn--primary btn--inverse w-full xs:w-auto">
+          <a href="#" class="btn btn--primary btn--inverse w-full sm:w-auto">
             <i data-lucide="home" class="btn-icon"></i>
             <span class="btn-label">Lihat Pilihan Unit</span>
           </a>
@@ -54,7 +54,7 @@ $hero_image_url = (!empty($args['hero_image_url']))
       </div>
 
       <!-- Right Column -->
-      <div class="md:col-span-6 lg:col-span-5 flex justify-center ">
+      <div class="min-w-0 md:col-span-6 lg:col-span-5 flex justify-center ">
         <?php get_template_part('template-parts/components/card-highlight') ?>
       </div>
 

@@ -82,7 +82,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-full
+    rounded-lg
     border border-transparent
     h-10
     cursor-pointer;
@@ -96,7 +96,7 @@
     }
 
     > .btn-label {
-      @apply text-sm/none;
+      @apply text-sm/none font-medium;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
