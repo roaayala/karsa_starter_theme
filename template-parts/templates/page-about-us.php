@@ -20,7 +20,7 @@ get_header(); ?>
       ['label' => 'Lokasi Proyek', 'value' => '8+'],
       ['label' => 'Legalitas Aman', 'value' => '100%']
     ];
-    get_template_part('template-parts/layouts/stat-simple', null, ['stats' => $stats]); ?>
+    get_template_part('template-parts/layouts/stats-simple', null, ['stats' => $stats]); ?>
 
 
     <!-- 3. VISION AND MISSION -->
