@@ -47,9 +47,13 @@ $card_contents = $args['features'] ?? [
 
       <!-- Right: Content Story -->
       <div class="md:col-span-6">
-        <div class="flex flex-col gap-2 mb-2">
-          <span class="badge badge--primary badge--ghost">Mengenal
-            <?= esc_html(get_bloginfo('name')); ?></span>
+        <div class="flex flex-col gap-1 mb-2">
+          <span class="badge badge--primary badge--ghost">
+            <span class="badge-label">
+              Mengenal
+              <?= esc_html(get_bloginfo('name')); ?>
+            </span>
+          </span>
           <h2>
             Hunian Modern & Terjangkau di Kota Samarinda
           </h2>

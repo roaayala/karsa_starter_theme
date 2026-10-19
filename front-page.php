@@ -17,7 +17,7 @@ get_template_part(
 $intro_image_url = wp_get_attachment_image_url(23, 'large');
 get_template_part('template-parts/layouts/intro', null, ['intro_image_url' => $intro_image_url]);
 
-get_template_part('template-parts/layouts/custom-post', null, [
+get_template_part('template-parts/layouts/latest-custom-post', null, [
   'title' => __('Daftar Unit', 'karsa_start'),
   'eyebrow' => __('Pilihan Properti', 'karsa_start'),
   'cta_label' => __('Lihat Semua Unit', 'karsa_start'),

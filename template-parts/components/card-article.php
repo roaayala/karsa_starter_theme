@@ -20,16 +20,16 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
 
 ?>
 
-<article class="group bg-surface-bright border border-outline/20 hover:border-primary/40 shadow-sm hover:shadow-md
-  transition-all rounded-2xl hover:rounded-4xl overflow-hidden">
+<article
+  class="group bg-surface-bright shadow-sm hover:shadow-md transition-all rounded-2xl overflow-hidden border border-outline/10">
 
   <a href="<?= esc_url(get_the_permalink()) ?>">
-    <img class="aspect-video object-cover object-center border border-outline/20" src="<?= esc_url($thumbnail_url) ?>"
-      alt="<?= esc_attr($thumbnail_alt) ?>">
+    <img class="aspect-4/3 object-cover object-center border border-outline/20 rounded-2xl"
+      src="<?= esc_url($thumbnail_url) ?>" alt="<?= esc_attr($thumbnail_alt) ?>">
   </a>
 
-  <div class="p-6 flex flex-col gap-2">
-    <div class="text-xs flex gap-1 items-center">
+  <div class="p-6 flex flex-col gap-3">
+    <div class="text-sm flex gap-1 items-center">
       <?php if (!empty($category)): ?>
         <a class="font-medium text-primary hover:underline" href="<?= esc_url(get_category_link($category->term_id)) ?>">
           <?= esc_html($category->name) ?>
@@ -42,15 +42,15 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
       </span>
     </div>
 
-    <div class="flex flex-col gap-1">
-      <h3 class="text-lg hover:text-primary hover:underline leading-[1.3] line-clamp-3">
-        <a href="<?= esc_url(get_the_permalink()) ?>">
-          <?= esc_html(get_the_title()) ?>
-        </a>
-      </h3>
+    <div class="flex flex-col gap-3">
+
+      <a href="<?= esc_url(get_the_permalink()) ?>"
+        class="font-semibold text-lg group-hover:text-primary group-hover:underline line-clamp-2">
+        <?= esc_html(get_the_title()) ?>
+      </a>
 
       <?php if ($with_excerpt): ?>
-        <p class="text-sm text-on-surface-subtle">
+        <p class="text-base text-on-surface-subtle line-clamp-3">
           <?= esc_html(get_the_excerpt()) ?>
         </p>
       <?php endif ?>

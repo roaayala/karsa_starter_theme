@@ -23,14 +23,16 @@ $the_query = new WP_Query($query_args);
 ?>
 
 <section class="py-16 bg-surface">
-  <div class="container flex flex-col gap-16">
+  <div class="container flex flex-col gap-8">
 
     <!-- Section Header Bar -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-outline/40">
       <div class="flex flex-col gap-1">
         <?php if ($eyebrow): ?>
-          <span class="text-xs font-medium uppercase text-primary">
-            <?= esc_html($eyebrow); ?>
+          <span class="badge badge--primary badge--ghost">
+            <span class="badge-label">
+              <?= esc_html($eyebrow); ?>
+            </span>
           </span>
         <?php endif; ?>
         <h2 class="truncate">
@@ -47,7 +49,7 @@ $the_query = new WP_Query($query_args);
 
     <!-- Article Cards Grid -->
     <?php if ($the_query->have_posts()): ?>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <?php while ($the_query->have_posts()):
           $the_query->the_post(); ?>
           <?php get_template_part('template-parts/components/card', 'article'); ?>
