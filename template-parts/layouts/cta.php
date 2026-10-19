@@ -10,7 +10,7 @@ $cta_image_url = (!empty($args['cta_image_url'])) ? $args['cta_image_url']
 
 <section class="py-16 bg-surface">
   <div class="container">
-    <div class=" relative flex flex-col justify-center min-h-80 rounded-4xl overflow-hidden">
+    <div class=" relative flex flex-col justify-center min-h-80 rounded-2xl shadow-lg overflow-hidden">
 
       <img src="<?= esc_url($cta_image_url) ?>" alt="Cta Background"
         class="absolute inset-0 w-full h-full object-cover z-0" fetchpriority="high" loading="eager">
@@ -19,7 +19,7 @@ $cta_image_url = (!empty($args['cta_image_url'])) ? $args['cta_image_url']
 
       <div class="p-6 sm:p-8 md:p-16 relative z-20 text-center items-center">
 
-        <h2 class="font-bold text-2xl xs:text-4xl lg:text-5xl text-on-primary text-center leading-tight mb-6">Tertarik
+        <h2 class="font-bold text-3xl sm:text-4xl text-on-primary text-center mb-6">Tertarik
           dengan Properti
           Kami?
         </h2>
