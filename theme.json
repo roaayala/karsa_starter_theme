@@ -51,21 +51,21 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "\"Works Sans\", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          "name": "Works Sans",
-          "slug": "work-sans"
+          "fontFamily": "\"Poppins\", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "Poppins",
+          "slug": "poppins"
         }
       ],
       "fontSizes": [
         {
           "name": "Extra Small",
           "slug": "xs",
-          "size": "0.694rem"
+          "size": "0.64rem"
         },
         {
           "name": "Small",
           "slug": "sm",
-          "size": "0.833rem"
+          "size": "0.8rem"
         },
         {
           "name": "Base",
@@ -75,59 +75,59 @@
         {
           "name": "Large",
           "slug": "lg",
-          "size": "1.2rem"
+          "size": "1.25rem"
         },
         {
           "name": "Extra Large",
           "slug": "xl",
-          "size": "1.44rem"
+          "size": "1.563rem"
         },
         {
           "name": "2XL",
           "slug": "2xl",
-          "size": "1.728rem"
+          "size": "1.953rem"
         },
         {
           "name": "3XL",
           "slug": "3xl",
-          "size": "2.074rem"
+          "size": "2.441rem"
         },
         {
           "name": "4XL",
           "slug": "4xl",
-          "size": "2.5rem"
+          "size": "3.052rem"
         },
         {
           "name": "5XL",
           "slug": "5xl",
-          "size": "2.986rem"
+          "size": "3.815rem"
         },
         {
           "name": "6XL",
           "slug": "6xl",
-          "size": "3.583rem"
+          "size": "4.768rem"
         },
         {
           "name": "7XL",
           "slug": "7xl",
-          "size": "4.3rem"
+          "size": "5.96rem"
         },
         {
           "name": "8XL",
           "slug": "8xl",
-          "size": "5.16rem"
+          "size": "7.451rem"
         },
         {
           "name": "9XL",
           "slug": "9xl",
-          "size": "6.192rem"
+          "size": "9.313rem"
         }
       ]
     }
   },
   "styles": {
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--work-sans)"
+      "fontFamily": "var(--wp--preset--font-family--poppins)"
     }
   }
 }
