@@ -25,13 +25,17 @@ get_header(); ?>
 
     <!-- 3. VISION AND MISSION -->
     <section class="py-16 bg-surface-bright">
-      <div class="container flex flex-col gap-12">
+      <div class="container flex flex-col gap-8">
         <div class="max-w-100 mx-auto flex flex-col gap-1">
-          <span class="badge badge--primary badge--ghost self-center">Arah & Tujuan</span>
+          <span class="badge badge--primary badge--ghost self-center">
+            <span class="badge-label">
+              Arah & Tujuan</span>
+          </span>
+
           <h2 class="text-center">Visi & Misi Perusahaan</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-2 gap-4">
 
           <!-- VISION -->
           <?php get_template_part('template-parts/components/card', 'feature', [
