@@ -30,7 +30,7 @@ get_template_part('template-parts/layouts/latest-post', null);
 get_template_part('template-parts/layouts/address');
 
 $cta_image_url = wp_get_attachment_image_url(22, 'large');
-get_template_part('template-parts/layouts/cta', null, ['cta_image_url' => $cta_image_url]);
+get_template_part('template-parts/layouts/cta-overlay', null, ['cta_image_url' => $cta_image_url]);
 
 
 get_footer();

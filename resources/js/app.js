@@ -18,6 +18,8 @@ import {
   Building2,
   Eye,
   Target,
+  Users,
+  ShieldCheck,
 } from "lucide";
 
 const initLucideIcons = () => {
@@ -41,6 +43,8 @@ const initLucideIcons = () => {
       Building2,
       Eye,
       Target,
+      Users,
+      ShieldCheck,
     },
   });
 };
