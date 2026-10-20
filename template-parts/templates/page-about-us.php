@@ -20,45 +20,11 @@ get_header(); ?>
       ['label' => 'Lokasi Proyek', 'value' => '8+'],
       ['label' => 'Legalitas Aman', 'value' => '100%']
     ];
-    get_template_part('template-parts/layouts/stats-simple', null, ['stats' => $stats]); ?>
+    get_template_part('template-parts/layouts/stats-simple', null, ['stats' => $stats]);
 
-
-    <!-- 3. VISION AND MISSION -->
-    <section class="py-16 bg-surface-bright">
-      <div class="container flex flex-col gap-8">
-        <div class="max-w-100 mx-auto flex flex-col gap-1">
-          <span class="badge badge--primary badge--ghost self-center">
-            <span class="badge-label">
-              Arah & Tujuan</span>
-          </span>
-
-          <h2 class="text-center">Visi & Misi Perusahaan</h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-
-          <!-- VISION -->
-          <?php get_template_part('template-parts/components/card', 'feature', [
-            'icon' => 'eye',
-            'title' => __('Visi', 'karsa_start'),
-            'description' => __('Menjadi pengembang hunian terdepan dan pilihan utama masyarakat Indonesia dalam penyediaan perumahan rakyat yang aman, nyaman, dan bernilai investasi tinggi.', 'karsa_start')
-          ]); ?>
-
-          <!-- MISSION -->
-          <?php get_template_part('template-parts/components/card', 'feature', [
-            'icon' => 'target',
-            'title' => __('Misi', 'karsa_start'),
-            'list_items' => [
-              __('Membangun hunian berkualitas dengan standar konstruksi terbaik.', 'karsa_start'),
-              __('Mengembangkan kawasan perumahan di lokasi strategis & berkembang.', 'karsa_start'),
-              __('Mengedepankan transparansi legalitas dan kemudahan proses kepemilikan.', 'karsa_start')
-            ]
-          ]); ?>
-
-        </div>
-
-      </div>
-    </section>
+    // VISION AND MISSION
+    get_template_part('template-parts/layouts/vision-mission');
+    ?>
 
     <!-- 4. CORE VALUES / KEUNGGULAN -->
     <section class="py-16 md:py-24 bg-surface">
@@ -95,7 +61,7 @@ get_header(); ?>
           <div
             class="p-6 rounded-shape-lg border border-outline-variant flex flex-col gap-3 hover:border-primary transition duration-200">
             <i data-lucide="users" class="w-8 h-8 text-primary stroke-[1.75]"></i>
-            <h3 class="text-h4 font-bold text-on-surface">Kolaborasi</h3>
+            <h3 class="font-bold text-on-surface">Kolaborasi</h3>
             <p class="text-sm text-on-surface-subtle leading-relaxed">
               Bekerja sama dengan perbankan dan mitra terpercaya untuk mempermudah proses KPR konsumen.
             </p>

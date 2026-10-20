@@ -92,11 +92,11 @@
     }
 
     > .btn-icon {
-      @apply h-4 w-4 leading-none stroke-2;
+      @apply h-5 w-5 leading-none stroke-2;
     }
 
     > .btn-label {
-      @apply text-sm/none font-medium;
+      @apply text-base/none font-normal;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {

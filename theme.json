@@ -60,12 +60,12 @@
         {
           "name": "Extra Small",
           "slug": "xs",
-          "size": "0.64rem"
+          "size": "0.694rem"
         },
         {
           "name": "Small",
           "slug": "sm",
-          "size": "0.8rem"
+          "size": "0.833rem"
         },
         {
           "name": "Base",
@@ -75,32 +75,32 @@
         {
           "name": "Large",
           "slug": "lg",
-          "size": "1.25rem"
+          "size": "1.2rem"
         },
         {
           "name": "Extra Large",
           "slug": "xl",
-          "size": "1.563rem"
+          "size": "1.44rem"
         },
         {
           "name": "2XL",
           "slug": "2xl",
-          "size": "1.953rem"
+          "size": "1.728rem"
         },
         {
           "name": "3XL",
           "slug": "3xl",
-          "size": "2.441rem"
+          "size": "2.074rem"
         },
         {
           "name": "4XL",
           "slug": "4xl",
-          "size": "3.052rem"
+          "size": "2.488rem"
         },
         {
           "name": "5XL",
           "slug": "5xl",
-          "size": "3.815rem"
+          "size": "2.986rem"
         },
         {
           "name": "6XL",

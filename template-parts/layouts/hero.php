@@ -16,7 +16,7 @@
           Profil Perusahaan
         </span>
       </span>
-      <h1 class="mb-2">PT. Ingria Pratama Capitalindo</h1>
+      <h1 class="mb-3">PT. Ingria Pratama Capitalindo</h1>
       <p class="text-base text-on-surface-subtle">
         Perseroan terbatas yang aktif dalam bidang jasa konstruksi dan perdagangan. Kami berkomitmen menjadi pengembang
         terdepan dalam penyediaan perumahan rakyat yang berkualitas, berintegritas, dan terjangkau di berbagai lokasi
