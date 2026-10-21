@@ -51,7 +51,7 @@ function tailpress_setup(): TailPress\Framework\Theme
     )
     ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
     ->menus(fn($manager) => $manager
-      ->add('primary', __('Primary Menu', 'karsa_start'))
+      ->add('header', __('Header Menu', 'karsa_start'))
       ->add('footer', __('Footer Menu', 'karsa_start')))
     ->themeSupport(fn($manager) => $manager->add([
       'title-tag',
@@ -80,16 +80,16 @@ add_action('after_setup_theme', 'karsa_start_setup');
 
 
 // NAV MENU RELATED SETUP
-function karsa_nav_menu_args($args = '')
-{
-  $args['container'] = 'nav';
-  return $args;
-}
-add_filter('wp_nav_menu_args', 'karsa_nav_menu_args');
+// function karsa_nav_menu_args($args = '')
+// {
+//   $args['container'] = 'nav';
+//   return $args;
+// }
+// add_filter('wp_nav_menu_args', 'karsa_nav_menu_args');
 
 function karsa_nav_menu_classes($classes, $item, $args)
 {
-  if (isset($args->theme_location) && $args->theme_location === 'primary') {
+  if (isset($args->theme_location) && $args->theme_location === 'header') {
 
     // for each defined CPT
     if (is_singular('unit') || is_post_type_archive('unit')) {

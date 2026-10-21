@@ -5,7 +5,7 @@
 ?>
 <div class="relative">
   <div class="md:hidden flex items-center">
-    <button id="primary-menu-toggle" class="inline-flex items-center cursor-pointer text-on-surface  transition">
+    <button id="primary-menu-toggle" class="inline-flex items-center cursor-pointer text-on-surface">
       <i id="primary-menu-menu-icon" data-lucide="menu"></i>
       <i id="primary-menu-close-icon" data-lucide="x" class="hidden"></i>
     </button>

@@ -23,15 +23,8 @@
 
 #### Font Weight Standard
 
-| Token        | Class           | Value | Scope / Usage                           |
-| :----------- | :-------------- | :---- | :-------------------------------------- |
-| **Regular**  | `font-normal`   | 400   | Body text, paragraph, excerpt           |
-| **Medium**   | `font-medium`   | 500   | Badges, meta data, buttons, UI labels   |
-| **SemiBold** | `font-semibold` | 600   | Card titles, H4–H6, navigation links    |
-| **Bold**     | `font-bold`     | 700   | Display text, H1–H3, primary highlights |
-
 > **Performa Note:** Hanya memuat varian Poppins `400`, `500`, `600`, dan `700` untuk menjaga kecepatan _Core Web Vitals_.
 
 #### Text Scale and Line Height
 
-- **Type Scale Ratio**: **Minor Third (1.250)** dengan _base font_ `1rem` (16px).
+- **Type Scale Ratio**: **Minor Third (1.200)** dengan _base font_ `1rem` (16px).

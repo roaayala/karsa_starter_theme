@@ -1,0 +1,81 @@
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+    px-4 py-2
+    rounded-lg
+    border border-transparent
+    h-10
+    cursor-pointer;
+
+    &:hover {
+      @apply hover:opacity-90;
+    }
+
+    > .btn-icon {
+      @apply h-5 w-5 leading-none stroke-2;
+    }
+
+    > .btn-label {
+      @apply text-base/none font-normal shrink-0;
+    }
+
+    &:has(.btn-icon):not(:has(.btn-label)) {
+      @apply p-2 aspect-square;
+    }
+
+    &.btn--primary {
+      @apply bg-primary
+      text-on-primary
+      border-primary;
+
+      &.btn--inverse {
+        @apply bg-on-primary
+        text-primary
+        border-on-primary;
+      }
+
+      &.btn--outline {
+        @apply bg-transparent hover:bg-primary text-primary hover:text-on-primary;
+      }
+    }
+  }
+
+  .badge {
+    @apply self-start inline-flex items-center text-xs font-medium leading-none py-1 px-2 gap-2 rounded-sm border border-transparent;
+
+    > .badge-label {
+      @apply text-xs leading-none;
+    }
+
+    > .badge-icon {
+      @apply w-4 h-4 stroke-[1.75];
+    }
+
+    &.badge--primary {
+      @apply text-on-primary bg-primary border-primary;
+
+      &.badge--inverse {
+        @apply bg-on-primary text-primary border-on-primary;
+      }
+
+      &.badge--ghost {
+        @apply p-0 uppercase text-primary bg-transparent border-transparent;
+      }
+    }
+  }
+
+  #header-menu-desktop {
+    > .menu {
+      @apply flex items-center gap-3;
+    }
+  }
+
+  .menu-item {
+    @apply text-on-surface-variant hover:text-primary;
+
+    &.current-menu-item,
+    &.current-menu-item-parent {
+      @apply text-primary;
+    }
+  }
+}

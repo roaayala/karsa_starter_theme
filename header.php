@@ -22,26 +22,32 @@
 
     <div id="page" class="min-h-screen flex flex-col">
 
-        <header id="header" class="sticky top-0 z-100 bg-surface-bright border-b border-b-outline">
-            <div class="container py-2 flex flex-col gap-2">
+        <header id="header" class="sticky top-0 z-100 bg-surface-bright border-b border-b-outline/40 shadow-sm">
+            <div class="container flex flex-col gap-2">
                 <div class="flex justify-between items-center">
+                    <!-- LEFT -->
                     <div class="flex gap-2 items-center">
                         <?php if (has_site_icon()): ?>
-                            <div class="h-12 w-20">
+                            <div class="flex items-center gap-2">
                                 <a href="<?= esc_url(home_url()) ?>">
-                                    <img class="h-full w-full object-cover" src="<?= esc_url(get_site_icon_url()) ?>"
+                                    <img class="h-16 object-cover" src="<?= esc_url(get_site_icon_url()) ?>"
                                         alt="Site Icon">
                                 </a>
                             </div>
                         <?php else: ?>
-                            <a class="hidden font-bold text-lg text-on-surface-variant hover:text-on-surface"
+                            <a class="font-bold text-lg text-on-surface-variant hover:text-on-surface"
                                 href="<?= esc_url(home_url()) ?>">
                                 <?php bloginfo('name') ?>
                             </a>
                         <?php endif ?>
                     </div>
 
-                    <?php get_template_part('template-parts/components/navigation', 'primary-menu'); ?>
+                    <!-- CENTER -->
+                    <?php get_template_part('template-parts/layouts/header-menu-desktop') ?>
+
+                    <!-- RIGHT -->
+                    <div>right</div>
+
 
                 </div>
             </div>
