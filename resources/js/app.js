@@ -21,6 +21,7 @@ import {
   Users,
   ShieldCheck,
 } from "lucide";
+import mobileMenuHandler from "./mobile-menu-handler";
 
 const initLucideIcons = () => {
   createIcons({
@@ -52,6 +53,7 @@ const initLucideIcons = () => {
 document.addEventListener("DOMContentLoaded", initLucideIcons);
 
 window.addEventListener("load", function () {
+  mobileMenuHandler();
   const primaryMenuToggle = document.getElementById("primary-menu-toggle");
   const primaryMenu = document.getElementById("primary-menu");
 

@@ -70,6 +70,12 @@
     }
   }
 
+  #header-menu-mobile {
+    > .menu {
+      @apply flex flex-col gap-2;
+    }
+  }
+
   .menu-item {
     @apply text-on-surface-variant hover:text-primary;
 

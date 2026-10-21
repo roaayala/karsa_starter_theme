@@ -46,7 +46,7 @@
                     <?php get_template_part('template-parts/layouts/header-menu-desktop') ?>
 
                     <!-- RIGHT -->
-                    <div>right</div>
+                    <?php get_template_part('template-parts/layouts/header-menu-mobile') ?>
 
 
                 </div>
