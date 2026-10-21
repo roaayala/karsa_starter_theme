@@ -28,7 +28,7 @@ if (!empty($args['description']) && is_array($args['description'])) {
   </div>
 
   <!-- Text Group -->
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-1">
     <span class="font-bold text-xl text-on-surface group-hover:text-primary transition-colors duration-200">
       <?= esc_html($title) ?>
     </span>

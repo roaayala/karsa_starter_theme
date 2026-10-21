@@ -15,11 +15,11 @@ $stats = $args['stats'] ?? [
 
 <section class="py-16 bg-surface">
   <div class="container">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 xs:gap-8">
       <?php
       foreach ($stats as $stat): ?>
         <div class="flex flex-col gap-2 text-center">
-          <span class="font-bold text-3xl sm:text-4xl text-primary"><?= esc_html($stat['value']) ?></span>
+          <span class="font-bold text-4xl text-primary"><?= esc_html($stat['value']) ?></span>
           <span class="text-xs sm:text-sm text-on-surface-subtle">
             <?= esc_html($stat['label']) ?>
           </span>

@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="w-full max-w-80 p-6 shadow-lg bg-surface-bright rounded-2xl">
+<div class="w-full max-w-80 p-6 xs:p-8 shadow-lg bg-surface-bright rounded-2xl">
 
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-1 border-b border-outline/40 pb-4 mb-1">
@@ -16,7 +16,7 @@
           Penawaran Spesial
         </span>
       </span>
-      <span class="font-bold text-on-surface text-3xl sm:text-4xl">
+      <span class="font-bold text-on-surface text-4xl">
         <?= esc_html(get_bloginfo('name')); ?>
       </span>
     </div>
@@ -25,7 +25,7 @@
       <span class="text-xs text-on-surface-subtle uppercase">Harga
         unit mulai dari</span>
       <div class="flex items-baseline gap-1">
-        <span class="font-bold text-primary text-3xl sm:text-4xl">182</span>
+        <span class="font-bold text-primary text-4xl">182</span>
         <span class="font-semibold text-on-surface">Juta.</span>
       </div>
     </div>
