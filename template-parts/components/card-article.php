@@ -29,7 +29,7 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
   </a>
 
   <div class="p-6 flex flex-col gap-3">
-    <div class="text-sm flex gap-1 items-center">
+    <div class="text-xs flex gap-1 items-center">
       <?php if (!empty($category)): ?>
         <a class="font-medium text-primary hover:underline" href="<?= esc_url(get_category_link($category->term_id)) ?>">
           <?= esc_html($category->name) ?>
@@ -42,15 +42,15 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
       </span>
     </div>
 
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-1">
 
       <a href="<?= esc_url(get_the_permalink()) ?>"
-        class="font-semibold text-lg group-hover:text-primary group-hover:underline line-clamp-2">
+        class="font-semibold text-xl text-on-surface group-hover:text-primary group-hover:underline line-clamp-2">
         <?= esc_html(get_the_title()) ?>
       </a>
 
       <?php if ($with_excerpt): ?>
-        <p class="text-base text-on-surface-subtle line-clamp-3">
+        <p class="text-sm/[1.6] text-on-surface-subtle line-clamp-4">
           <?= esc_html(get_the_excerpt()) ?>
         </p>
       <?php endif ?>
