@@ -5,7 +5,7 @@
  */
 
 $cta_image_url = (!empty($args['cta_image_url'])) ? $args['cta_image_url']
-  : get_template_directory_uri() . "/assets/images/fallback-1-undraw.png";
+  : get_template_directory_uri() . "/public/images/fallback-1-undraw.png";
 ?>
 
 <section class="py-16 bg-surface">

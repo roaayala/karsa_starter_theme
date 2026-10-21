@@ -6,7 +6,7 @@
 
 $intro_image_url = (!empty($args['intro_image_url']))
   ? $args['intro_image_url']
-  : get_template_directory_uri() . "/assets/images/common-fallback-2-undraw.png";
+  : get_template_directory_uri() . "/public/images/common-fallback-2-undraw.png";
 
 $card_contents = $args['features'] ?? [
   [

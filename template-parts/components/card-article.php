@@ -14,7 +14,7 @@ $has_thumbnail = has_post_thumbnail();
 $thumbnail_id = $has_thumbnail ? get_post_thumbnail_id() : null;
 $thumbnail_url = $has_thumbnail
   ? get_the_post_thumbnail_url(get_the_ID(), 'large')
-  : get_template_directory_uri() . "/assets/images/fallback-2-undraw.png";
+  : get_template_directory_uri() . "/public/images/fallback-2-undraw.png";
 $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true)
   : __('Thumbnail Fallback by Undraw', 'karsa_start');
 

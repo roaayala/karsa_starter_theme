@@ -28,7 +28,7 @@
       <div class="aspect-4/3 sm:aspect-video md:aspect-4/3 rounded-2xl overflow-hidden shadow-lg">
         <img src="<?= has_post_thumbnail()
           ? get_the_post_thumbnail_url(get_the_ID(), 'large')
-          : esc_url(get_template_directory_uri() . '/assets/images/fallback-1-undraw.png'); ?>"
+          : esc_url(get_template_directory_uri() . '/public/images/fallback-1-undraw.png'); ?>"
           alt="PT Ingria Pratama Capitalindo" class="w-full h-full object-cover">
       </div>
     </div>

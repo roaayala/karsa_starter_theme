@@ -29,17 +29,17 @@ if (!empty($args['description']) && is_array($args['description'])) {
 
   <!-- Text Group -->
   <div class="flex flex-col gap-1">
-    <span class="font-bold text-xl text-on-surface group-hover:text-primary transition-colors duration-200">
+    <span class="font-semibold text-xl text-on-surface group-hover:text-primary transition-colors duration-200">
       <?= esc_html($title) ?>
     </span>
     <?php if ($description): ?>
-      <p class="text-sm/[1.6] text-on-surface-subtle">
+      <p class="text-base/[1.6] text-on-surface-subtle">
         <?= esc_html($description) ?>
       </p>
     <?php endif; ?>
 
     <?php if (!empty($list_items)): ?>
-      <ul class="text-sm/[1.6] text-on-surface-subtle flex flex-col gap-0">
+      <ul class="text-base/[1.6] text-on-surface-subtle flex flex-col gap-0">
         <?php foreach ($list_items as $item): ?>
           <li class="flex items-start ml-2 gap-2">
             <span class="w-1 h-1 rounded-full bg-current shrink-0 mt-2"></span>
