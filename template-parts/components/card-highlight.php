@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="w-full max-w-72 p-6 shadow-lg bg-surface-bright rounded-2xl">
+<div class="w-full max-w-80 p-6 shadow-lg bg-surface-bright rounded-2xl">
 
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-1 border-b border-outline/40 pb-4 mb-1">

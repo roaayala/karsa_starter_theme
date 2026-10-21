@@ -1,13 +1,5 @@
-@import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/500.css";
-@import "@fontsource/poppins/600.css";
-@import "@fontsource/poppins/700.css";
-@import "@fontsource/poppins/400-italic.css";
-@import "@fontsource/poppins/500-italic.css";
-@import "@fontsource/poppins/600-italic.css";
-@import "@fontsource/poppins/700-italic.css";
-
 @import "tailwindcss";
+@import "./_fonts.css";
 @import "./_theme.css";
 @import "./_base.css";
 @import "./_components.css";
