@@ -1,22 +1,33 @@
 <?php
 /**
- * Component: Custom Pagination Structure
+ * Component: Pagination
  * 
  * @package KarsaStart
  */
 
+$total_pages = $args['total'] ?? $GLOBALS['wp_query']->max_num_pages ?? 1;
+$current_page = $args['current'] ?? max(1, get_query_var('paged'));
+
+if ($total_pages <= 1) {
+  return;
+}
+
 $links = paginate_links([
+  'total' => $total_pages,
+  'current' => $current_page,
   'type' => 'array',
   'format' => '?paged=%#%',
   'prev_text' => sprintf(
     '<span class="inline-flex items-center gap-2 hover:underline"><i data-lucide="move-left" class="w-5 h-5 shrink-0"></i><span class="text-base hover:underline">%s</span></span>',
-    __('Prev', 'karsa_start')
+    __('Kembali', 'karsa_start')
   ),
   'next_text' => sprintf(
     '<span class="inline-flex items-center gap-2 hover:underline"><span class="text-base">%s</span><i data-lucide="move-right" class="w-5 h-5 shrink-0"></i></span>',
-    __('Next', 'karsa_start')
+    __('Selanjutnya', 'karsa_start')
   ),
 ]);
+
+dump($links);
 ?>
 
 <?php if (!empty($links)): ?>
@@ -56,7 +67,7 @@ $links = paginate_links([
         );
       }
       ?>
-      <?= $styled_link ?>
+      <?= $link ?>
     <?php endforeach ?>
   </nav>
 

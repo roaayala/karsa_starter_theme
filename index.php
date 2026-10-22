@@ -1,5 +1,9 @@
 <?php
 
+use TailPress\Pagination;
+
+
+
 /**
  * Template: Index
  * 
@@ -18,7 +22,8 @@ flex flex-col gap-8
 	<?php endif ?>
 
 	<?php get_template_part('template-parts/templates/index-default') ?>
-	<?php get_template_part('template-parts/components/navigation') ?>
+	<?php get_template_part('template-parts/components/pagination') ?>
+
 
 </div>
 
