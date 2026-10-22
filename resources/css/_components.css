@@ -66,7 +66,7 @@
 
   #header-menu-desktop {
     > .menu {
-      @apply flex items-center gap-3;
+      @apply flex items-center gap-4;
     }
   }
 

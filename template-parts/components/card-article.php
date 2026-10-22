@@ -21,7 +21,7 @@ $thumbnail_alt = $has_thumbnail ? get_post_meta($thumbnail_id, '_wp_attachment_i
 ?>
 
 <article
-  class="group bg-surface-bright shadow-sm hover:shadow-md transition-all rounded-2xl overflow-hidden border border-outline/10">
+  class="group bg-surface-bright shadow-sm hover:shadow-md transition-all rounded-2xl overflow-hidden border border-outline/20">
 
   <a href="<?= esc_url(get_the_permalink()) ?>">
     <img class="aspect-4/3 object-cover object-center border border-outline/20 rounded-2xl"
