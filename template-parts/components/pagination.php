@@ -18,57 +18,63 @@ $links = paginate_links([
   'type' => 'array',
   'format' => '?paged=%#%',
   'prev_text' => sprintf(
-    '<span class="inline-flex items-center gap-2 hover:underline"><i data-lucide="move-left" class="w-5 h-5 shrink-0"></i><span class="text-base hover:underline">%s</span></span>',
+    '<i data-lucide="move-left" class="w-4 h-4 shrink-0 leading-none"></i><span class="hidden sm:inline leading-none">%s</span>',
     __('Kembali', 'karsa_start')
   ),
   'next_text' => sprintf(
-    '<span class="inline-flex items-center gap-2 hover:underline"><span class="text-base">%s</span><i data-lucide="move-right" class="w-5 h-5 shrink-0"></i></span>',
+    '<span class="hidden sm:inline leading-none">%s</span><i data-lucide="move-right" class="w-4 h-4 shrink-0 leading-none"></i>',
     __('Selanjutnya', 'karsa_start')
   ),
 ]);
 
-dump($links);
+if (empty($links)) {
+  return;
+}
+
+
+$prev_link_class = 'inline-flex items-center justify-end gap-4 min-w-28 text-base text-on-surface hover:text-primary transition-colors';
+$next_link_class = 'inline-flex items-center justify-start gap-4 min-w-28 text-base text-on-surface hover:text-primary transition-colors';
+$current_page_class = 'inline-flex items-center justify-center h-8 w-8 rounded-lg text-base font-semibold bg-primary text-on-primary';
+$dots_class = 'inline-flex items-center justify-center text-base text-on-surface-subtle';
+$page_numbers_class = 'inline-flex items-center justify-center h-8 w-8 rounded-lg text-base text-on-surface hover:bg-surface-container transition-colors';
 ?>
 
-<?php if (!empty($links)): ?>
-
-  <nav class="flex items-center justify-center gap-2">
-    <?php foreach ($links as $link): ?>
-      <?php
-      if (str_contains($link, 'prev page-numbers')) {
-        $styled_link = str_replace(
-          'class="page-numbers prev"',
-          'class=""',
-          $link
-        );
-      } elseif (str_contains($link, 'next page-numbers')) {
-        $styled_link = str_replace(
-          'class="page-numbers next"',
-          'class=""',
-          $link
-        );
-      } elseif (str_contains($link, 'current')) {
-        $styled_link = str_replace(
-          'class="page-numbers current"',
-          'class="inline-flex items-center justify-center rounded-shape-full h-8 w-8 bg-primary text-on-primary"',
-          $link
-        );
-      } elseif (str_contains($link, 'dots')) {
-        $styled_link = str_replace(
-          'class="page-numbers dots"',
-          'class="inline-flex items-center justify-center rounded-shape-full h-8 w-8 hover:bg-primary"',
-          $link
-        );
-      } else {
-        $styled_link = str_replace(
-          'class="page-numbers"',
-          'class="inline-flex items-center justify-center rounded-shape-full h-8 w-8 hover:bg-primary hover:text-on-primary"',
-          $link
-        );
-      }
-      ?>
-      <?= $link ?>
-    <?php endforeach ?>
-  </nav>
-
-<?php endif ?>
+<nav class="flex items-center justify-center gap-2" aria-label="<?php esc_attr_e('Pagination', 'karsa_start'); ?>">
+  <?php foreach ($links as $link): ?>
+    <?php
+    $styled_link = match (true) {
+      // 1. PREV LINK
+      str_contains($link, 'prev') => str_replace(
+        'class="prev page-numbers"',
+        "class=\"{$prev_link_class}\"",
+        $link
+      ),
+      // 2. NEXT LINK 
+      str_contains($link, 'next') => str_replace(
+        'class="next page-numbers"',
+        "class=\"{$next_link_class}\"",
+        $link
+      ),
+      // 3. CURRENT PAGE
+      str_contains($link, 'current') => str_replace(
+        'class="page-numbers current"',
+        "class=\"{$current_page_class}\"",
+        $link
+      ),
+      // 4. DOTS (...)
+      str_contains($link, 'dots') => str_replace(
+        'class="page-numbers dots"',
+        "class=\"{$dots_class}\"",
+        $link
+      ),
+      // 5. REGULAR PAGE NUMBERS
+      default => str_replace(
+        'class="page-numbers"',
+        "class=\"{$page_numbers_class}\"",
+        $link
+      ),
+    };
+    ?>
+    <?= $styled_link; ?>
+  <?php endforeach; ?>
+</nav>
