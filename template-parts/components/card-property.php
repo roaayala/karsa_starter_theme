@@ -19,8 +19,8 @@ $property_info = [
     : get_template_directory_uri() . "/public/images/fallback-2-undraw.png" ?>"
     alt="  <?= esc_attr(get_the_title()) ?>" class="w-full aspect-video object-cover object-center">
 
-  <div class="p-6">
-    <span class="font-bold text-lg">
+  <div class="p-6 flex flex-col gap-4">
+    <span class="font-semibold text-xl">
       <a href="<?= get_the_permalink() ?>">
         <?= esc_html(get_the_title()) ?>
       </a>

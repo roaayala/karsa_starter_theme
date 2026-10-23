@@ -15,7 +15,7 @@ get_header();
       <?php while (have_posts()):
         the_post(); ?>
 
-        <div>
+        <div class="grid gap-4 sm:grid-cols-2">
           <?php get_template_part('template-parts/components/card-property') ?>
         </div>
       <?php endwhile ?>
