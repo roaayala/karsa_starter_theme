@@ -20,13 +20,13 @@ $property_info = [
     alt="  <?= esc_attr(get_the_title()) ?>" class="w-full aspect-video object-cover object-center">
 
   <div class="p-6">
-    <span class="block font-bold text-2xl mb-4 group-hover:underline text-on-surface group-hover:text-primary">
+    <span class="block font-bold text-2xl mb-6 group-hover:underline text-on-surface group-hover:text-primary">
       <a href="<?= get_the_permalink() ?>">
         <?= esc_html(get_the_title()) ?>
       </a>
     </span>
 
-    <ul class="mb-6 flex flex-row flex-wrap gap-3">
+    <ul class="mb-8 flex flex-row flex-wrap gap-3">
       <?php foreach ($property_info as $info): ?>
         <li class="inline-flex items-center gap-1.5 bg-surface-container py-1.5 px-3 rounded-lg">
           <i data-lucide="<?= esc_attr($info['icon']) ?>" class="w-4 h-4"></i>
@@ -48,7 +48,7 @@ $property_info = [
       <?php endforeach ?>
     </ul>
 
-    <div class="pt-4 border-t border-t-outline/20 flex justify-between items-start">
+    <div class="pt-6 border-t border-t-outline/20 flex justify-between items-start">
       <span class="truncate text-on-surface-subtle">Harga</span>
       <span class="shrink-0 font-bold text-xl text-primary">
         <?= esc_html(format_rupiah(get_field('harga'))) ?>
