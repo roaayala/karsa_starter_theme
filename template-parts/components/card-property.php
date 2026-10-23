@@ -13,24 +13,24 @@ $property_info = [
 
 ?>
 
-<div class="border border-outline/10 shadow-sm rounded-2xl overflow-hidden">
+<div class="group border border-outline/10 shadow-sm hover:shadow-md rounded-2xl overflow-hidden">
 
   <img src="<?= has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'large')
     : get_template_directory_uri() . "/public/images/fallback-2-undraw.png" ?>"
     alt="  <?= esc_attr(get_the_title()) ?>" class="w-full aspect-video object-cover object-center">
 
-  <div class="p-6 flex flex-col gap-4">
-    <span class="font-semibold text-xl">
+  <div class="p-6">
+    <span class="block font-bold text-2xl mb-4 group-hover:underline text-on-surface group-hover:text-primary">
       <a href="<?= get_the_permalink() ?>">
         <?= esc_html(get_the_title()) ?>
       </a>
     </span>
 
-    <ul class="flex flex-row flex-wrap gap-3">
+    <ul class="mb-6 flex flex-row flex-wrap gap-3">
       <?php foreach ($property_info as $info): ?>
-        <li class="inline-flex items-center gap-2 bg-surface-container py-1.5 px-3 rounded-lg">
-          <i data-lucide="<?= esc_attr($info['icon']) ?>" class="w-4.5 h-4.5"></i>
-          <span class="text-sm leading-none">
+        <li class="inline-flex items-center gap-1.5 bg-surface-container py-1.5 px-3 rounded-lg">
+          <i data-lucide="<?= esc_attr($info['icon']) ?>" class="w-4 h-4"></i>
+          <span class="text-xs leading-none">
             <?= esc_html($info['value'] === 0 ? '-' : $info['value']) ?>
             <span>
               <?php if ($info['key'] === 'bedroom') {
@@ -48,8 +48,9 @@ $property_info = [
       <?php endforeach ?>
     </ul>
 
-    <div>
-      <span>
+    <div class="pt-4 border-t border-t-outline/20 flex justify-between items-start">
+      <span class="truncate text-on-surface-subtle">Harga</span>
+      <span class="shrink-0 font-bold text-xl text-primary">
         <?= esc_html(format_rupiah(get_field('harga'))) ?>
       </span>
     </div>
