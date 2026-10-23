@@ -15,10 +15,9 @@ get_header();
       <?php while (have_posts()):
         the_post(); ?>
 
-        <?php dump(get_post()); ?>
-
-        <?php get_template_part('template-parts/components/card-property') ?>
-
+        <div>
+          <?php get_template_part('template-parts/components/card-property') ?>
+        </div>
       <?php endwhile ?>
     <?php endif ?>
   </div>
