@@ -22,7 +22,7 @@
 
     <div id="page" class="min-h-screen flex flex-col">
 
-        <header id="header" class="sticky top-0 z-100 bg-surface-bright border-b border-b-outline/40 shadow-sm">
+        <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-sm">
             <div class="container flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                     <!-- LEFT -->

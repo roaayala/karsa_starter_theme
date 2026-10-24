@@ -45,7 +45,7 @@ $full_address = get_field('alamat') . ', ' . $address_tax;
 
     <ul class="mb-6 flex flex-row flex-wrap gap-3">
       <?php foreach ($property_info as $info): ?>
-        <li class="inline-flex items-center gap-2 bg-surface-container py-2 px-4 rounded-lg text-on-surface">
+        <li class="inline-flex items-center gap-1.5 bg-surface-container py-1.5 px-3 rounded-lg text-on-surface">
           <i data-lucide="<?= esc_attr($info['icon']) ?>" class="w-4 h-4"></i>
           <span class="text-xs leading-none">
             <?= esc_html($info['value'] === 0 ? '-' : $info['value']) ?>
