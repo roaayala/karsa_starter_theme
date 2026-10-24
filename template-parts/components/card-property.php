@@ -5,11 +5,15 @@
  */
 
 $property_info = [
-  ['key' => 'bedroom', 'value' => get_field('kamar_tidur'), 'icon' => 'bed-double'],
-  ['key' => 'bathroom', 'value' => get_field('kamar_mandi'), 'icon' => 'bath'],
   ['key' => 'property_area', 'value' => get_field('luas_unit'), 'icon' => 'vector-polygon'],
   ['key' => 'land_area', 'value' => get_field('luas_tanah'), 'icon' => 'home'],
+  ['key' => 'floor', 'value' => get_field('lantai'), 'icon' => 'layers-2'],
+  ['key' => 'bedroom', 'value' => get_field('kamar_tidur'), 'icon' => 'bed-double'],
+  ['key' => 'bathroom', 'value' => get_field('kamar_mandi'), 'icon' => 'bath'],
 ];
+
+$address_tax = karsa_build_tax_tree(get_the_terms(get_the_ID(), 'unit_address'), 'unit_address');
+$full_address = get_field('alamat') . ', ' . $address_tax;
 
 ?>
 
@@ -20,11 +24,18 @@ $property_info = [
     alt="  <?= esc_attr(get_the_title()) ?>" class="w-full aspect-video object-cover object-center">
 
   <div class="p-6">
-    <span class="block font-bold text-2xl mb-6 group-hover:underline text-on-surface group-hover:text-primary">
+    <span class="block font-bold text-2xl mb-2 group-hover:underline text-on-surface group-hover:text-primary">
       <a href="<?= get_the_permalink() ?>">
         <?= esc_html(get_the_title()) ?>
       </a>
     </span>
+
+    <div class="mb-6">
+      <i data-lucide="map-pin"></i>
+      <span><?= esc_html($full_address) ?>
+      </span>
+    </div>
+
 
     <ul class="mb-8 flex flex-row flex-wrap gap-3">
       <?php foreach ($property_info as $info): ?>
@@ -39,6 +50,8 @@ $property_info = [
                 echo esc_html('KM');
               } else if ($info['key'] === 'property_area' || $info['key'] === 'land_area') {
                 echo esc_html('M') . '<sup>2</sup>';
+              } else if ($info['key'] === 'floor') {
+                echo esc_html('LT');
               }
               ?>
             </span>

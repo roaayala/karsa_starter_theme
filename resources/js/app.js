@@ -20,6 +20,7 @@ import {
   Target,
   Users,
   ShieldCheck,
+  Layers2,
 } from "lucide";
 import mobileMenuHandler from "./mobile-menu-handler";
 
@@ -46,6 +47,7 @@ const initLucideIcons = () => {
       Target,
       Users,
       ShieldCheck,
+      Layers2,
     },
   });
 };
