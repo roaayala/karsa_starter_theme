@@ -45,19 +45,19 @@ $full_address = get_field('alamat') . ', ' . $address_tax;
 
     <ul class="mb-6 flex flex-row flex-wrap gap-3">
       <?php foreach ($property_info as $info): ?>
-        <li class="inline-flex items-center gap-1.5 bg-surface-container py-1.5 px-3 rounded-lg">
+        <li class="inline-flex items-center gap-2 bg-surface-container py-2 px-4 rounded-lg text-on-surface">
           <i data-lucide="<?= esc_attr($info['icon']) ?>" class="w-4 h-4"></i>
           <span class="text-xs leading-none">
             <?= esc_html($info['value'] === 0 ? '-' : $info['value']) ?>
             <span>
               <?php if ($info['key'] === 'bedroom') {
-                echo esc_html('KT');
+                echo esc_html('Kamar Tidur');
               } else if ($info['key'] === 'bathroom') {
-                echo esc_html('KM');
+                echo esc_html('Kamar Mandi');
               } else if ($info['key'] === 'property_area' || $info['key'] === 'land_area') {
                 echo esc_html('M') . '<sup>2</sup>';
               } else if ($info['key'] === 'floor') {
-                echo esc_html('LT');
+                echo esc_html('Lantai');
               }
               ?>
             </span>
