@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Single for property-like preview
+ * Template: Single for property-like 
  * @package KarsaStart
  */
 

@@ -4,6 +4,33 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
+function format_rupiah($price, $compact = false)
+{
+  if (empty($price) || !is_numeric($price)) {
+    return 'Hubungi Kami';
+  }
+
+  $price = (float) $price;
+
+  if ($compact) {
+    if ($price >= 1000000000) {
+      $formatted = ($price % 1000000000 === 0)
+        ? ($price / 1000000000)
+        : number_format($price / 1000000000, 1, ',', '.');
+      return 'Rp ' . $formatted . ' Milyar';
+    }
+
+    if ($price >= 1000000) {
+      $formatted = ($price % 1000000 === 0)
+        ? ($price / 1000000)
+        : number_format($price / 1000000, 1, ',', '.');
+      return 'Rp ' . $formatted . ' Juta';
+    }
+  }
+
+  return 'Rp ' . number_format($price, 0, ',', '.');
+}
+
 function karsa_build_tax_tree($terms, $taxonomy)
 {
 
@@ -41,3 +68,4 @@ function karsa_build_tax_tree($terms, $taxonomy)
 
   return implode(', ', $stack);
 }
+
