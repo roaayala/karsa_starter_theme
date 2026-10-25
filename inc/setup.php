@@ -102,6 +102,23 @@ function karsa_nav_menu_classes($classes, $item, $args)
       }
     }
 
+    $is_unit_context = is_singular('unit') || is_post_type_archive('unit');
+    $is_unit_menu_item = false;
+
+    if ($item->type === 'post_type_archive' && $item->object === 'unit') {
+      $is_unit_menu_item = true;
+    } elseif ($item->url === get_post_type_archive_link('unit')) {
+      $is_unit_menu_item = true;
+    }
+
+    if ($is_unit_context && $is_unit_menu_item) {
+      $classes[] = 'current-menu-ancestor';
+      $classes[] = 'current-menu-parent';
+      if (is_post_type_archive('unit')) {
+        $classes[] = 'current-menu-item';
+      }
+    }
+
     // for all
     $is_active_parent = !empty(array_intersect([
       'current-menu-parent',
@@ -113,8 +130,7 @@ function karsa_nav_menu_classes($classes, $item, $args)
       $classes[] = 'current-menu-item-parent';
     }
   }
-
-  return $classes;
+  return array_unique($classes);
 }
 add_filter('nav_menu_css_class', 'karsa_nav_menu_classes', 10, 3);
 

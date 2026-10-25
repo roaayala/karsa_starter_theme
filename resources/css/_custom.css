@@ -95,6 +95,8 @@
     }
   }
 
+  /* TABLE WRAPPER & CONTAINER */
+
   /* COMMON */
   :where(a) {
     @apply cursor-pointer underline hover:text-on-surface;
