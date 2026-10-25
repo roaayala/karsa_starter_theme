@@ -21,6 +21,8 @@ import {
   Users,
   ShieldCheck,
   Layers2,
+  ChevronRight,
+  ChevronLeft,
 } from "lucide";
 import mobileMenuHandler from "./mobile-menu-handler";
 
@@ -48,31 +50,20 @@ const initLucideIcons = () => {
       Users,
       ShieldCheck,
       Layers2,
+      ChevronRight,
+      ChevronLeft,
     },
   });
 };
 
-document.addEventListener("DOMContentLoaded", initLucideIcons);
-
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  initLucideIcons();
   mobileMenuHandler();
-  const primaryMenuToggle = document.getElementById("primary-menu-toggle");
-  const primaryMenu = document.getElementById("primary-menu");
 
-  if (primaryMenuToggle && primaryMenu) {
-    const primaryMenuMenuIcon = document.getElementById(
-      "primary-menu-menu-icon",
-    );
-    const primaryMenuCloseIcon = document.getElementById(
-      "primary-menu-close-icon",
-    );
+  // const sliderElement = document.getElementById("gallery-slider");
+  // if (sliderElement && sliderElement.dataset.images) {
+  //   const images = JSON.parse(sliderElement.dataset.images);
 
-    if (primaryMenuMenuIcon && primaryMenuCloseIcon) {
-      primaryMenuToggle.addEventListener("click", () => {
-        primaryMenu.classList.toggle("hidden");
-        primaryMenuMenuIcon.classList.toggle("hidden");
-        primaryMenuCloseIcon.classList.toggle("hidden");
-      });
-    }
-  }
+  //   console.log(images);
+  // }
 });
