@@ -1,81 +1,92 @@
 .entry-content,
 .block-editor-block-list__layout {
-  @apply text-on-surface-variant text-lg leading-loose;
+  @apply text-on-surface-variant;
 
-  /* :where(
+  :where(
     .entry-content > *:not(li),
     .block-editor-block-list__layout > *:not(li)
-  ) { */
-  /* margin-top: --spacing(6);
-    margin-bottom: --spacing(6); */
-  /* } */
+  ) {
+    @apply mb-6;
+  }
 
+  :first-child {
+    @apply mt-0;
+  }
+
+  /* SEPARATOR */
+  :where(hr),
+  hr,
+  .wp-block-separator {
+    @apply my-12 border border-outline/40!;
+  }
+
+  /* HEADING */
   :where(h2) {
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--text-2xl);
-    line-height: var(--text-2xl--line-height);
-    margin-top: --spacing(12);
+    @apply mb-4;
   }
 
-  :where(h3) {
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
-    margin-top: --spacing(8);
+  :where(h3),
+  :where(h4),
+  :where(h5) {
+    @apply mb-2;
   }
 
-  :where(h2 + h3) {
-    margin-top: 0;
+  :where(h6) {
+    @apply mb-1;
   }
 
+  h2:has(+ h3),
+  h3:has(+ h4),
+  h4:has(+ h5),
+  h5:has(+ h6) {
+    @apply mb-2;
+  }
+
+  /* LISTS & NESTED LISTS */
   :where(ul, ol) {
-    padding-left: 1.5rem;
+    @apply pl-6;
   }
 
   :where(ul) {
-    list-style-type: disc;
+    @apply list-disc;
   }
 
   :where(ol) {
-    list-style-type: decimal;
-  }
-
-  :where(a) {
-    color: var(--color-primary);
+    @apply list-decimal;
   }
 
   :where(li) {
-    padding-left: --spacing(3);
+    @apply pl-2 mb-2;
   }
 
-  :where(li)::marker {
-    color: var(--color-zinc-500);
+  :where(li:last-child) {
+    @apply mb-4;
   }
 
-  :where(li > *),
-  :where(li li) {
-    margin-top: --spacing(4);
+  :where(li > ul),
+  :where(li > ol) {
+    li:first-child {
+      @apply mt-2;
+    }
   }
 
-  :where(ol > li)::marker {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-semibold);
+  /* QUOTES */
+  :where(blockquote) {
+    @apply italic py-4 pl-4 border-l-2 border-l-outline text-on-surface;
   }
 
-  :where(strong) {
-    font-weight: var(--font-weight-semibold);
-  }
-
+  /* IMAGE */
   :where(figure) {
-    margin-top: --spacing(12);
-    margin-bottom: --spacing(12);
   }
 
-  :where(li > :first-child) {
-    margin-top: 0 !important;
+  /* COMMON */
+  :where(a) {
+    @apply cursor-pointer underline hover:text-on-surface;
   }
 
-  :where(li > :last-child) {
-    margin-bottom: 0 !important;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }
