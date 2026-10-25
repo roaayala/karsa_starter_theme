@@ -77,6 +77,13 @@
 
   /* IMAGE */
   :where(figure) {
+    @apply mb-6!;
+    img {
+      @apply rounded-2xl;
+    }
+    figcaption {
+      @apply mt-4! text-center italic text-sm/[1.6] text-on-surface-subtle;
+    }
   }
 
   /* COMMON */
