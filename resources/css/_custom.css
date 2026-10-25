@@ -71,8 +71,8 @@
   }
 
   /* QUOTES */
-  :where(blockquote) {
-    @apply italic py-4 pl-4 border-l-2 border-l-outline text-on-surface;
+  :where(blockquote, .wp-block-quote) {
+    @apply italic my-6 py-2 pl-4 border-l-4 border-l-primary text-on-surface;
   }
 
   /* IMAGE */
