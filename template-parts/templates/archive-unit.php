@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<div class="flex-1 py-8 bg-surface-bright">
+<div class="flex-1 py-8 md:py-16 bg-surface-bright">
   <div class="container flex flex-col gap-8">
     <div class="flex flex-col gap-4">
       <h1>Daftar Unit</h1>

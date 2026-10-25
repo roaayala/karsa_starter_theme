@@ -1,6 +1,6 @@
 <?php
 /**
- * Component: Card for property-like previed
+ * Component: Card for property-like preview
  * @package KarsaStart
  */
 
