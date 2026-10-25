@@ -22,7 +22,7 @@
 
   /* HEADING */
   :where(h2) {
-    @apply mb-4;
+    @apply mb-3;
   }
 
   :where(h3),
@@ -39,7 +39,7 @@
   h3:has(+ h4),
   h4:has(+ h5),
   h5:has(+ h6) {
-    @apply mb-2;
+    @apply mb-4;
   }
 
   /* LISTS & NESTED LISTS */
@@ -77,12 +77,21 @@
 
   /* IMAGE */
   :where(figure) {
-    @apply mb-6!;
+    @apply my-6!;
     img {
       @apply rounded-2xl;
     }
     figcaption {
       @apply mt-4! text-center italic text-sm/[1.6] text-on-surface-subtle;
+    }
+  }
+
+  /* PRE & CODE */
+  :where(pre) {
+    @apply my-6;
+
+    code {
+      @apply bg-surface-container rounded-2xl p-6 leading-[2];
     }
   }
 
