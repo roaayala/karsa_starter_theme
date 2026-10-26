@@ -66,52 +66,48 @@ function galerySlider() {
   const gallerySliderElement = document.getElementById("gallery-slider");
   const galleryThumbnails = document.getElementById("gallery-thumbnails");
 
-  if (gallerySliderElement && galleryThumbnails) {
-    const mainImage = document.getElementById("gallery-main-image");
-    const prevImage = document.getElementById("gallery-prev");
-    const nextImage = document.getElementById("gallery-next");
+  if (!gallerySliderElement || !galleryThumbnails) return;
 
-    let currentMainImage = {
-      index: 0,
-      url: mainImage.src,
-      alt: mainImage.alt,
-    };
+  const mainImage = document.getElementById("gallery-main-image");
+  const prevImage = document.getElementById("gallery-prev");
+  const nextImage = document.getElementById("gallery-next");
+  const thumbs = Array.from(
+    galleryThumbnails.querySelectorAll(".gallery-image"),
+  );
 
-    let images = [];
-    galleryThumbnails.querySelectorAll(".gallery-image").forEach((image) => {
-      const currentImage = {
-        index: Number(image.dataset.index),
-        url: image.dataset.url,
-        alt: image.dataset.alt,
-      };
+  if (!mainImage || thumbs.length === 0) return;
 
-      images.push(currentImage);
-    });
+  let currentIndex = 0;
+  const totalImages = thumbs.length;
 
-    function setMainImage() {
-      if (currentMainImage.index >= images.length - 1) {
-        currentMainImage.index = 0;
+  function updateSlider(index) {
+    currentIndex = currentIndex + index;
 
-        currentMainImage = {
-          ...images.find((image) => image.index === currentMainImage.index),
-        };
-      } else {
-        currentMainImage.index++;
-
-        currentMainImage = {
-          ...images.find((image) => image.index === currentMainImage.index),
-        };
-      }
-
-      mainImage.src = currentMainImage.url;
-      mainImage.alt = currentMainImage.alt;
+    if (currentIndex > totalImages - 1) {
+      currentIndex = 0;
     }
 
+    if (currentIndex <= 0) {
+      currentIndex = totalImages - 1;
+    }
+
+    const activeThumb = thumbs[currentIndex];
+    const newUrl = activeThumb.dataset.url;
+    const newAlt = activeThumb.dataset.alt;
+
+    mainImage.src = newUrl;
+    mainImage.alt = newAlt;
+  }
+
+  if (nextImage) {
     nextImage.addEventListener("click", () => {
-      setMainImage();
+      updateSlider(1);
     });
+  }
+
+  if (prevImage) {
     prevImage.addEventListener("click", () => {
-      setMainImage();
+      updateSlider(-1);
     });
   }
 }
