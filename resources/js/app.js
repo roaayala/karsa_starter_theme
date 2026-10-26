@@ -80,6 +80,8 @@ function galerySlider() {
   let currentIndex = 0;
   const totalImages = thumbs.length;
 
+  thumbs[currentIndex].classList.add("is-active");
+
   function updateSlider(index) {
     currentIndex = (totalImages + index) % totalImages;
 
@@ -89,6 +91,9 @@ function galerySlider() {
 
     mainImage.src = newUrl;
     mainImage.alt = newAlt;
+    thumbs.forEach((thumb, i) => {
+      thumb.classList.toggle("is-active", i === currentIndex);
+    });
   }
 
   if (nextImage) {

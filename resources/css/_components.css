@@ -87,10 +87,10 @@
 
   #gallery-thumbnails {
     .gallery-image {
-      @apply border-2 border-transparent;
+      @apply opacity-60 hover:opacity-100;
 
       &.is-active {
-        @apply border-primary;
+        @apply opacity-100;
       }
     }
   }
