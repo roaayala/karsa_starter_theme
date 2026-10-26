@@ -31,8 +31,7 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
 
       <article class="container flex flex-col gap-8">
         <?php if (!empty($images)): ?>
-          <div class="grid lg:grid-cols-[1fr_20rem] gap-4" id="gallery-slider"
-            data-images="<?= esc_attr(wp_json_encode($images)); ?>">
+          <div class="grid gap-4" id="gallery-slider" data-images="<?= esc_attr(wp_json_encode($images)); ?>">
             <div class="relative aspect-video rounded-2xl overflow-hidden">
               <img id="gallery-main-image" src="<?= esc_url($images[0]['url']); ?>" alt="<?= esc_attr($images[0]['alt']); ?>"
                 class="h-full w-full object-cover" loading="eager" />
@@ -51,10 +50,10 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
             </div>
 
             <?php if (count($images) > 1): ?>
-              <div id="galery-thumbnails" class="hidden sm:flex gap-4 overflow-x-auto scrollbar-none">
+              <div id="gallery-thumbnails" class="hidden sm:flex gap-4 overflow-x-auto scrollbar-none">
 
                 <?php foreach ($images as $index => $image): ?>
-                  <button class="galery-image aspect-square w-40 rounded-lg overflow-hidden " data-index="<?= $index; ?>"
+                  <button class="gallery-image aspect-square w-40 rounded-lg overflow-hidden " data-index="<?= $index; ?>"
                     data-url="<?= esc_url($image['url']); ?>" data-alt="<?= esc_attr($image['alt']); ?>">
                     <img class="h-full w-full object-cover" src="<?= esc_url($image['url']); ?>"
                       alt="<?= esc_attr($image['alt']); ?>" loading="lazy" />
