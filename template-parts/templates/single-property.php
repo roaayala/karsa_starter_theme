@@ -29,12 +29,15 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
       the_post();
       ?>
 
-      <article class="container flex flex-col gap-8">
+
+      <article class="container grid md:grid-cols-2 gap-8">
         <?php if (!empty($images)): ?>
-          <div class="grid gap-4" id="gallery-slider" data-images="<?= esc_attr(wp_json_encode($images)); ?>">
-            <div class="relative aspect-video rounded-2xl overflow-hidden">
+          <div class="rounded-2xl overflow-hidden shadow-xl border border-outline/40" id="gallery-slider">
+
+
+            <div class="relative aspect-video overflow-hidden border-b border-b-outline/40">
               <img id="gallery-main-image" src="<?= esc_url($images[0]['url']); ?>" alt="<?= esc_attr($images[0]['alt']); ?>"
-                class="h-full w-full object-cover" loading="eager" />
+                class="h-full w-full object-contain" loading="eager" />
 
               <?php if (count($images) > 1): ?>
                 <button type="button" id="gallery-prev" class="absolute left-4 top-1/2 -translate-y-1/2 btn btn--primary"
@@ -50,24 +53,26 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
             </div>
 
             <?php if (count($images) > 1): ?>
-              <div id="gallery-thumbnails" class="hidden sm:flex gap-4 overflow-x-auto scrollbar-none">
-
+              <div id="gallery-thumbnails" class="p-6 flex gap-4 overflow-x-auto scrollbar-none">
                 <?php foreach ($images as $index => $image): ?>
-                  <button class="gallery-image cursor-pointer aspect-square w-40 rounded-2xl overflow-hidden"
+                  <button class="gallery-image cursor-pointer aspect-square w-20 shrink-0 rounded-2xl overflow-hidden"
                     data-index="<?= $index; ?>" data-url="<?= esc_url($image['url']); ?>"
                     data-alt="<?= esc_attr($image['alt']); ?>">
-                    <img class="h-full w-full object-cover " src="<?= esc_url($image['url']); ?>"
+                    <img class="h-full w-full object-cover" src="<?= esc_url($image['url']); ?>"
                       alt="<?= esc_attr($image['alt']); ?>" loading="lazy" />
                   </button>
                 <?php endforeach; ?>
-
               </div>
             <?php endif ?>
 
           </div>
         <?php endif ?>
-        <h1><?= esc_html(get_the_title()) ?></h1>
+
+        <h1>
+          <?= esc_html(get_the_title()) ?>
+        </h1>
       </article>
+
     <?php endwhile; ?>
   <?php endif; ?>
 </div>
