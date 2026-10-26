@@ -81,15 +81,7 @@ function galerySlider() {
   const totalImages = thumbs.length;
 
   function updateSlider(index) {
-    currentIndex = currentIndex + index;
-
-    if (currentIndex > totalImages - 1) {
-      currentIndex = 0;
-    }
-
-    if (currentIndex <= 0) {
-      currentIndex = totalImages - 1;
-    }
+    currentIndex = (totalImages + index) % totalImages;
 
     const activeThumb = thumbs[currentIndex];
     const newUrl = activeThumb.dataset.url;
@@ -101,13 +93,19 @@ function galerySlider() {
 
   if (nextImage) {
     nextImage.addEventListener("click", () => {
-      updateSlider(1);
+      updateSlider(currentIndex + 1);
     });
   }
 
   if (prevImage) {
     prevImage.addEventListener("click", () => {
-      updateSlider(-1);
+      updateSlider(currentIndex - 1);
     });
   }
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      updateSlider(Number(thumb.dataset.index));
+    });
+  });
 }

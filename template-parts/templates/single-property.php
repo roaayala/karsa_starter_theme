@@ -53,9 +53,9 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
               <div id="gallery-thumbnails" class="hidden sm:flex gap-4 overflow-x-auto scrollbar-none">
 
                 <?php foreach ($images as $index => $image): ?>
-                  <button class="gallery-image aspect-square w-40 rounded-lg overflow-hidden " data-index="<?= $index; ?>"
+                  <button class="gallery-image aspect-square w-40 rounded-2xl overflow-hidden" data-index="<?= $index; ?>"
                     data-url="<?= esc_url($image['url']); ?>" data-alt="<?= esc_attr($image['alt']); ?>">
-                    <img class="h-full w-full object-cover" src="<?= esc_url($image['url']); ?>"
+                    <img class="h-full w-full object-cover " src="<?= esc_url($image['url']); ?>"
                       alt="<?= esc_attr($image['alt']); ?>" loading="lazy" />
                   </button>
                 <?php endforeach; ?>

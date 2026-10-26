@@ -84,4 +84,14 @@
       @apply text-primary;
     }
   }
+
+  #gallery-thumbnails {
+    .gallery-image {
+      @apply border-2 border-transparent;
+
+      &.is-active {
+        @apply border-primary;
+      }
+    }
+  }
 }
