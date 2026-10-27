@@ -45,7 +45,7 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
       $specs = get_field('spesifikasi_unit');
       ?>
 
-      <article class="container flex flex-col md:grid md:grid-cols-12 gap-8">
+      <article class="container flex flex-col md:grid md:grid-cols-12 gap-8 items-start">
 
         <div class="md:col-span-7 lg:col-span-8">
           <?php get_template_part('template-parts/components/gallery-slider', null, [
@@ -53,7 +53,7 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
           ]) ?>
         </div>
 
-        <div class="md:col-span-5 lg:col-span-4">
+        <div class="md:col-span-5 lg:col-span-4 md:row-span-3 md:sticky md:top-24">
           <div class="flex flex-col gap-4 md:gap-6">
             <div>
               <?php if (!empty($status_tax) && !is_wp_error($status_tax)): ?>
