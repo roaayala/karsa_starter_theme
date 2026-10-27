@@ -41,7 +41,7 @@
   }
 
   .badge {
-    @apply self-start inline-flex items-center text-xs font-medium leading-none py-1 px-2 gap-2 rounded-sm border border-transparent;
+    @apply self-start inline-flex items-center text-xs font-medium leading-none py-1.5 px-3 gap-2 rounded-lg border border-transparent;
 
     > .badge-label {
       @apply text-xs leading-none;
