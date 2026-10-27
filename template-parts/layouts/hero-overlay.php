@@ -45,7 +45,8 @@ $hero_image_url = (!empty($args['hero_image_url']))
             <span class="btn-label">Hubungi Kami</span>
           </a>
 
-          <a href="#" class="btn btn--primary btn--inverse w-full sm:w-auto">
+          <a href="<?= esc_url(get_post_type_archive_link('unit')) ?>"
+            class="btn btn--primary btn--inverse w-full sm:w-auto">
             <i data-lucide="home" class="btn-icon"></i>
             <span class="btn-label">Lihat Pilihan Unit</span>
           </a>

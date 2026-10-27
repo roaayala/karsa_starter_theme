@@ -180,7 +180,8 @@ $images = karsa_get_field_images(get_field('galeri_foto'));
                 <li class="<?= esc_attr($li_style) ?>">
                   <span class="<?= esc_attr($li_label) ?>">Listrik</span>
                   :
-                  <span class="<?= esc_attr($li_value) ?>"><?= esc_html($specs['listrik']) ?> Watt</span>
+                  <span class="<?= esc_attr($li_value) ?>"><?= esc_html($specs['listrik']) ?>
+                    <?= $specs['listrik'] === 'Tidak Ada' ? '' : esc_html('Watt') ?></span>
                 </li>
               </ul>
 

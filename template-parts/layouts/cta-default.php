@@ -28,7 +28,7 @@ $description = $args['description'] ?? null;
       </div>
 
       <div>
-        <a href="#" class="btn btn--primary btn--inverse">
+        <a href="<?= esc_url(get_post_type_archive_link('unit')) ?>" class="btn btn--primary btn--inverse">
           <span class="btn-label">Lihat Daftar Unit</span>
         </a>
       </div>
