@@ -23,7 +23,7 @@
     "color": {
       "palette": [
         { "name": "White", "slug": "white", "color": "#ffffff" },
-        { "name": "Black", "slug": "blakc", "color": "#000000" },
+        { "name": "Black", "slug": "black", "color": "#000000" },
         { "name": "Neutral 50", "slug": "neutral-50", "color": "#f8fafc" },
         { "name": "Neutral 100", "slug": "neutral-100", "color": "#f1f5f9" },
         { "name": "Neutral 200", "slug": "neutral-200", "color": "#e2e8f0" },
@@ -65,12 +65,12 @@
         {
           "name": "Extra Small",
           "slug": "xs",
-          "size": "0.694rem"
+          "size": "0.75rem"
         },
         {
           "name": "Small",
           "slug": "sm",
-          "size": "0.833rem"
+          "size": "0.875rem"
         },
         {
           "name": "Base",
@@ -80,52 +80,52 @@
         {
           "name": "Large",
           "slug": "lg",
-          "size": "1.2rem"
+          "size": "1.25rem"
         },
         {
           "name": "Extra Large",
           "slug": "xl",
-          "size": "1.44rem"
+          "size": "1.5rem"
         },
         {
           "name": "2XL",
           "slug": "2xl",
-          "size": "1.728rem"
+          "size": "1.75rem"
         },
         {
           "name": "3XL",
           "slug": "3xl",
-          "size": "2.074rem"
+          "size": "2.125rem"
         },
         {
           "name": "4XL",
           "slug": "4xl",
-          "size": "2.488rem"
+          "size": "2.5rem"
         },
         {
           "name": "5XL",
           "slug": "5xl",
-          "size": "2.986rem"
+          "size": "3rem"
         },
         {
           "name": "6XL",
           "slug": "6xl",
-          "size": "4.768rem"
+          "size": "3.625rem"
         },
         {
           "name": "7XL",
           "slug": "7xl",
-          "size": "5.96rem"
+          "size": "4.25rem"
         },
         {
           "name": "8XL",
           "slug": "8xl",
-          "size": "7.451rem"
+          "size": "5.125rem"
         },
         {
           "name": "9XL",
           "slug": "9xl",
-          "size": "9.313rem"
+          "size": "6.25rem"
         }
       ]
     }
