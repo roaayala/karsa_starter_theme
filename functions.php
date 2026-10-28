@@ -20,10 +20,6 @@ define('THEME_VERSION', '1.0.0');
 
 $theme_includes = [
     'inc/setup.php',
-    'inc/cpts.php',
-    'inc/taxonomies.php',
-    'inc/meta-fields.php',
-    'inc/search-filters.php',
     'inc/helpers.php',
 ];
 

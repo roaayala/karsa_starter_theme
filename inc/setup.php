@@ -72,52 +72,11 @@ function tailpress_setup(): TailPress\Framework\Theme
 }
 tailpress_setup();
 
-function karsa_start_setup()
-{
-  load_theme_textdomain('karsa_start', get_template_directory() . '/languages');
-}
-add_action('after_setup_theme', 'karsa_start_setup');
-
-
-// NAV MENU RELATED SETUP
-// function karsa_nav_menu_args($args = '')
-// {
-//   $args['container'] = 'nav';
-//   return $args;
-// }
-// add_filter('wp_nav_menu_args', 'karsa_nav_menu_args');
-
 function karsa_nav_menu_classes($classes, $item, $args)
 {
   if (isset($args->theme_location) && $args->theme_location === 'header') {
 
     // for each defined CPT
-    if (is_singular('unit') || is_post_type_archive('unit')) {
-      if ((int) $item->object_id === (int) get_option('page_for_posts')) {
-        $classes = array_diff($classes, [
-          'current_page_parent',
-          'current-menu-parent',
-          'current-menu-ancestor'
-        ]);
-      }
-    }
-
-    $is_unit_context = is_singular('unit') || is_post_type_archive('unit');
-    $is_unit_menu_item = false;
-
-    if ($item->type === 'post_type_archive' && $item->object === 'unit') {
-      $is_unit_menu_item = true;
-    } elseif ($item->url === get_post_type_archive_link('unit')) {
-      $is_unit_menu_item = true;
-    }
-
-    if ($is_unit_context && $is_unit_menu_item) {
-      $classes[] = 'current-menu-ancestor';
-      $classes[] = 'current-menu-parent';
-      if (is_post_type_archive('unit')) {
-        $classes[] = 'current-menu-item';
-      }
-    }
 
     // for all
     $is_active_parent = !empty(array_intersect([
