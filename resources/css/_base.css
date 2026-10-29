@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-sans text-on-surface-variant leading-[1.6] bg-surface;
+    @apply font-sans text-on-surface-variant leading-normal bg-surface;
   }
 
   h1,
@@ -56,10 +56,6 @@
   }
 
   h6 {
-    @apply text-base;
-  }
-
-  p {
     @apply text-base;
   }
 }

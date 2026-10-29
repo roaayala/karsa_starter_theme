@@ -2,20 +2,6 @@
   "$schema": "https://schemas.wp.org/trunk/theme.json",
   "version": 3,
   "settings": {
-    "custom": {
-      "corner": {
-        "none": "0",
-        "xs": "0.125rem",
-        "sm": "0.25rem",
-        "md": "0.375rem",
-        "lg": "0.5rem",
-        "xl": "0.75rem",
-        "2xl": "1rem",
-        "3xl": "1.5rem",
-        "4xl": "2rem",
-        "full": "9999px"
-      }
-    },
     "layout": {
       "contentSize": "60rem",
       "wideSize": "75rem"
@@ -51,12 +37,12 @@
     "typography": {
       "fontFamilies": [
         {
-          "fontFamily": "\"Geist\", sans-serif",
+          "fontFamily": "'Geist Variable', ui-sans-serif, system-ui, sans-serif",
           "name": "Font Sans",
           "slug": "sans"
         },
         {
-          "fontFamily": "\"Geist Mono\", monospace",
+          "fontFamily": "'Geist Mono Variable', ui-monospace, monospace",
           "name": "Font Mono",
           "slug": "mono"
         }

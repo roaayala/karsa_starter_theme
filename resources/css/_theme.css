@@ -1,4 +1,5 @@
 @theme {
+  /* Breakpoint */
   --breakpoint-xs: 30rem;
   --breakpoint-sm: 37.5rem;
   --breakpoint-md: 48.875rem;
@@ -6,8 +7,11 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 90rem;
 
-  --font-sans: var(--wp--preset--font-family--work-sans);
+  /* Font Family */
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 
+  /* Overlay Color */
   --color-overlay: var(--wp--preset--color--black);
 
   /* SURFACE */
@@ -26,26 +30,11 @@
   --color-on-primary-container: var(--wp--preset--color--blue-800);
 
   /* SECONDARY */
-  --color-secondary: var(--wp--preset--color--neutral-700);
-  --color-on-secondary: var(--wp--preset--color--white);
-  --color-secondary-container: var(--wp--preset--color--neutral-300);
-  --color-on-secondary-container: var(--wp--preset--color--neutral-900);
 
   /* OUTLINE */
   --color-outline: var(--wp--preset--color--neutral-400);
 
-  /* RADIUS */
-  --radius-none: var(--wp--custom--corner--none);
-  --radius-xs: var(--wp--custom--corner--xs);
-  --radius-sm: var(--wp--custom--corner--sm);
-  --radius-md: var(--wp--custom--corner--md);
-  --radius-lg: var(--wp--custom--corner--lg);
-  --radius-xl: var(--wp--custom--corner--xl);
-  --radius-2xl: var(--wp--custom--corner--2-xl);
-  --radius-3xl: var(--wp--custom--corner--3-xl);
-  --radius-4xl: var(--wp--custom--corner--4-xl);
-  --radius-full: var(--wp--custom--corner--full);
-
+  /* Text and Leading */
   --text-xs: var(--wp--preset--font-size--xs);
   --text-sm: var(--wp--preset--font-size--sm);
   --text-base: var(--wp--preset--font-size--base);

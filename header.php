@@ -17,16 +17,15 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(''); ?>>
-
+<body <?php body_class(); ?>>
     <div id="page" class="min-h-screen flex flex-col">
-        <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-sm py-4">
+        <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-md py-4">
             <div class="container">
+                <!-- LEFT -->
                 <a class="font-bold text-lg text-on-surface-variant hover:text-on-surface"
                     href="<?= esc_url(home_url()) ?>">
                     <?php bloginfo('name') ?>
                 </a>
             </div>
         </header>
-
         <main id="content" class="flex-1 flex flex-col">
