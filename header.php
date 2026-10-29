@@ -23,8 +23,7 @@
             <div class="container">
                 <!-- LEFT -->
                 <div>
-                    <a class="font-bold text-lg text-on-surface-variant hover:text-on-surface"
-                        href="<?= esc_url(home_url()) ?>">
+                    <a class="font-bold text-base text-on-surface" href="<?= esc_url(home_url()) ?>">
                         <?php bloginfo('name') ?>
                     </a>
                 </div>
