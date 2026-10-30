@@ -24,7 +24,7 @@
                 <!-- LEFT -->
                 <div>
                     <a class="font-bold text-base text-on-surface" href="<?= esc_url(home_url()) ?>">
-                        <?php bloginfo('name') ?>
+                        MK <?php bloginfo('name') ?>
                     </a>
                 </div>
                 <!-- Center -->
