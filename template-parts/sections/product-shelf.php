@@ -12,17 +12,17 @@ $products = $args['products'] ?? [];
 
 ?>
 
-<section class="py-8">
+<section class="bg-surface-bright py-8">
   <div class="container flex flex-col gap-4">
-    <div class="flex flex-col xs:flex-row xs:justify-between">
+    <div class="flex flex-col xs:flex-row xs:justify-between gap-1">
       <h2>
         <?= esc_html($title) ?>
       </h2>
 
       <?php if ($url_link): ?>
-        <a href="<?= esc_url($url_link ?: '#') ?>" class="text-sm flex items-center gap-2">
+        <a href="<?= esc_url($url_link ?: '#') ?>" class="text-sm flex items-center gap-2 hover:underline">
           <?= esc_html($url_label) ?>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <i data-lucide="move-right" class="w-4 h-4"></i>
         </a>
       <?php endif ?>
     </div>
