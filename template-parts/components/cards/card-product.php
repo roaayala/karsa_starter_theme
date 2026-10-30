@@ -1,36 +1,62 @@
 <?php
 
+use KarsaStart\Helpers;
+
 /**
  * Component: Card for product
  * @package KarsaStart
  */
 
-$product_url = $args['product_url'] ?? null;
-$product_name = $args['product_name'] ?? __('Nama Produk', 'karsa_start');
-$product_image_url = $args['product_image_url']
+$url = $args['url'] ?? null;
+$name = $args['name'] ?? __('Nama Produk', 'karsa_start');
+$image_url = $args['image_url']
   ?? get_template_directory_uri() . '/public/images/fallback-2-undraw.png';
-$product_price = $args['product_price'] ?? __('Hubungi Kami', 'karsa_start');
+$discount_rate = $args['discount_rate'] ?? 0;
+$price = $args['price'] ?? 0;
+$price_discount = $discount_rate > 0 ? $price + ($discount_rate / $price) : $price;
+$stock_status = $args['stock_status'] ?? [];
 
 ?>
 
-<div class="bg-surface-bright border border-outline/20 rounded-lg overflow-hidden">
-  <div class="aspect-4/3">
-    <a href="<?= esc_url($product_url ?: '#') ?>">
-      <img src="<?= esc_url($product_image_url) ?>" alt="<?= esc_attr($product_name) ?>"
-        class="h-full w-full object-contain">
+<div
+  class="w-full max-w-60 shrink-0 p-4 flex flex-col gap-4 bg-surface-bright border border-outline/20 shadow-sm rounded-lg overflow-hidden">
+  <div class="">
+    <a href="<?= esc_url($url ?: '#') ?>">
+      <img src="<?= esc_url($image_url) ?>" alt="<?= esc_attr($name) ?>"
+        class="aspect-video h-full w-full object-center object-contain">
     </a>
   </div>
 
-  <div class="p-6">
-    <h3 class="text-lg">
-      <a href="<?= esc_url($product_url ?: '#') ?>">
-        <?= esc_html($product_name) ?>
-      </a>
-    </h3>
+  <div class="flex-1 flex flex-col gap-2">
+    <div class="flex-1">
+      <div class="flex flex-col gap-1">
+        <?php if (!empty($stock_status)): ?>
+          <span class="text-xs">
+            <?= esc_html($stock_status['label']) ?>
+          </span>
+        <?php endif ?>
 
-    <div>
-      <span><?php _e('Harga', 'karsa_start') ?></span>
-      <span><?= esc_html($product_price) ?></span>
+        <h3 class="text-base">
+          <a href="<?= esc_url($url ?: '#') ?>">
+            <?= esc_html($name) ?>
+          </a>
+          </h>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <?php if ($discount_rate > 0): ?>
+        <span class="font-normal text-xs text-on-surface-variant line-through">
+          <?= esc_html(Helpers::format_rupiah($price)) ?>
+        </span>
+        <span class="font-semibold text-base text-primary">
+          <?= esc_html(Helpers::format_rupiah($price_discount)) ?>
+        </span>
+      <?php else: ?>
+        <span class="font-semibold text-base text-primary">
+          <?= esc_html(Helpers::format_rupiah($price)) ?>
+        </span>
+      <?php endif ?>
     </div>
   </div>
 </div>

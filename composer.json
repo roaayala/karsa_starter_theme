@@ -12,7 +12,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "TailPress\\": "inc/src/"
+      "TailPress\\": "inc/src/",
+      "KarsaStart\\": "inc/src/"
     },
     "files": [
       "inc/src/class-tgm-plugin-activation.php"

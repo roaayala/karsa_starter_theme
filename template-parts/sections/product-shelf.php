@@ -14,7 +14,7 @@ $products = $args['products'] ?? [];
 
 <section class="py-8">
   <div class="container flex flex-col gap-4">
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col xs:flex-row xs:justify-between">
       <h2>
         <?= esc_html($title) ?>
       </h2>
@@ -27,17 +27,19 @@ $products = $args['products'] ?? [];
       <?php endif ?>
     </div>
 
-    <div class="grid gap-4">
+    <div class="flex gap-4 overflow-x-auto">
       <?php
       if ($products->have_posts()) {
         while ($products->have_posts()) {
           $products->the_post();
 
           get_template_part('template-parts/components/cards/card', 'product', [
-            'product_name' => get_the_title(),
-            'product_url' => get_the_permalink(),
-            'product_image_url' => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
-            'product_price' => get_field('price')
+            'name' => get_the_title(),
+            'url' => get_the_permalink(),
+            'image_url' => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
+            'discount_rate' => get_field('discount_rate'),
+            'price' => get_field('price'),
+            'stock_status' => get_field('stock_status')
           ]);
 
         }
