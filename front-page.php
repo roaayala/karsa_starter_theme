@@ -6,6 +6,6 @@
 
 get_header();
 
-get_template_part('template-parts/layouts/front-page', 'store');
+get_template_part('template-parts/store/front-page');
 
 get_footer();

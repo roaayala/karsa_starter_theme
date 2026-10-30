@@ -27,8 +27,13 @@ $discount_products_args['meta_query'] = [
     'compare' => '>'
   ]
 ];
-
 $discount_products = new WP_Query($discount_products_args);
+get_template_part('template-parts/sections/product-shelf', null, [
+  'title' => __('Lagi discount!', 'karsa_start'),
+  'url_link' => '#',
+  'url_label' => __('Lebih Banyak', 'karsa_start'),
+  'products' => $discount_products
+]);
 wp_reset_postdata();
 
 // Newest products

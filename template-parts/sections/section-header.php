@@ -4,24 +4,24 @@
  * @package KarsaStart
  */
 
-$title_text = $args['title_text'] ?? __('Judul Section', 'karsa_start');
-$eyebrow_text = $args['eyebrow_text'] ?? null;
+$title = $args['title'] ?? __('Judul Section', 'karsa_start');
+$eyebrow = $args['eyebrow'] ?? null;
 
 $alignment = $args['alignment'] ?? 'left';
 $header_constraint = $alignment !== 'center' ? '' : 'max-w-100 mx-auto';
-$rainbow_alignment;
+$eyebrow_alignment;
 $title_alignment;
 
 if ($alignment === 'left') {
-  $rainbow_alignment = 'self-start';
+  $eyebrow_alignment = 'self-start';
   $title_alignment = 'text-left';
 
 } else if ($alignment === 'right') {
-  $rainbow_alignment = 'self-end';
+  $eyebrow_alignment = 'self-end';
   $title_alignment = 'text-right';
 
 } else if ($alignment === 'center') {
-  $rainbow_alignment = 'self-center';
+  $eyebrow_alignment = 'self-center';
   $title_alignment = 'text-center';
 }
 
@@ -29,16 +29,16 @@ if ($alignment === 'left') {
 
 <header class="<?= esc_attr($header_constraint) ?> flex flex-col gap-1">
 
-  <?php if ($eyebrow_text): ?>
-    <span class="badge badge--primary badge--ghost <?= esc_attr($rainbow_alignment) ?>">
+  <?php if ($eyebrow): ?>
+    <span class="badge badge--primary badge--ghost <?= esc_attr($eyebrow_alignment) ?>">
       <span class="badge-label">
-        <?= esc_html($eyebrow_text); ?>
+        <?= esc_html($eyebrow); ?>
       </span>
     </span>
   <?php endif; ?>
 
   <h2 class="<?= esc_attr($title_alignment) ?>">
-    <?= esc_html($title_text) ?>
+    <?= esc_html($title) ?>
   </h2>
 
 </header>

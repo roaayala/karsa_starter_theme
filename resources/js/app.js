@@ -23,6 +23,7 @@ import {
   Layers2,
   ChevronRight,
   ChevronLeft,
+  ArrowRight,
 } from "lucide";
 import mobileMenuHandler from "./mobile-menu-handler";
 
@@ -52,6 +53,7 @@ const initLucideIcons = () => {
       Layers2,
       ChevronRight,
       ChevronLeft,
+      ArrowRight,
     },
   });
 };
