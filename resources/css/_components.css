@@ -51,8 +51,16 @@
       @apply w-4 h-4 stroke-[1.75];
     }
 
+    &.badge--default {
+      @apply text-on-surface bg-surface-container border-surface-container;
+    }
+
     &.badge--primary {
       @apply text-on-primary-container bg-primary-container border-primary-container;
+    }
+
+    &.badge--danger {
+      @apply text-on-danger-container bg-danger-container border-danger-container;
     }
   }
 

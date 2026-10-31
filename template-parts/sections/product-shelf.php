@@ -40,7 +40,8 @@ $products = $args['products'] ?? [];
           'discount_rate' => get_field('discount_rate'),
           'price' => get_field('price'),
           'brands' => get_the_terms(get_the_ID(), 'product-brand'),
-          'categories' => get_the_terms(get_the_ID(), 'product-category')
+          'categories' => get_the_terms(get_the_ID(), 'product-category'),
+          'stock_status' => get_field('stock_status')
         ]);
 
       }
