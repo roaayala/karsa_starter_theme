@@ -7,6 +7,8 @@ use KarsaStart\Helpers;
  * @package KarsaStart
  */
 
+
+
 $url = $args['url'] ?? null;
 
 $name = $args['name'] ?? __('Nama Produk', 'karsa_start');
@@ -22,19 +24,18 @@ $discounted_price = ($price > 0 && $discount_rate > 0)
 
 $stock_status = $args['stock_status'] ?? [];
 
-
 ?>
 
 <div
-  class="w-full max-w-60 shrink-0 p-4 flex flex-col gap-4 bg-surface-bright border border-outline/20 shadow-sm rounded-lg overflow-hidden">
-  <div class="">
+  class="w-full max-w-48 shrink-0 flex flex-col bg-surface-bright border border-outline/20 shadow-sm rounded-lg overflow-hidden">
+
+  <div class=" aspect-4/3 border border-outline/20 rounded-lg overflow-hidden">
     <a href="<?= esc_url($url ?: '#') ?>">
-      <img src="<?= esc_url($image_url) ?>" alt="<?= esc_attr($name) ?>"
-        class="aspect-video h-full w-full object-center object-contain">
+      <img src="<?= esc_url($image_url) ?>" alt="<?= esc_attr($name) ?>" class="h-full w-full object-contain">
     </a>
   </div>
 
-  <div class=" flex flex-col gap-2">
+  <div class="p-4 flex-1 flex flex-col gap-2">
     <div class="flex-1">
       <div class="flex flex-col gap-1">
         <?php if (!empty($stock_status)): ?>
@@ -43,7 +44,7 @@ $stock_status = $args['stock_status'] ?? [];
           </span>
         <?php endif ?>
 
-        <h3 class="text-base">
+        <h3 class="text-base line-clamp-2">
           <a href="<?= esc_url($url ?: '#') ?>">
             <?= esc_html($name) ?>
           </a>

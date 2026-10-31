@@ -14,31 +14,62 @@ $products_args = [
   'posts_per_page' => '6',
   'post_status' => 'publish',
   'orderby' => 'date',
-  'order' => 'DESC'
+  'order' => 'DESC',
+  'meta_query' => [
+    [
+      'key' => 'stock_status',
+      'value' => 'ready',
+      'compare' => '='
+    ]
+  ]
 ];
 
 // Products on discount
 $discount_products_args = $products_args;
 $discount_products_args['meta_query'] = [
+  'relation' => 'AND',
   [
     'key' => 'discount_rate',
     'type' => 'NUMERIC',
     'value' => 0,
     'compare' => '>'
+  ],
+  [
+    'key' => 'stock_status',
+    'value' => 'ready',
+    'compare' => '='
   ]
 ];
-$discount_products = new WP_Query($discount_products_args);
-get_template_part('template-parts/sections/product-shelf', null, [
-  'title' => __('Lagi discount!', 'karsa_start'),
-  'url_link' => '#',
-  'url_label' => __('Lebih Banyak', 'karsa_start'),
-  'products' => $discount_products
-]);
-wp_reset_postdata();
+?>
 
-// Newest products
-$newest_products = new WP_Query($products_args);
-wp_reset_postdata();
+<section class="bg-surface-bright py-8">
+  <?php
+  $discount_products = new WP_Query($discount_products_args);
+  get_template_part('template-parts/sections/product-shelf', null, [
+    'title' => __('Lagi discount!', 'karsa_start'),
+    'url_link' => '#',
+    'url_label' => __('Lebih Banyak', 'karsa_start'),
+    'products' => $discount_products
+  ]);
+  wp_reset_postdata();
+  ?>
+</section>
+
+<section class="bg-surface py-8">
+  <?php
+  // Newest products
+  $newest_products = new WP_Query($products_args);
+  get_template_part('template-parts/sections/product-shelf', null, [
+    'title' => __('Baru banget di toko!', 'karsa_start'),
+    'url_link' => '#',
+    'url_label' => __('Lebih Banyak', 'karsa_start'),
+    'products' => $newest_products
+  ]);
+  wp_reset_postdata();
+  ?>
+</section>
+
+<?php
 
 // Category list
 $product_categories = get_terms([
