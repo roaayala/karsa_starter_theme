@@ -39,6 +39,8 @@ $products = $args['products'] ?? [];
           'image_url' => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
           'discount_rate' => get_field('discount_rate'),
           'price' => get_field('price'),
+          'brands' => get_the_terms(get_the_ID(), 'product-brand'),
+          'categories' => get_the_terms(get_the_ID(), 'product-category')
         ]);
 
       }

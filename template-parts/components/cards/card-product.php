@@ -23,35 +23,51 @@ $discounted_price = ($price > 0 && $discount_rate > 0)
   : $price;
 
 $stock_status = $args['stock_status'] ?? [];
+$brands = $args['brands'] ?? [];
+$categories = $args['categories'] ?? [];
+
 
 ?>
 
 <div
-  class="w-full max-w-48 shrink-0 flex flex-col bg-surface-bright border border-outline/20 shadow-sm rounded-lg overflow-hidden">
+  class="w-full max-w-52 shrink-0 flex flex-col bg-surface-bright border border-outline/20 shadow-sm rounded-lg overflow-hidden">
+
 
   <div class=" aspect-4/3 border border-outline/20 rounded-lg overflow-hidden">
-    <a href="<?= esc_url($url ?: '#') ?>">
+    <a href="<?= esc_url($url ?: '#') ?>" class="block w-full h-full">
       <img src="<?= esc_url($image_url) ?>" alt="<?= esc_attr($name) ?>" class="h-full w-full object-contain">
     </a>
   </div>
 
-  <div class="p-4 flex-1 flex flex-col gap-2">
-    <div class="flex-1">
-      <div class="flex flex-col gap-1">
-        <?php if (!empty($stock_status)): ?>
-          <span class="text-xs">
-            <?= esc_html($stock_status['label']) ?>
-          </span>
-        <?php endif ?>
+  <div class="p-4 flex-1 flex flex-col justify-between gap-2">
 
-        <h3 class="text-base line-clamp-2">
-          <a href="<?= esc_url($url ?: '#') ?>">
-            <?= esc_html($name) ?>
-          </a>
-          </h>
-      </div>
+    <div class="flex flex-col gap-2">
+
+      <!-- brand  -->
+      <?php if (!empty($brands)): ?>
+        <div class="flex gap-2">
+          <?php foreach ($brands as $brand): ?>
+            <?php if ($brand->parent == 0): ?>
+              <span class="badge badge--primary">
+                <span class="badge-label">
+                  <?= esc_html($brand->name) ?>
+                </span>
+              </span>
+            <?php endif ?>
+          <?php endforeach ?>
+        </div>
+      <?php endif ?>
+
+      <!-- name -->
+      <h3 class="text-base">
+        <a href="<?= esc_url($url ?: '#') ?>">
+          <?= esc_html($name) ?>
+        </a>
+      </h3>
+
     </div>
 
+    <!-- price area -->
     <div class="flex flex-col">
       <?php if ($discount_rate > 0): ?>
         <span class="font-normal text-xs text-on-surface-variant line-through">
