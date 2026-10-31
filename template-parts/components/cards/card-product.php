@@ -92,8 +92,8 @@ $categories = $args['categories'] ?? [];
       </div>
 
       <!-- name -->
-      <h3 class="text-base line-clamp-2">
-        <a href="<?= esc_url($url ?: '#') ?>">
+      <h3 class="text-sm line-clamp-2">
+        <a href="<?= esc_url($url ?: '#') ?>" class="hover:text-primary transition-colors">
           <?= esc_html($name) ?>
         </a>
       </h3>
