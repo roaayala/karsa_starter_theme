@@ -79,6 +79,7 @@ $product_categories = get_terms([
   'orderby' => 'name',
   'order' => 'ASC',
 ]);
+dump($product_categories);
 wp_reset_postdata();
 
 // Brand list

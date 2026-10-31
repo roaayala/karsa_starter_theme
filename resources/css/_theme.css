@@ -33,8 +33,15 @@
 
   /* DANGER */
   --color-danger: var(--wp--preset--color--red-600);
+  --color-on-danger: var(--wp--preset--color--white);
   --color-danger-container: var(--wp--preset--color--red-100);
   --color-on-danger-container: var(--wp--preset--color--red-800);
+
+  /* SUCCRESS */
+  --color-success: var(--wp--preset--color--green-600);
+  --color-on-success: var(--wp--preset--color--white);
+  --color-success-container: var(--wp--preset--color--green-100);
+  --color-on-success-container: var(--wp--preset--color--green-800);
 
   /* OUTLINE */
   --color-outline: var(--wp--preset--color--neutral-400);

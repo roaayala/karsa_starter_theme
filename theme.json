@@ -34,7 +34,10 @@
         { "name": "Blue 950", "slug": "blue-950", "color": "#172554" },
         { "name": "Red 100", "slug": "red-100", "color": "#fee2e2" },
         { "name": "Red 600", "slug": "red-600", "color": "#dc2626" },
-        { "name": "Red 800", "slug": "red-800", "color": "#991b1b" }
+        { "name": "Red 800", "slug": "red-800", "color": "#991b1b" },
+        { "name": "Green 100", "slug": "green-100", "color": "#dcfce7" },
+        { "name": "Green 600", "slug": "green-600", "color": "#16a34a" },
+        { "name": "Green 800", "slug": "green-800", "color": "#166534" }
       ]
     },
     "typography": {

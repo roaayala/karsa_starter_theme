@@ -28,7 +28,7 @@ $categories = $args['categories'] ?? [];
 ?>
 
 <div
-  class="group w-full max-w-52 shrink-0 flex flex-col bg-surface-bright border border-outline/20 hover:border-outline/60 shadow-sm rounded-lg overflow-hidden">
+  class="group w-full max-w-60 shrink-0 flex flex-col bg-surface-bright border border-outline/20 hover:border-outline/60 shadow-sm rounded-lg overflow-hidden">
 
   <!-- thumbnail and floating badges -->
   <div class="relative aspect-square border border-outline/20 overflow-hidden">
@@ -64,44 +64,41 @@ $categories = $args['categories'] ?? [];
     <?php endif ?>
   </div>
 
-  <div class="p-4 flex-1 flex flex-col justify-between gap-2">
+  <div class="p-4 flex-1 flex flex-col justify-between">
 
-    <div class="flex flex-col gap-2">
-      <div class="flex items-end">
-        <!-- brand  -->
-        <?php if (!empty($brands)): ?>
-          <div class="flex gap-2">
-            <?php foreach ($brands as $brand): ?>
-              <?php if ($brand->parent == 0): ?>
-                <span class="badge badge--primary">
-                  <span class="badge-label">
-                    <?= esc_html($brand->name) ?>
-                  </span>
+    <div class="flex items-end mb-4">
+      <!-- brand  -->
+      <?php if (!empty($brands)): ?>
+        <div class="flex gap-2">
+          <?php foreach ($brands as $brand): ?>
+            <?php if ($brand->parent == 0): ?>
+              <span class="badge badge--primary">
+                <span class="badge-label">
+                  <?= esc_html($brand->name) ?>
                 </span>
-              <?php endif ?>
-            <?php endforeach ?>
-          </div>
-        <?php endif ?>
+              </span>
+            <?php endif ?>
+          <?php endforeach ?>
+        </div>
+      <?php endif ?>
 
-        <!-- stock status -->
-        <?php if (!empty($stock_status)): ?>
-          <span class="text-[.625rem] font-medium text-on-surface-subtle ml-auto">
-            <?= esc_html(is_array($stock_status) ? ($stock_status['label'] ?? '') : $stock_status) ?>
-          </span>
-        <?php endif ?>
-      </div>
-
-      <!-- name -->
-      <h3 class="text-sm line-clamp-2">
-        <a href="<?= esc_url($url ?: '#') ?>" class="hover:text-primary transition-colors">
-          <?= esc_html($name) ?>
-        </a>
-      </h3>
-
+      <!-- stock status -->
+      <?php if (!empty($stock_status)): ?>
+        <span class="text-[.625rem] font-medium text-on-surface-subtle ml-auto">
+          <?= esc_html(is_array($stock_status) ? ($stock_status['label'] ?? '') : $stock_status) ?>
+        </span>
+      <?php endif ?>
     </div>
 
+    <!-- name -->
+    <h3 class="flex-1 text-base line-clamp-2 mb-2">
+      <a href="<?= esc_url($url ?: '#') ?>" class="hover:text-primary transition-colors">
+        <?= esc_html($name) ?>
+      </a>
+    </h3>
+
     <!-- price area -->
-    <div class="flex flex-col">
+    <div class="flex flex-col mb-4">
       <?php if ($discount_rate > 0): ?>
         <span class="font-normal text-xs text-on-surface-variant line-through">
           <?= esc_html(Helpers::format_rupiah($price)) ?>
@@ -115,5 +112,14 @@ $categories = $args['categories'] ?? [];
         </span>
       <?php endif ?>
     </div>
+
+    <!-- cta -->
+    <div class="flex flex-col">
+      <a href="#" class="btn btn--primary w-full">
+        <span class="btn-label"><?php _e('Hubungi kami', 'karsa_start') ?></span>
+      </a>
+    </div>
+
   </div>
+
 </div>

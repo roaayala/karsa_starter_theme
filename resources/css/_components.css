@@ -2,9 +2,9 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    rounded-lg
+    h-8
+    rounded-md
     border border-transparent
-    h-10
     cursor-pointer;
 
     &:hover {
@@ -16,7 +16,7 @@
     }
 
     > .btn-label {
-      @apply text-base/none font-normal shrink-0;
+      @apply text-sm/none font-normal shrink-0;
     }
 
     &:has(.btn-icon):not(:has(.btn-label)) {
