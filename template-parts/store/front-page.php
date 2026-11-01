@@ -1,7 +1,5 @@
 <?php
 
-use KarsaStart\Helpers;
-
 /**
  * Template: Front page for store
  * @package KarsaStart
@@ -45,18 +43,7 @@ $discount_products_args['meta_query'] = [
 ?>
 
 <section class="bg-surface-bright py-8">
-  <a href="#">
-    <?= Helpers::get_icon('tokopedia', 'h-4 w-auto shrink-0') ?>
-  </a>
-  <a href="#" class="">
-    <?= Helpers::get_icon('shopee', 'h-4 w-auto shrink-0') ?>
-  </a>
-  <a href="#">
-    <?= Helpers::get_icon('lazada', 'h-4 w-auto shrink-0') ?>
-  </a>
-  <a href="#">
-    <?= Helpers::get_icon('blibli', 'h-4 w-auto shrink-0') ?>
-  </a>
+
   <?php
   // Newest products
   $newest_products = new WP_Query($products_args);

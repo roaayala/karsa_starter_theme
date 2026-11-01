@@ -44,7 +44,11 @@ if (!($products instanceof \WP_Query) || !$products->have_posts()) {
           'price' => get_field('price'),
           'brands' => get_the_terms(get_the_ID(), 'product-brand'),
           'categories' => get_the_terms(get_the_ID(), 'product-category'),
-          'stock_status' => get_field('stock_status')
+          'stock_status' => get_field('stock_status'),
+          'tokopedia_link' => get_field('tokopedia_link'),
+          'shopee_link' => get_field('shopee_link'),
+          'lazada_link' => get_field('lazada_link'),
+          'blibli_link' => get_field('blibli_link')
         ]);
       }
     }
