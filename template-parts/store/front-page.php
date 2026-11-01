@@ -44,19 +44,6 @@ $discount_products_args['meta_query'] = [
 
 <section class="bg-surface-bright py-8">
   <?php
-  $discount_products = new WP_Query($discount_products_args);
-  get_template_part('template-parts/sections/product-shelf', null, [
-    'title' => __('Lagi discount!', 'karsa_start'),
-    'url_link' => '#',
-    'url_label' => __('Lebih Banyak', 'karsa_start'),
-    'products' => $discount_products
-  ]);
-  wp_reset_postdata();
-  ?>
-</section>
-
-<section class="bg-surface py-8">
-  <?php
   // Newest products
   $newest_products = new WP_Query($products_args);
   get_template_part('template-parts/sections/product-shelf', null, [
@@ -69,25 +56,57 @@ $discount_products_args['meta_query'] = [
   ?>
 </section>
 
-<?php
 
-// Category list
-$product_categories = get_terms([
-  'taxonomy' => 'product-category',
-  'hide_empty' => true,
-  'parent' => 0,
-  'orderby' => 'name',
-  'order' => 'ASC',
-]);
-dump($product_categories);
-wp_reset_postdata();
 
-// Brand list
-$product_brands = get_terms([
-  'taxonomy' => 'product-brand',
-  'hide_empty' => true,
-  'parent' => 0,
-  'orderby' => 'name',
-  'order' => 'ASC',
-]);
-wp_reset_postdata();
+<section class="py-8 bg-surface">
+  <?php
+  // Category list
+  $product_categories = get_terms([
+    'taxonomy' => 'product-category',
+    'hide_empty' => true,
+    'parent' => 0,
+    'orderby' => 'name',
+    'order' => 'ASC',
+  ]);
+  get_template_part('template-parts/sections/product-tax-list', null, [
+    'tax' => $product_categories,
+    'title' => __('Cari berdasarkan kategori!')
+  ]);
+  wp_reset_postdata();
+  ?>
+</section>
+
+
+
+<section class="bg-surface-bright py-8">
+  <?php
+  $discount_products = new WP_Query($discount_products_args);
+  get_template_part('template-parts/sections/product-shelf', null, [
+    'title' => __('Lagi discount!', 'karsa_start'),
+    'url_link' => '#',
+    'url_label' => __('Lebih Banyak', 'karsa_start'),
+    'products' => $discount_products
+  ]);
+  wp_reset_postdata();
+  ?>
+</section>
+
+
+
+<section class="py-8 bg-surface">
+  <?php
+  // Brand list
+  $product_brands = get_terms([
+    'taxonomy' => 'product-brand',
+    'hide_empty' => true,
+    'parent' => 0,
+    'orderby' => 'name',
+    'order' => 'ASC',
+  ]);
+  get_template_part('template-parts/sections/product-tax-list', null, [
+    'tax' => $product_brands,
+    'title' => __('Cari berdasarkan brand!')
+  ]);
+  wp_reset_postdata();
+  ?>
+</section>
