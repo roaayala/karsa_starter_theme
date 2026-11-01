@@ -122,34 +122,34 @@ $has_marketplace = $tokopedia_link || $shopee_link || $lazada_link || $blibli_li
 
     <!-- cta -->
     <div class="flex flex-col gap-4">
-      <a href="#" class="btn btn--primary w-full">
+      <a href="#" target="_blank" class="btn btn--primary w-full">
         <i data-lucide="phone" class="btn-icon"></i>
         <span class="btn-label"><?php _e('Hubungi kami', 'karsa_start') ?></span>
       </a>
 
       <?php if ($has_marketplace): ?>
         <div class="flex items-center flex-wrap gap-2">
-          <?php if ($tokopedia_link): ?>
-            <a href="<?= esc_url($tokopedia_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Tokopedia">
-              <?= Helpers::get_icon('tokopedia', 'h-4 mr-2 w-auto') ?>
-            </a>
-          <?php endif; ?>
-
           <?php if ($shopee_link): ?>
             <a href="<?= esc_url($shopee_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Shopee">
               <?= Helpers::get_icon('shopee', 'h-5 mr-2 w-auto') ?>
             </a>
           <?php endif; ?>
 
-          <?php if ($lazada_link): ?>
-            <a href="<?= esc_url($lazada_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Lazada">
-              <?= Helpers::get_icon('lazada', 'h-5 mr-2 w-auto') ?>
+          <?php if ($tokopedia_link): ?>
+            <a href="<?= esc_url($tokopedia_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Tokopedia">
+              <?= Helpers::get_icon('tokopedia', 'h-4 mr-2 w-auto') ?>
             </a>
           <?php endif; ?>
 
           <?php if ($blibli_link): ?>
             <a href="<?= esc_url($blibli_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Blibli">
               <?= Helpers::get_icon('blibli', 'h-4.5 mr-2 w-auto') ?>
+            </a>
+          <?php endif; ?>
+
+          <?php if ($lazada_link): ?>
+            <a href="<?= esc_url($lazada_link) ?>" target="_blank" rel="noopener noreferrer" aria-label="Lazada">
+              <?= Helpers::get_icon('lazada', 'h-5 mr-2 w-auto') ?>
             </a>
           <?php endif; ?>
 

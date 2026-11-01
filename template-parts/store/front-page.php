@@ -1,5 +1,7 @@
 <?php
 
+use KarsaStart\Helpers;
+
 /**
  * Template: Front page for store
  * @package KarsaStart
@@ -109,20 +111,22 @@ $discount_products_args['meta_query'] = [
 <section class="py-8 bg-surface-bright">
   <div class="container grid gap-6 grid-cols-12">
 
-    <div class="col-span-12">
+    <div class="col-span-12 sm:col-span-5 md:col-span-4">
       <h2>Kami juga ada di marketplace favorit kamu!</h2>
     </div>
 
     <?php
-    $marketplaces = ['Tokopedia', 'Shopee', 'Lazada', 'Blibli'];
+    $marketplaces = ['shopee', 'tokopedia', 'blibli', 'lazada'];
     ?>
 
-    <div class="col-span-12 grid gap-4 grid-cols-2">
+    <div class="col-span-12 sm:col-span-7 md:col-span-8 grid gap-4 grid-cols-2">
       <?php foreach ($marketplaces as $marketplace): ?>
-        <div
-          class="aspect-video bg-primary-container rounded-lg text-base font-semibold text-on-primary-container text-center flex items-center justify-center">
-          <?= $marketplace ?>
-        </div>
+        <a href="#" class="group block" target="_blank">
+          <div
+            class="w-full h-20 p-4 bg-surface-bright rounded-lg border border-outline/20 hover:border-outline/60 shadow-sm flex items-center justify-center transition-border duration-150">
+            <?= Helpers::get_icon($marketplace, $marketplace == 'tokopedia' ? 'h-6 mt-1' : 'h-8') ?>
+          </div>
+        </a>
       <?php endforeach ?>
     </div>
 
