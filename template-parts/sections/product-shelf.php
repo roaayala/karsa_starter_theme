@@ -31,7 +31,7 @@ if (!($products instanceof \WP_Query) || !$products->have_posts()) {
     <?php endif ?>
   </div>
 
-  <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
+  <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none">
     <?php
     if ($products->have_posts()) {
       while ($products->have_posts()) {

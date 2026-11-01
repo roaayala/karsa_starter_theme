@@ -116,8 +116,27 @@ $categories = $args['categories'] ?? [];
     <!-- cta -->
     <div class="flex flex-col">
       <a href="#" class="btn btn--primary w-full">
+        <i data-lucide="phone" class="btn-icon"></i>
         <span class="btn-label"><?php _e('Hubungi kami', 'karsa_start') ?></span>
       </a>
+
+
+      <div class="flex items-center gap-2">
+        <a href="#">
+          <?= Helpers::get_icon('tokopedia', 'btn-icon') ?>
+        </a>
+        <a href="#">
+          <?= Helpers::get_icon('shopee', 'btn-icon') ?>
+        </a>
+        <a href="#">
+          <?= Helpers::get_icon('lazada', 'btn-icon') ?>
+        </a>
+        <a href="#">
+          <?= Helpers::get_icon('blibli', 'btn-icon') ?>
+        </a>
+
+      </div>
+
     </div>
 
   </div>

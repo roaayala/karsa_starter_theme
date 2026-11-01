@@ -17,7 +17,7 @@ $title = $args['title'] ?? __('Judul Section', 'karsa_start');
       <h2><?= esc_html($title) ?></h2>
     </div>
 
-    <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
+    <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none">
 
       <?php foreach ($tax as $term): ?>
 

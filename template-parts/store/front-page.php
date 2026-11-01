@@ -1,5 +1,7 @@
 <?php
 
+use KarsaStart\Helpers;
+
 /**
  * Template: Front page for store
  * @package KarsaStart
@@ -43,6 +45,18 @@ $discount_products_args['meta_query'] = [
 ?>
 
 <section class="bg-surface-bright py-8">
+  <a href="#">
+    <?= Helpers::get_icon('tokopedia', 'h-4 w-auto shrink-0') ?>
+  </a>
+  <a href="#" class="">
+    <?= Helpers::get_icon('shopee', 'h-4 w-auto shrink-0') ?>
+  </a>
+  <a href="#">
+    <?= Helpers::get_icon('lazada', 'h-4 w-auto shrink-0') ?>
+  </a>
+  <a href="#">
+    <?= Helpers::get_icon('blibli', 'h-4 w-auto shrink-0') ?>
+  </a>
   <?php
   // Newest products
   $newest_products = new WP_Query($products_args);
@@ -55,8 +69,6 @@ $discount_products_args['meta_query'] = [
   wp_reset_postdata();
   ?>
 </section>
-
-
 
 <section class="py-8 bg-surface">
   <?php
@@ -76,8 +88,6 @@ $discount_products_args['meta_query'] = [
   ?>
 </section>
 
-
-
 <section class="bg-surface-bright py-8">
   <?php
   $discount_products = new WP_Query($discount_products_args);
@@ -90,8 +100,6 @@ $discount_products_args['meta_query'] = [
   wp_reset_postdata();
   ?>
 </section>
-
-
 
 <section class="py-8 bg-surface">
   <?php
@@ -109,4 +117,27 @@ $discount_products_args['meta_query'] = [
   ]);
   wp_reset_postdata();
   ?>
+</section>
+
+<section class="py-8 bg-surface-bright">
+  <div class="container grid gap-6 grid-cols-12">
+
+    <div class="col-span-12">
+      <h2>Kami juga ada di marketplace favorit kamu!</h2>
+    </div>
+
+    <?php
+    $marketplaces = ['Tokopedia', 'Shopee', 'Lazada', 'Blibli'];
+    ?>
+
+    <div class="col-span-12 grid gap-4 grid-cols-2">
+      <?php foreach ($marketplaces as $marketplace): ?>
+        <div
+          class="aspect-video bg-primary-container rounded-lg text-base font-semibold text-on-primary-container text-center flex items-center justify-center">
+          <?= $marketplace ?>
+        </div>
+      <?php endforeach ?>
+    </div>
+
+  </div>
 </section>
