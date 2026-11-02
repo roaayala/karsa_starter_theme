@@ -1,6 +1,6 @@
 <?php
 
-use KarsaStart\Helpers;
+
 
 /**
  * Template: Front page for store
@@ -102,33 +102,14 @@ $discount_products_args['meta_query'] = [
   ]);
   get_template_part('template-parts/sections/product-tax-list', null, [
     'tax' => $product_brands,
-    'title' => __('Cari berdasarkan brand!')
+    'title' => __('Cari berdasarkan brand!', 'karsa_start')
   ]);
   wp_reset_postdata();
   ?>
 </section>
 
 <section class="py-8 bg-surface-bright">
-  <div class="container grid gap-6 grid-cols-12">
-
-    <div class="col-span-12 sm:col-span-5 md:col-span-4">
-      <h2>Kami juga ada di marketplace favorit kamu!</h2>
-    </div>
-
-    <?php
-    $marketplaces = ['shopee', 'tokopedia', 'blibli', 'lazada'];
-    ?>
-
-    <div class="col-span-12 sm:col-span-7 md:col-span-8 grid gap-4 grid-cols-2">
-      <?php foreach ($marketplaces as $marketplace): ?>
-        <a href="#" class="group block" target="_blank">
-          <div
-            class="w-full h-20 p-4 bg-surface-bright rounded-lg border border-outline/20 hover:border-outline/60 shadow-sm flex items-center justify-center transition-border duration-150">
-            <?= Helpers::get_icon($marketplace, $marketplace == 'tokopedia' ? 'h-6 mt-1' : 'h-8') ?>
-          </div>
-        </a>
-      <?php endforeach ?>
-    </div>
-
-  </div>
+  <?php get_template_part('template-parts/sections/section', 'marketplace', [
+    'title' => __('Kami juga ada di marketplace favorit kamu!')
+  ]); ?>
 </section>
