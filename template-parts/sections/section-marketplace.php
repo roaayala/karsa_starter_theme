@@ -4,9 +4,7 @@
  * @package KarsaStart
  */
 
-
 $title = $args['title'] ?? __('Judul Section', 'karsa_start');
-
 
 $marketplaces = [
   [
@@ -28,13 +26,15 @@ $marketplaces = [
 ];
 ?>
 
-<div class="container grid gap-6 grid-cols-12">
+<div class="container flex flex-col items-center text-center gap-6">
 
-  <div class="col-span-12 sm:col-span-5 md:col-span-4 lg:col-span-3">
-    <h2><?= esc_html($title) ?></h2>
+  <div class="max-w-md">
+    <h2>
+      <?= esc_html($title) ?>
+    </h2>
   </div>
 
-  <div class="col-span-12 sm:col-span-7 md:col-span-8 lg:col-span-9 grid gap-4 grid-cols-2">
+  <div class="w-full grid grid-cols-2 sm:grid-cols-4 gap-4">
     <?php foreach ($marketplaces as $marketplace) {
       get_template_part('template-parts/components/cards/card', 'marketplace', [
         'url' => $marketplace['url'],

@@ -113,13 +113,10 @@ $featured_categories = !is_wp_error($product_categories) ? array_slice($product_
 </section>
 
 
-
 <?php
-
 foreach ($featured_categories as $index => $category):
 
   $product_in_category_args = $products_args;
-
   $product_in_category_args['tax_query'] = [
     [
       'taxonomy' => 'product-category',
@@ -128,7 +125,6 @@ foreach ($featured_categories as $index => $category):
 
     ]
   ];
-
   $product_in_category = new WP_Query($product_in_category_args);
   ?>
   <section class="py-8 <?= esc_attr(($index + 1) % 2 == 1 ? 'bg-surface-bright' : 'bg-surface') ?>">
@@ -143,7 +139,7 @@ foreach ($featured_categories as $index => $category):
   </section>
   <?php wp_reset_postdata(); endforeach; ?>
 
-<section class="py-8 bg-surface-bright">
+<section class="py-8 bg-surface">
   <?php get_template_part('template-parts/sections/section', 'marketplace', [
     'title' => __('Kami juga ada di marketplace favorit kamu!')
   ]); ?>
