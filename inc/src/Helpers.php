@@ -4,7 +4,7 @@ namespace KarsaStart;
 
 class Helpers
 {
-  public static function format_rupiah($price)
+  public static function format_rupiah(int $price)
   {
     if (empty($price) || !is_numeric($price)) {
       return 'Hubungi Kami';
@@ -32,5 +32,26 @@ class Helpers
     }
 
     return $svg;
+  }
+
+  private static function render(string $path, array $args): void
+  {
+    $clean_path = ltrim($path, '/');
+    get_template_part("template-parts/{$clean_path}", null, $args);
+  }
+
+  public static function component(string $name, array $args): void
+  {
+    self::render("components/{$name}", $args);
+  }
+
+  public static function section(string $name, array $args): void
+  {
+    self::render("sections/{$name}", $args);
+  }
+
+  public static function layout(string $name, array $args): void
+  {
+    self::render("layouts/{$name}", $args);
   }
 }
