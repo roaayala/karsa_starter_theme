@@ -69,51 +69,36 @@ Helpers::section('store/product-tax-slider', [
   'title' => __('Cari berdasarkan kategori!', 'karsa_start')
 ]);
 
+// Discounted products
+$discount_products = new WP_Query($discount_products_args);
+Helpers::section('store/product-slider', [
+  'title' => __('Lagi discount!', 'karsa_start'),
+  'url_link' => '#',
+  'url_label' => __('Lebih Banyak', 'karsa_start'),
+  'products' => $discount_products
+]);
+wp_reset_postdata();
+
+// Newest products
+$newest_products = new WP_Query($products_args);
+Helpers::section('store/product-slider', [
+  'section_classes' => 'py-8 bg-surface-bright',
+  'title' => __('Baru banget di toko!', 'karsa_start'),
+  'url_link' => '#',
+  'url_label' => __('Lebih Banyak', 'karsa_start'),
+  'products' => $newest_products
+]);
+wp_reset_postdata();
+
 // Brands tax
 Helpers::section('store/product-tax-slider', [
-  'section_classes' => 'py-8 bg-surface-bright',
+  'section_classes' => 'py-8 bg-surface',
   'tax' => $product_brands,
   'title' => __('Cari berdasarkan brand!', 'karsa_start')
 ]);
 
-?>
-
-
-
-<section class="bg-surface py-8">
-  <?php
-  $discount_products = new WP_Query($discount_products_args);
-  get_template_part('template-parts/sections/product-shelf', null, [
-    'title' => __('Lagi discount!', 'karsa_start'),
-    'url_link' => '#',
-    'url_label' => __('Lebih Banyak', 'karsa_start'),
-    'products' => $discount_products
-  ]);
-  wp_reset_postdata();
-  ?>
-</section>
-
-<!-- Newest products -->
-<section class="bg-surface-bright py-8">
-  <?php
-  $newest_products = new WP_Query($products_args);
-  get_template_part('template-parts/sections/product-shelf', null, [
-    'title' => __('Baru banget di toko!', 'karsa_start'),
-    'url_link' => '#',
-    'url_label' => __('Lebih Banyak', 'karsa_start'),
-    'products' => $newest_products
-  ]);
-  wp_reset_postdata();
-  ?>
-</section>
-
-
-
-
-
-<?php
-foreach ($featured_categories as $index => $category):
-
+// Featured Categories Loop 
+foreach ($featured_categories as $index => $category) {
   $product_in_category_args = $products_args;
   $product_in_category_args['tax_query'] = [
     [
@@ -124,21 +109,20 @@ foreach ($featured_categories as $index => $category):
     ]
   ];
   $product_in_category = new WP_Query($product_in_category_args);
-  ?>
-  <section class="py-8 <?= esc_attr(($index + 1) % 2 == 1 ? 'bg-surface-bright' : 'bg-surface') ?>">
-    <?php
-    get_template_part('template-parts/sections/product-shelf', null, [
-      'title' => sprintf(__('Terbaru di %s', 'karsa_start'), $category->name),
-      'url_link' => '#',
-      'url_label' => __('Lebih Banyak', 'karsa_start'),
-      'products' => $product_in_category
-    ]);
-    ?>
-  </section>
-  <?php wp_reset_postdata(); endforeach; ?>
 
-<section class="py-8 bg-surface">
-  <?php get_template_part('template-parts/sections/section', 'marketplace', [
-    'title' => __('Kami juga ada di marketplace favorit kamu!')
-  ]); ?>
-</section>
+  $bg_class = ($index % 2 == 0) ? 'py-8 bg-surface-bright' : 'py-8 bg-surface';
+
+  Helpers::section('store/product-slider', [
+    'section_classes' => $bg_class,
+    'title' => sprintf(__('Terbaru di %s', 'karsa_start'), $category->name),
+    'url_link' => get_term_link($category),
+    'url_label' => __('Lebih Banyak', 'karsa_start'),
+    'products' => $product_in_category
+  ]);
+
+  wp_reset_postdata();
+}
+// CTA marketplaces
+Helpers::section('store/marketplace-cta', [
+  'title' => __('Kami juga ada di marketplace favorit kamu!', 'karsa_start')
+]);

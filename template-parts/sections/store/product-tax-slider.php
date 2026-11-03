@@ -1,5 +1,7 @@
 <?php
 
+use KarsaStart\Helpers;
+
 /**
  * Section: Product tax slider
  * @package KarsaStart
@@ -18,14 +20,13 @@ $title = $args['title'] ?? __('Judul Section', 'karsa_start');
       </div>
 
       <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none">
+        <?php foreach ($tax as $term):
 
-        <?php foreach ($tax as $term): ?>
-
-          <?php get_template_part('template-parts/components/cards/card', 'term', [
+          Helpers::component('cards/card-term', [
             'term' => $term
-          ]) ?>
+          ]);
 
-        <?php endforeach ?>
+        endforeach; ?>
       </div>
 
     </div>
