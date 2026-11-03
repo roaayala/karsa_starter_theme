@@ -54,4 +54,45 @@ class Helpers
   {
     self::render("layouts/{$name}", $args);
   }
+
+  public static function get_active_taxonomy_tree(string $taxonomy): array
+  {
+    // get all taxonomy that already have posts
+    $terms = get_terms([
+      'taxonomy' => $taxonomy,
+      'hide_empty' => true,
+      'orderby' => 'name',
+      'order' => 'ASC',
+    ]);
+
+    if (is_wp_error($terms) || empty($terms)) {
+      return [];
+    }
+
+    $parents = [];
+    $children = [];
+
+    // separate parents and children
+    foreach ($terms as $term) {
+      if ($term->parent == 0) { // if parent, create children props and add to a parent and use term_id as key
+        $term->children = [];
+        $parents[$term->term_id] = $term;
+      } else { // add to $children
+        $children[] = $term;
+      }
+    }
+
+    // add child to their parent
+    foreach ($children as $child) {
+      if (isset($parents[$child->parent])) {
+        $parents[$child->parent]->children[] = $child; // add $child as children to the parent
+      } else {
+        $child->children = [];
+        $parents[$child->term_id] = $child;
+      }
+    }
+
+    return array_values($parents);
+
+  }
 }

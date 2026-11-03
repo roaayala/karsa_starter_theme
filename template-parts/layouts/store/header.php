@@ -1,9 +1,16 @@
 <?php
 
+use KarsaStart\Helpers;
+
 /**
  * Template: Header for store
  * @package KarsaStart
  */
+
+$categories_tree = Helpers::get_active_taxonomy_tree('product-category');
+$brands_tree = Helpers::get_active_taxonomy_tree('product-brand');
+dump($categories_tree);
+dump($brands_tree);
 
 ?>
 
@@ -17,6 +24,7 @@
       </a>
     </div>
     <!-- Center -->
+
     <!-- Right -->
   </div>
 </header>

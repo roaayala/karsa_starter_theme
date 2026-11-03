@@ -1,7 +1,6 @@
 <?php
 /**
  * Tailpress Framework Initialization & Theme Setup
- *
  * @package KarsaStart
  */
 
@@ -72,40 +71,40 @@ function tailpress_setup(): TailPress\Framework\Theme
 }
 tailpress_setup();
 
-function karsa_nav_menu_classes($classes, $item, $args)
-{
-  if (isset($args->theme_location) && $args->theme_location === 'header') {
+// function karsa_nav_menu_classes($classes, $item, $args)
+// {
+//   if (isset($args->theme_location) && $args->theme_location === 'header') {
 
-    // for each defined CPT
+//     // for each defined CPT
 
-    // for all
-    $is_active_parent = !empty(array_intersect([
-      'current-menu-parent',
-      'current-menu-ancestor',
-      'current_page_parent'
-    ], $classes));
+//     // for all
+//     $is_active_parent = !empty(array_intersect([
+//       'current-menu-parent',
+//       'current-menu-ancestor',
+//       'current_page_parent'
+//     ], $classes));
 
-    if ($is_active_parent) {
-      $classes[] = 'current-menu-item-parent';
-    }
-  }
-  return array_unique($classes);
-}
-add_filter('nav_menu_css_class', 'karsa_nav_menu_classes', 10, 3);
+//     if ($is_active_parent) {
+//       $classes[] = 'current-menu-item-parent';
+//     }
+//   }
+//   return array_unique($classes);
+// }
+// add_filter('nav_menu_css_class', 'karsa_nav_menu_classes', 10, 3);
 
-function karsa_nav_menu_link_attributes($atts, $item, $args)
-{
-  $has_class = $atts['class'] ?? '';
-  $atts['class'] = trim($has_class . ' menu-link');
+// function karsa_nav_menu_link_attributes($atts, $item, $args)
+// {
+//   $has_class = $atts['class'] ?? '';
+//   $atts['class'] = trim($has_class . ' menu-link');
 
-  return $atts;
-}
-add_filter('nav_menu_link_attributes', 'karsa_nav_menu_link_attributes', 10, 3);
+//   return $atts;
+// }
+// add_filter('nav_menu_link_attributes', 'karsa_nav_menu_link_attributes', 10, 3);
 
-function karsa_nav_menu_item_title($title, $menu_item, $args, $depth)
-{
-  $title = "<span class='menu-link__label'>{$title}</span>";
+// function karsa_nav_menu_item_title($title, $menu_item, $args, $depth)
+// {
+//   $title = "<span class='menu-link__label'>{$title}</span>";
 
-  return $title;
-}
-add_filter('nav_menu_item_title', 'karsa_nav_menu_item_title', 10, 4);
+//   return $title;
+// }
+// add_filter('nav_menu_item_title', 'karsa_nav_menu_item_title', 10, 4);

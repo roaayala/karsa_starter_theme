@@ -73,7 +73,7 @@ Helpers::section('store/product-tax-slider', [
 $discount_products = new WP_Query($discount_products_args);
 Helpers::section('store/product-slider', [
   'title' => __('Lagi discount!', 'karsa_start'),
-  'url_link' => '#',
+  'url_link' => get_post_type_archive_link('product') ?: '#',
   'url_label' => __('Lebih Banyak', 'karsa_start'),
   'products' => $discount_products
 ]);
@@ -84,7 +84,7 @@ $newest_products = new WP_Query($products_args);
 Helpers::section('store/product-slider', [
   'section_classes' => 'py-8 bg-surface-bright',
   'title' => __('Baru banget di toko!', 'karsa_start'),
-  'url_link' => '#',
+  'url_link' => get_post_type_archive_link('product') ?: '#',
   'url_label' => __('Lebih Banyak', 'karsa_start'),
   'products' => $newest_products
 ]);
