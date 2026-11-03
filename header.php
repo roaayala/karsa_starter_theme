@@ -1,4 +1,6 @@
 <?php
+
+use KarsaStart\Helpers;
 /**
  * Template: Global Header
  * @package KarsaStart
@@ -19,16 +21,7 @@
 
 <body <?php body_class(); ?>>
     <div id="page" class="min-h-screen flex flex-col">
-        <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-sm py-4">
-            <div class="container">
-                <!-- LEFT -->
-                <div>
-                    <a class="font-bold text-base text-on-surface" href="<?= esc_url(home_url()) ?>">
-                        MK <?php bloginfo('name') ?>
-                    </a>
-                </div>
-                <!-- Center -->
-                <!-- Right -->
-            </div>
-        </header>
+
+        <?php Helpers::layout('store/header'); ?>
+
         <main id="content" class="flex-1 flex flex-col">

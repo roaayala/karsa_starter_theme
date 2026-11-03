@@ -1,11 +1,10 @@
 <?php
-
-
-
 /**
  * Template: Front page for store
  * @package KarsaStart
  */
+
+use KarsaStart\Helpers;
 
 // Hero for promo, discount, events and new product
 
@@ -62,17 +61,24 @@ $product_brands = get_terms([
 ]);
 
 $featured_categories = !is_wp_error($product_categories) ? array_slice($product_categories, 0, 3) : [];
+
+// Categories tax
+Helpers::section('store/product-tax-slider', [
+  'section_classes' => 'py-8 bg-surface-bright',
+  'tax' => $product_categories,
+  'title' => __('Cari berdasarkan kategori!', 'karsa_start')
+]);
+
+// Brands tax
+Helpers::section('store/product-tax-slider', [
+  'section_classes' => 'py-8 bg-surface-bright',
+  'tax' => $product_brands,
+  'title' => __('Cari berdasarkan brand!', 'karsa_start')
+]);
+
 ?>
 
-<!-- category list -->
-<section class="py-8 bg-surface-bright">
-  <?php
-  get_template_part('template-parts/sections/product-tax-list', null, [
-    'tax' => $product_categories,
-    'title' => __('Cari berdasarkan kategori!')
-  ]);
-  ?>
-</section>
+
 
 <section class="bg-surface py-8">
   <?php
@@ -102,15 +108,7 @@ $featured_categories = !is_wp_error($product_categories) ? array_slice($product_
 </section>
 
 
-<!-- brand list -->
-<section class="py-8 bg-surface">
-  <?php
-  get_template_part('template-parts/sections/product-tax-list', null, [
-    'tax' => $product_brands,
-    'title' => __('Cari berdasarkan brand!', 'karsa_start')
-  ]);
-  ?>
-</section>
+
 
 
 <?php

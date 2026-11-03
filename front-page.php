@@ -1,4 +1,7 @@
 <?php
+
+use KarsaStart\Helpers;
+
 /**
  * Template: Front Page
  * @package KarsaStart
@@ -6,6 +9,6 @@
 
 get_header();
 
-get_template_part('template-parts/store/front-page');
+Helpers::layout('store/front-page');
 
 get_footer();

@@ -6,7 +6,6 @@
  */
 
 $tax = $args['tax'] ?? [];
-
 $title = $args['title'] ?? __('Judul Section', 'karsa_start');
 ?>
 

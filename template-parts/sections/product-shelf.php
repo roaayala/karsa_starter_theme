@@ -13,7 +13,6 @@ $products = $args['products'] ?? [];
 if (!($products instanceof \WP_Query) || !$products->have_posts()) {
   return;
 }
-
 ?>
 
 <div class="container flex flex-col gap-6">

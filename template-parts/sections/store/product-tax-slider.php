@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Section: Product tax slider
+ * @package KarsaStart
+ */
+
+$section_classes = $args['section_classes'] ?? 'py-8 bg-surface';
+$tax = $args['tax'] ?? [];
+$title = $args['title'] ?? __('Judul Section', 'karsa_start');
+?>
+
+<?php if (!empty($tax)): ?>
+  <section class="<?= esc_attr($section_classes) ?>">
+    <div class="container flex flex-col gap-6">
+      <div class="">
+        <h2><?= esc_html($title) ?></h2>
+      </div>
+
+      <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-none">
+
+        <?php foreach ($tax as $term): ?>
+
+          <?php get_template_part('template-parts/components/cards/card', 'term', [
+            'term' => $term
+          ]) ?>
+
+        <?php endforeach ?>
+      </div>
+
+    </div>
+  </section>
+<?php endif ?>
