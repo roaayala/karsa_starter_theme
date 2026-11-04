@@ -23,9 +23,10 @@ import {
   Layers2,
   ChevronRight,
   ChevronLeft,
+  ChevronDown,
   ArrowRight,
 } from "lucide";
-import mobileMenuHandler from "./mobile-menu-handler";
+import Alpine from "alpinejs";
 
 const initLucideIcons = () => {
   createIcons({
@@ -53,66 +54,17 @@ const initLucideIcons = () => {
       Layers2,
       ChevronRight,
       ChevronLeft,
+      ChevronDown,
       ArrowRight,
     },
   });
 };
 
+window.initLucideIcons = initLucideIcons;
+
 document.addEventListener("DOMContentLoaded", () => {
   initLucideIcons();
-  mobileMenuHandler();
-  galerySlider();
 });
 
-function galerySlider() {
-  const gallerySliderElement = document.getElementById("gallery-slider");
-  const galleryThumbnails = document.getElementById("gallery-thumbnails");
-
-  if (!gallerySliderElement || !galleryThumbnails) return;
-
-  const mainImage = document.getElementById("gallery-main-image");
-  const prevImage = document.getElementById("gallery-prev");
-  const nextImage = document.getElementById("gallery-next");
-  const thumbs = Array.from(
-    galleryThumbnails.querySelectorAll(".gallery-image"),
-  );
-
-  if (!mainImage || thumbs.length === 0) return;
-
-  let currentIndex = 0;
-  const totalImages = thumbs.length;
-
-  thumbs[currentIndex].classList.add("is-active");
-
-  function updateSlider(index) {
-    currentIndex = (totalImages + index) % totalImages;
-
-    const activeThumb = thumbs[currentIndex];
-    const newUrl = activeThumb.dataset.url;
-    const newAlt = activeThumb.dataset.alt;
-
-    mainImage.src = newUrl;
-    mainImage.alt = newAlt;
-    thumbs.forEach((thumb, i) => {
-      thumb.classList.toggle("is-active", i === currentIndex);
-    });
-  }
-
-  if (nextImage) {
-    nextImage.addEventListener("click", () => {
-      updateSlider(currentIndex + 1);
-    });
-  }
-
-  if (prevImage) {
-    prevImage.addEventListener("click", () => {
-      updateSlider(currentIndex - 1);
-    });
-  }
-
-  thumbs.forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-      updateSlider(Number(thumb.dataset.index));
-    });
-  });
-}
+window.Alpine = Alpine;
+Alpine.start();

@@ -1,30 +1,30 @@
 <?php
-
-use KarsaStart\Helpers;
-
 /**
  * Template: Header for store
  * @package KarsaStart
  */
 
-$categories_tree = Helpers::get_active_taxonomy_tree('product-category');
-$brands_tree = Helpers::get_active_taxonomy_tree('product-brand');
-dump($categories_tree);
-dump($brands_tree);
-
 ?>
 
 <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-sm py-4">
-  <div class="container">
+  <div class="container relative flex flex-col gap-4 items-center justify-between">
     <!-- LEFT -->
     <div>
-      <a class="font-bold text-base text-on-surface" href="<?= esc_url(home_url()) ?>">
-        MK
-        <?php bloginfo('name') ?>
+      <a class="font-bold text-on-surface flex gap-2 items-center" href="<?= esc_url(home_url()) ?>">
+        <span class="p-2 font-semibold text-sm bg-primary text-on-primary rounded-lg">MK</span>
+        <span><?php bloginfo('name') ?></span>
       </a>
     </div>
-    <!-- Center -->
 
-    <!-- Right -->
+    <div class="w-full flex gap-4">
+      <!-- Center -->
+      <div class="flex-1 bg-surface-container py-2 px-4">
+        Search
+      </div>
+
+      <!-- Right -->
+      <div class="bg-primary p-4 aspect-square"></div>
+
+    </div>
   </div>
 </header>

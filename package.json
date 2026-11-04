@@ -14,6 +14,7 @@
     "vite": "^6.4.3"
   },
   "dependencies": {
+    "alpinejs": "^3.17.5",
     "lucide": "^1.50.0"
   }
 }

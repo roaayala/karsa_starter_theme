@@ -47,6 +47,7 @@
   --color-outline: var(--wp--preset--color--neutral-400);
 
   /* Text and Leading */
+  --text-2xs: var(--wp--preset--font-size--2-xs);
   --text-xs: var(--wp--preset--font-size--xs);
   --text-sm: var(--wp--preset--font-size--sm);
   --text-base: var(--wp--preset--font-size--base);
