@@ -69,30 +69,24 @@ class Helpers
       return [];
     }
 
-    $parents = [];
-    $children = [];
+    $indexed = [];
 
-    // separate parents and children
     foreach ($terms as $term) {
-      if ($term->parent == 0) { // if parent, create children props and add to a parent and use term_id as key
-        $term->children = [];
-        $parents[$term->term_id] = $term;
-      } else { // add to $children
-        $children[] = $term;
-      }
+      $term->children = []; // add blank children array
+      $indexed[$term->term_id] = $term; // register each term to $indexed and use the term_id as key
     }
 
-    // add child to their parent
-    foreach ($children as $child) {
-      if (isset($parents[$child->parent])) {
-        $parents[$child->parent]->children[] = $child; // add $child as children to the parent
+    $tree = [];
+
+    foreach ($indexed as $term) {
+      if ($term->parent != 0 && isset($indexed[$term->parent])) {
+        $indexed[$term->parent]->children[] = $term; // add term to it respective parent
       } else {
-        $child->children = [];
-        $parents[$child->term_id] = $child;
+        $tree[] = $term; // if parent, then set is as a root
       }
     }
 
-    return array_values($parents);
+    return $tree;
 
   }
 }
