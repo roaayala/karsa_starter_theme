@@ -9,6 +9,7 @@ use KarsaStart\Helpers;
 $categories = Helpers::get_active_taxonomy_tree('product-category');
 $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
+
 ?>
 
 <header id="header" class="sticky top-0 z-100 bg-surface border-b border-b-outline/40 shadow-sm py-4">
@@ -67,9 +68,10 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
           </div>
         <?php endif ?>
 
-        <div>
-          <a href="<?= esc_url(get_post_type_archive_link('product')) ?>"><?= __('Produk', 'karsa_start') ?></a>
-        </div>
+        <?php Helpers::component('nav/nav-item', [
+          'link' => get_post_type_archive_link('product'),
+          'label' => __('Produk', 'karsa_start')
+        ]) ?>
 
       </nav>
     </div>
