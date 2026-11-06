@@ -100,7 +100,6 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
     <!-- MOBILE NAVIGATION AND HIDDEN ON DESKTOP -->
     <div x-data="{ open: false }" class="flex items-center md:hidden">
 
-      <!-- Button Trigger Hamburger -->
       <button @click="open = !open" type="button" class="cursor-pointer text-on-surface">
         <i x-show="!open" data-lucide="menu" class="w-6 h-6"></i>
         <i x-show="open" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
@@ -109,59 +108,16 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
       <nav x-show="open" @click.outside="open = false"
         class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-4 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-4 max-h-screen overflow-y-auto">
 
-        <?php if (!empty($categories)): ?>
-          <div x-data="{ expanded: false }" class="border-b border-outline/20 pb-2">
-            <button @click="expanded = !expanded" type="button"
-              class="cursor-pointer w-full flex items-center justify-between text-sm font-medium  text-primary">
-              <span>
-                <?= __('Kategori Produk', 'karsa_start') ?>
-              </span>
-              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded }"></i>
-            </button>
+        <?php Helpers::component('nav/nav-dropdown', [
+          'items' => $categories,
+          'label' => __('Kategori', 'karsa_start')
+        ]) ?>
 
-            <div x-show="expanded" class="mt-2 pl-2 flex flex-col gap-2" style="display: none;">
-              <?php foreach ($categories as $cat): ?>
-                <div>
-                  <a href="<?= esc_url(get_term_link($cat)) ?>" class="text-xs font-medium text-on-surface block py-0.5">
-                    <?= esc_html($cat->name) ?>
-                  </a>
-                  <?php if (!empty($cat->children)): ?>
-                    <div class="ml-2 pl-2 border-l border-outline/20 flex flex-col gap-1 mt-1">
-                      <?php foreach ($cat->children as $child): ?>
-                        <a href="<?= esc_url(get_term_link($child)) ?>" class="text-[11px] text-on-surface-variant py-0.5">
-                          <?= esc_html($child->name) ?>
-                        </a>
-                      <?php endforeach; ?>
-                    </div>
-                  <?php endif; ?>
-                </div>
-              <?php endforeach; ?>
-            </div>
-          </div>
-        <?php endif; ?>
+        <?php Helpers::component('nav/nav-dropdown', [
+          'items' => $brands,
+          'label' => __('Brand', 'karsa_start')
+        ]) ?>
 
-        <!-- Accordion Section: Brand -->
-        <?php if (!empty($brands)): ?>
-          <div x-data="{ expanded: false }" class="border-b border-outline/10 pb-3">
-            <button @click="expanded = !expanded" type="button"
-              class="w-full flex items-center justify-between text-xs font-bold text-primary">
-              <span>
-                <?= __('Brand Terpilih', 'karsa_start') ?>
-              </span>
-              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded }"></i>
-            </button>
-
-            <div x-show="expanded" class="mt-2 pl-2 flex flex-col gap-1.5" style="display: none;">
-              <?php foreach ($brands as $brand): ?>
-                <a href="<?= esc_url(get_term_link($brand)) ?>" class="text-xs text-on-surface py-0.5">
-                  <?= esc_html($brand->name) ?>
-                </a>
-              <?php endforeach; ?>
-            </div>
-          </div>
-        <?php endif; ?>
-
-        <!-- Direct Link -->
         <div>
           <?php Helpers::component('nav/nav-link', [
             'url' => get_post_type_archive_link('product'),
