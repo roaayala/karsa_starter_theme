@@ -26,12 +26,12 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
     <nav x-show="open" @click.outside="open = false" class="hidden md:flex flex-row items-center gap-4">
 
-      <?php Helpers::component('nav/nav-dropdown', [
+      <?php Helpers::component('nav/nav-dropdown-desktop', [
         'items' => $categories,
         'label' => __('Kategori', 'karsa_start')
       ]) ?>
 
-      <?php Helpers::component('nav/nav-dropdown', [
+      <?php Helpers::component('nav/nav-dropdown-desktop', [
         'items' => $brands,
         'label' => __('Brand', 'karsa_start')
       ]) ?>
@@ -51,18 +51,18 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
       <button @click="open = !open" type="button" class="cursor-pointer text-on-surface">
         <i x-show="!open" data-lucide="menu" class="w-6 h-6"></i>
-        <i x-show="open" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
+        <i x-show="open" data-lucide="x" class="w-6 h-6"></i>
       </button>
 
       <nav x-show="open" @click.outside="open = false"
         class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-4 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-4 max-h-screen overflow-y-auto">
 
-        <?php Helpers::component('nav/nav-dropdown', [
+        <?php Helpers::component('nav/nav-dropdown-mobile', [
           'items' => $categories,
           'label' => __('Kategori', 'karsa_start')
         ]) ?>
 
-        <?php Helpers::component('nav/nav-dropdown', [
+        <?php Helpers::component('nav/nav-dropdown-mobile', [
           'items' => $brands,
           'label' => __('Brand', 'karsa_start')
         ]) ?>

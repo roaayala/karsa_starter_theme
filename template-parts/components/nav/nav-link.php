@@ -6,7 +6,7 @@
 
 $url = $args['url'] ?? null;
 $label = $args['label'] ?? null;
-$link_classes = $args['link_classes'] ?? 'flex text-sm text-on-surface';
+$link_classes = $args['link_classes'] ?? 'flex text-sm text-on-surface hover:text-primary';
 
 if (!$url || !$label)
   return;
