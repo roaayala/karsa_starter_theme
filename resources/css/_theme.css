@@ -47,6 +47,8 @@
   --color-outline: var(--wp--preset--color--neutral-400);
 
   /* Text and Leading */
+  --leading-tighter: 1.125;
+
   --text-2xs: var(--wp--preset--font-size--2-xs);
   --text-xs: var(--wp--preset--font-size--xs);
   --text-sm: var(--wp--preset--font-size--sm);
@@ -54,19 +56,19 @@
   --text-base--line-height: var(--leading-normal);
 
   --text-lg: var(--wp--preset--font-size--lg);
-  --text-lg--line-height: var(--leading-snug);
+  --text-lg--line-height: var(--leading-tight);
 
   --text-xl: var(--wp--preset--font-size--xl);
-  --text-xl--line-height: var(--leading-snug);
+  --text-xl--line-height: var(--leading-tight);
 
   --text-2xl: var(--wp--preset--font-size--2-xl);
-  --text-2xl--line-height: var(--leading-snug);
+  --text-2xl--line-height: var(--leading-tighter);
 
   --text-3xl: var(--wp--preset--font-size--3-xl);
-  --text-4xl--line-height: var(--leading-tight);
+  --text-4xl--line-height: var(--leading-tighter);
 
   --text-4xl: var(--wp--preset--font-size--4-xl);
-  --text-4xl--line-height: var(--leading-tight);
+  --text-4xl--line-height: var(--leading-none);
 
   --text-5xl: var(--wp--preset--font-size--5-xl);
   --text-6xl: var(--wp--preset--font-size--6-xl);

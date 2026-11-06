@@ -58,17 +58,17 @@
         {
           "name": "2XS",
           "slug": "2xs",
-          "size": "0.579rem"
+          "size": "0.625rem"
         },
         {
           "name": "XS",
           "slug": "xs",
-          "size": "0.694rem"
+          "size": "0.75rem"
         },
         {
           "name": "SM",
           "slug": "sm",
-          "size": "0.833rem"
+          "size": "0.875rem"
         },
         {
           "name": "Base",

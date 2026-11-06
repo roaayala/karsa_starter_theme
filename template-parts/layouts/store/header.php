@@ -10,68 +10,23 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
 ?>
 
-<header id="header" class="sticky top-0 z-40 bg-surface border-b border-b-outline/40 shadow-sm py-2">
-  <div class="container flex items-center justify-between gap-4">
-
-    <!-- 1. LEFT: LOGO (Mobile & Desktop) -->
-    <div class="flex-1 flex justify-start">
-      <a class="flex gap-2 items-center" href="<?= esc_url(home_url()) ?>">
-        <span class="aspect-square p-2 font-semibold text-xs bg-primary text-on-primary rounded-lg flex items-center">
-          MK
-        </span>
-      </a>
-    </div>
-
-    <!-- 2. DESKTOP DEAD CENTER NAV -->
-    <nav class="hidden md:flex md:flex-1 md:justify-center">
-      Nav
-    </nav>
-
-    <!-- 3. MOBILE DEAD CENTER, DESKTOP RIGHT -->
-    <div class="flex-1 flex justify-center md:justify-end">
-      Search
-    </div>
-
-    <!-- 4. MOBILE RIGHT (HAMBURGER TRIGGER) -->
-    <div x-data="{ open: false }" class="relative flex-1 flex justify-end items-center md:hidden">
-      <button @click="open = !open" type="button" class="p-2 cursor-pointer text-on-surface">
-        <i x-show="!open" data-lucide="menu" class="w-6 h-6"></i>
-        <i x-show="open" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
-      </button>
-
-      <nav x-show="open" @click.outside="open = false"
-        class="absolute top-full right-0 bg-surface-bright p-4 border border-outline/40 shadow-sm rounded-lg min-w-64"
-        style="display: none;">
-        <?php
-        wp_nav_menu([
-          'theme_location' => 'header',
-          'menu_class' => 'main-menu flex flex-col gap-2',
-          'container' => false,
-        ]);
-        ?>
-      </nav>
-    </div>
-
-  </div>
-</header>
-
 <header id="header" class="sticky top-0 z-40 bg-surface border-b border-outline/40 shadow-sm py-4">
   <div class="container relative flex items-center justify-between gap-4">
 
-    <!-- 1. LOGO -->
+    <!-- LOGO AND SITE NAME -->
     <a href="<?= esc_url(home_url()) ?>" class="flex items-center gap-2">
-      <span class="aspect-square p-2 font-bold text-xs bg-primary text-on-primary rounded-lg">MK</span>
+      <span class="aspect-square p-2 font-bold text-xs/none bg-primary text-on-primary rounded-lg flex items-center">
+        MK
+      </span>
       <span class="hidden sm:inline font-bold text-base text-on-surface">
         <?php bloginfo('name'); ?>
       </span>
     </a>
 
-    <!-- ========================================== -->
-    <!-- 2. DESKTOP NAVIGATION (Hidden di Mobile)   -->
-    <!-- ========================================== -->
-    <nav class="hidden md:flex items-center gap-6">
+    <!-- DESKTOP NAVIGATION AND HIDDEN ON MOBILE -->
+    <nav class="hidden md:flex items-center gap-4">
 
-      <!-- Dropdown Kategori -->
+      <!-- CATEGORIES -->
       <?php if (!empty($categories)): ?>
         <div x-data="{ open: false }" class="relative">
           <button @click="open = !open" type="button"
@@ -142,27 +97,22 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
     </nav>
 
 
-    <!-- ========================================== -->
-    <!-- 3. MOBILE NAVIGATION (Hidden di Desktop)   -->
-    <!-- ========================================== -->
+    <!-- MOBILE NAVIGATION AND HIDDEN ON DESKTOP -->
     <div x-data="{ open: false }" class="flex items-center md:hidden">
 
       <!-- Button Trigger Hamburger -->
-      <button @click="open = !open" type="button" class="p-2 text-on-surface">
+      <button @click="open = !open" type="button" class="cursor-pointer text-on-surface">
         <i x-show="!open" data-lucide="menu" class="w-6 h-6"></i>
         <i x-show="open" data-lucide="x" class="w-6 h-6" style="display: none;"></i>
       </button>
 
-      <!-- Panel Vertical Accordion Mobile -->
       <nav x-show="open" @click.outside="open = false"
-        class="absolute top-full left-4 right-4 mt-2 bg-surface-bright p-4 border border-outline/30 rounded-xl shadow-xl z-50 flex flex-col gap-4 max-h-[75vh] overflow-y-auto"
-        style="display: none;">
+        class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-4 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-4 max-h-screen overflow-y-auto">
 
-        <!-- Accordion Section: Kategori -->
         <?php if (!empty($categories)): ?>
-          <div x-data="{ expanded: false }" class="border-b border-outline/10 pb-3">
+          <div x-data="{ expanded: false }" class="border-b border-outline/20 pb-2">
             <button @click="expanded = !expanded" type="button"
-              class="w-full flex items-center justify-between text-xs font-bold text-primary">
+              class="cursor-pointer w-full flex items-center justify-between text-sm font-medium  text-primary">
               <span>
                 <?= __('Kategori Produk', 'karsa_start') ?>
               </span>
@@ -172,7 +122,7 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
             <div x-show="expanded" class="mt-2 pl-2 flex flex-col gap-2" style="display: none;">
               <?php foreach ($categories as $cat): ?>
                 <div>
-                  <a href="<?= esc_url(get_term_link($cat)) ?>" class="text-xs font-semibold text-on-surface block py-0.5">
+                  <a href="<?= esc_url(get_term_link($cat)) ?>" class="text-xs font-medium text-on-surface block py-0.5">
                     <?= esc_html($cat->name) ?>
                   </a>
                   <?php if (!empty($cat->children)): ?>
@@ -212,9 +162,12 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
         <?php endif; ?>
 
         <!-- Direct Link -->
-        <a href="<?= esc_url(get_post_type_archive_link('product')) ?>" class="text-xs font-bold text-on-surface py-1">
-          <?= __('Semua Produk', 'karsa_start') ?>
-        </a>
+        <div>
+          <?php Helpers::component('nav/nav-link', [
+            'url' => get_post_type_archive_link('product'),
+            'label' => __('Semua Produk', 'karsa_start')
+          ]) ?>
+        </div>
 
       </nav>
 
