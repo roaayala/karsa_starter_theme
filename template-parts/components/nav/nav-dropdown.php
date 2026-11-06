@@ -14,7 +14,7 @@ if (empty($items)) {
 
 <div x-data="{ expanded: false }" class="flex flex-col gap-2">
   <button @click="expanded = !expanded" type="button" :aria-expanded="expanded"
-    class="cursor-pointer w-full flex items-center justify-between text-sm font-medium text-on-surface">
+    class="cursor-pointer w-full flex items-center justify-between text-sm  text-on-surface">
     <span><?= esc_html($label) ?></span>
     <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"
       :class="{ 'rotate-180': expanded }"></i>
@@ -28,7 +28,7 @@ if (empty($items)) {
         continue;
       ?>
       <div class="pl-3 flex flex-col gap-2">
-        <a href="<?= esc_url($item_link) ?>" class="flex font-medium text-xs text-on-surface-variant">
+        <a href="<?= esc_url($item_link) ?>" class="flex  text-xs text-on-surface-variant">
           <?= esc_html($item->name) ?>
         </a>
 
@@ -40,7 +40,7 @@ if (empty($items)) {
               if (is_wp_error($child_link))
                 continue;
               ?>
-              <a href="<?= esc_url($child_link) ?>" class="font-medium text-2xs text-on-surface-subtle">
+              <a href="<?= esc_url($child_link) ?>" class=" text-2xs text-on-surface-subtle">
                 <?= esc_html($child->name) ?>
               </a>
             <?php endforeach; ?>
