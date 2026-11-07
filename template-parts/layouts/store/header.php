@@ -15,10 +15,10 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
     <!-- LOGO AND SITE NAME -->
     <a href="<?= esc_url(home_url()) ?>" class="flex items-center gap-2">
-      <span class="aspect-square p-2 font-bold text-xs/none bg-primary text-on-primary rounded-lg flex items-center">
+      <span class="aspect-square p-1.5 font-bold text-xs/none bg-primary text-on-primary rounded-lg flex items-center">
         MK
       </span>
-      <span class="hidden sm:inline font-bold text-base text-on-surface">
+      <span class="font-semibold text-base text-on-surface">
         <?php bloginfo('name'); ?>
       </span>
     </a>
@@ -50,8 +50,8 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
     <div x-data="{ open: false }" class="flex items-center md:hidden">
 
       <button @click="open = !open" type="button" class="cursor-pointer text-on-surface">
-        <i x-show="!open" data-lucide="menu" class="w-6 h-6"></i>
-        <i x-show="open" data-lucide="x" class="w-6 h-6"></i>
+        <i x-show="!open" data-lucide="menu" class="w-5 h-5"></i>
+        <i x-show="open" data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <nav x-show="open" @click.outside="open = false"

@@ -22,18 +22,16 @@ if (empty($items))
   </button>
 
   <div x-show="expanded"
-    class="absolute top-full right-0 z-50 mt-2 min-w-[200px] bg-surface p-3 border border-outline/20 rounded-lg shadow-lg flex flex-col gap-2">
+    class="absolute top-full right-0 z-50 mt-2 min-w-60 bg-surface-bright p-4 border border-outline/40 rounded-lg shadow-lg flex flex-col gap-2">
     <?php foreach ($items as $item): ?>
       <div class="flex flex-col gap-2">
-        <a href="<?= esc_url(get_term_link($item)) ?>"
-          class="flex text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors">
+        <a href="<?= esc_url(get_term_link($item)) ?>" class="flex text-xs text-on-surface-variant hover:text-on-surface">
           <?= esc_html($item->name) ?>
         </a>
         <?php if (!empty($item->children)): ?>
           <div class="pl-3 flex flex-col gap-1 border-l border-outline/50">
             <?php foreach ($item->children as $child): ?>
-              <a href="<?= esc_url(get_term_link($child)) ?>"
-                class="text-2xs text-on-surface-subtle hover:text-on-surface transition-colors">
+              <a href="<?= esc_url(get_term_link($child)) ?>" class="text-2xs text-on-surface-subtle hover:text-on-surface">
                 <?= esc_html($child->name) ?>
               </a>
             <?php endforeach; ?>
