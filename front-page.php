@@ -1,14 +1,16 @@
 <?php
-
-use KarsaStart\Helpers;
-
 /**
- * Template: Front Page
+ * Template: Root Front Page
  * @package KarsaStart
  */
 
-get_header();
+use KarsaStart\Helpers;
 
-Helpers::layout('store/front-page');
+?>
 
-get_footer();
+<?php get_header(); ?>
+
+<!-- Front Page Template Here -->
+<?php Helpers::layout('store/front-page'); ?>
+
+<?php get_footer(); ?>

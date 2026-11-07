@@ -1,11 +1,17 @@
+<?php
+/**
+ * Template: Root footer
+ * @package KarsaStart
+ */
+
+use KarsaStart\Helpers
+?>
+
+
 </main>
-<footer id="footer" class="py-4 border-t border-t-outline/20">
-    <div class="container">
-        <div class="text-center flex flex-col gap-1">
-            <p>Blank</p>
-        </div>
-    </div>
-</footer>
+
+<!-- Footer Template Here -->
+<?php Helpers::layout('store/footer') ?>
 
 </div>
 

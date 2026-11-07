@@ -55,7 +55,7 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
       </button>
 
       <nav x-show="open" @click.outside="open = false"
-        class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-4 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-4 max-h-screen overflow-y-auto">
+        class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-6 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-6 max-h-screen overflow-y-auto">
 
         <?php Helpers::component('nav/nav-dropdown-mobile', [
           'items' => $categories,

@@ -18,7 +18,8 @@
   h4,
   h5,
   h6 {
-    @apply text-on-surface tracking-[-0.02em];
+    @apply text-on-surface;
+    /* @apply text-on-surface tracking-[-0.02em]; */
   }
 
   /* heading weight */
