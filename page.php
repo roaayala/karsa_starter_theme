@@ -12,17 +12,25 @@ get_header();
 while (have_posts()):
   the_post();
 
-  // Panggil view dinamis/default
   $slug = get_post_field('post_name', get_post());
-  Helpers::view("pages/{$slug}");
 
-  $relative_view_path = "pages/{$slug}";
+  $relative_view_path = "store/{$slug}";
   $full_file_path = get_template_directory() . "/template-parts/views/{$relative_view_path}.php";
+
+  $title = null;
+
+  if ($slug == 'privacy-policy') {
+    $title = __('Kebijakan Privasi', 'karsa_start');
+  } elseif ($slug == 'terms-and-conditions') {
+    $title = __('Syarat dan Ketentuan', 'karsa_start');
+  }
 
   if (file_exists($full_file_path)) {
     Helpers::view($relative_view_path);
   } else {
-    Helpers::view('page-default');
+    Helpers::view('store/page-default', [
+      'title' => $title
+    ]);
   }
 
 endwhile;
