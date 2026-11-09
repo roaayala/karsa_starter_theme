@@ -5,7 +5,7 @@
  */
 ?>
 
-<footer id="footer" class="py-8 bg-surface">
+<footer id="footer" class="py-8 bg-surface border-t border-outline/40">
   <div class="container">
     <?php if (is_front_page()): ?>
       <h1 class="font-bold text-2xl"><?php bloginfo('name'); ?></h1>
