@@ -11,7 +11,7 @@ use KarsaStart\Helpers
 </main>
 
 <!-- Footer Template Here -->
-<?php Helpers::layout('store/footer') ?>
+<?php Helpers::view('store/footer') ?>
 
 </div>
 

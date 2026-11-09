@@ -2,7 +2,7 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2
     px-4 py-2
-    h-10
+    h-9
     rounded-md
     border border-transparent
     cursor-pointer;

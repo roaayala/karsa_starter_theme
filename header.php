@@ -20,9 +20,9 @@ use KarsaStart\Helpers;
 </head>
 
 <body <?php body_class(); ?>>
-  <div id="page" class="min-h-screen flex flex-col ">
+  <div id="page" class="min-h-screen flex flex-col">
 
     <!-- Header Template Here -->
-    <?php Helpers::layout('store/header'); ?>
+    <?php Helpers::view('store/header'); ?>
 
     <main id="content" class="flex-1 flex flex-col">

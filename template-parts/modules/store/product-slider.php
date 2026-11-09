@@ -18,7 +18,7 @@ if (!($products instanceof \WP_Query) || !$products->have_posts()) {
 
 <section class="<?= esc_attr($section_classes) ?>">
   <div class="container flex flex-col gap-6">
-    <div class="flex flex-col xs:flex-row xs:items-baseline xs:justify-between gap-1">
+    <div class="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-2">
       <h2>
         <?= esc_html($title) ?>
       </h2>

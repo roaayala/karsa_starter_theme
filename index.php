@@ -6,9 +6,9 @@
 
 ?>
 
-<?php phpget_header(); ?>
+<?php get_header(); ?>
 
 <!-- Index Template Here -->
-<?php get_template_part('template-parts/templates/index-default') ?>
+<?php ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

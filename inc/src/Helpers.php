@@ -45,14 +45,14 @@ class Helpers
     self::render("components/{$name}", $args);
   }
 
-  public static function section(string $name, array $args = []): void
+  public static function module(string $name, array $args = []): void
   {
-    self::render("sections/{$name}", $args);
+    self::render("modules/{$name}", $args);
   }
 
-  public static function layout(string $name, array $args = []): void
+  public static function view(string $name, array $args = []): void
   {
-    self::render("layouts/{$name}", $args);
+    self::render("views/{$name}", $args);
   }
 
   public static function get_active_taxonomy_tree(string $taxonomy): array

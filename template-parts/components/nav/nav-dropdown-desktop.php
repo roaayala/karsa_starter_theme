@@ -31,7 +31,7 @@ if (empty($items))
         <?php if (!empty($item->children)): ?>
           <div class="pl-4 flex flex-col gap-2">
             <?php foreach ($item->children as $child): ?>
-              <a href="<?= esc_url(get_term_link($child)) ?>" class="text-xs text-on-surface-subtle hover:underline">
+              <a href="<?= esc_url(get_term_link($child)) ?>" class="text-sm text-on-surface-subtle hover:underline">
                 <?= esc_html($child->name) ?>
               </a>
             <?php endforeach; ?>

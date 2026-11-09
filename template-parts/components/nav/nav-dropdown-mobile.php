@@ -25,13 +25,13 @@ if (empty($items))
   <div x-show="expanded" class="flex flex-col gap-2">
     <?php foreach ($items as $item): ?>
       <div class="flex flex-col gap-2">
-        <a href="<?= esc_url(get_term_link($item)) ?>" class="flex text-xs text-on-surface-variant hover:underline">
+        <a href="<?= esc_url(get_term_link($item)) ?>" class="flex text-sm text-on-surface-variant hover:underline">
           <?= esc_html($item->name) ?>
         </a>
         <?php if (!empty($item->children)): ?>
           <div class="pl-4 flex flex-col gap-1">
             <?php foreach ($item->children as $child): ?>
-              <a href="<?= esc_url(get_term_link($child)) ?>" class="text-2xs text-on-surface-subtle hover:underline">
+              <a href="<?= esc_url(get_term_link($child)) ?>" class="text-sm text-on-surface-subtle hover:underline">
                 <?= esc_html($child->name) ?>
               </a>
             <?php endforeach; ?>
