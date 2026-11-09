@@ -8,6 +8,24 @@ use KarsaStart\Helpers;
 $categories = Helpers::get_active_taxonomy_tree('product-category');
 $brands = Helpers::get_active_taxonomy_tree('product-brand');
 
+$nav_items = [
+  [
+    'type' => 'dropdown',
+    'label' => __('Kategori', 'karsa_start'),
+    'items' => $categories,
+  ],
+  [
+    'type' => 'dropdown',
+    'label' => __('Brand', 'karsa_start'),
+    'items' => $brands,
+  ],
+  [
+    'type' => 'link',
+    'label' => __('Semua Produk', 'karsa_start'),
+    'url' => get_post_type_archive_link('product'),
+  ],
+];
+
 ?>
 
 <header id="header" class="sticky top-0 z-40 bg-surface border-b border-outline/40 shadow-sm py-4">
@@ -23,58 +41,31 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
       </span>
     </a>
 
-    <nav x-show="open" @click.outside="open = false" class="hidden md:flex flex-row items-center gap-4">
-
-      <?php Helpers::component('nav/nav-dropdown-desktop', [
-        'items' => $categories,
-        'label' => __('Kategori', 'karsa_start')
-      ]) ?>
-
-      <?php Helpers::component('nav/nav-dropdown-desktop', [
-        'items' => $brands,
-        'label' => __('Brand', 'karsa_start')
-      ]) ?>
-
-      <div>
-        <?php Helpers::component('nav/nav-link', [
-          'url' => get_post_type_archive_link('product'),
-          'label' => __('Semua Produk', 'karsa_start')
-        ]) ?>
-      </div>
-
+    <!-- Desktop navigation -->
+    <nav class="hidden md:flex">
+      <?php Helpers::component('nav/menu-list', [
+        'items' => $nav_items,
+        'is_mobile' => false,
+      ]); ?>
     </nav>
 
-
-    <!-- MOBILE NAVIGATION AND HIDDEN ON DESKTOP -->
+    <!-- Mobile navigation -->
     <div x-data="{ open: false }" class="flex items-center md:hidden">
 
-      <button @click="open = !open" type="button" class="cursor-pointer text-on-surface">
+      <button @click="open = !open" type="button" class="cursor-pointer text-on-surface" aria-label="Toggle menu">
         <i x-show="!open" data-lucide="menu" class="w-5 h-5"></i>
-        <i x-show="open" data-lucide="x" class="w-5 h-5"></i>
+        <i x-show="open" x-cloak data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <nav x-show="open" @click.outside="open = false"
-        class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-6 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col gap-6 max-h-screen overflow-y-auto">
+      <nav x-show="open" x-cloak @click.outside="open = false"
+        class="absolute top-full left-4 sm:left-8 right-4 sm:right-8 mt-2 bg-surface-bright p-6 border border-outline/40 rounded-lg shadow-lg z-50 flex flex-col max-h-[80vh] overflow-y-auto">
 
-        <?php Helpers::component('nav/nav-dropdown-mobile', [
-          'items' => $categories,
-          'label' => __('Kategori', 'karsa_start')
-        ]) ?>
-
-        <?php Helpers::component('nav/nav-dropdown-mobile', [
-          'items' => $brands,
-          'label' => __('Brand', 'karsa_start')
-        ]) ?>
-
-        <div>
-          <?php Helpers::component('nav/nav-link', [
-            'url' => get_post_type_archive_link('product'),
-            'label' => __('Semua Produk', 'karsa_start')
-          ]) ?>
-        </div>
+        <?php Helpers::component('nav/menu-list', [
+          'items' => $nav_items,
+          'is_mobile' => true,
+        ]); ?>
 
       </nav>
-
     </div>
 
   </div>
