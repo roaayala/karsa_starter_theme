@@ -19,16 +19,18 @@ if (empty($items)) {
 
     <?php if ($item['type'] === 'dropdown'): ?>
       <?php
-      $dropdown_component = $is_mobile ? 'nav/nav-dropdown-mobile' : 'nav/nav-dropdown-desktop';
+      $dropdown_component = $is_mobile ? 'nav/menu-dropdown-mobile' : 'nav/menu-dropdown-desktop';
+      $normalized_sub_items = Helpers::normalize_menu_items($item['items'] ?? []);
+
       Helpers::component($dropdown_component, [
-        'items' => $item['items'],
+        'items' => $normalized_sub_items,
         'label' => $item['label'],
       ]);
       ?>
 
     <?php elseif ($item['type'] === 'link'): ?>
       <div>
-        <?php Helpers::component('nav/nav-link', [
+        <?php Helpers::component('nav/menu-link', [
           'url' => $item['url'],
           'label' => $item['label'],
         ]); ?>

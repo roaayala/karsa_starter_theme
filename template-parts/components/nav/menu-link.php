@@ -1,6 +1,6 @@
 <?php
 /**
- * Component: Navigation link
+ * Component: Navigation menu link
  * @package KarsaStart
  */
 

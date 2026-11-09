@@ -89,4 +89,37 @@ class Helpers
     return $tree;
 
   }
+
+  /**
+   * Normalisasi item navigasi (WP_Term, WP_Post, atau Array) 
+   * menjadi struktur terstandarisasi: ['label', 'url', 'children']
+   */
+  public static function normalize_menu_items(array $items): array
+  {
+    $normalize = function ($item) use (&$normalize) {
+      if (is_object($item)) {
+        if ($item instanceof \WP_Term) {
+          $link = get_term_link($item);
+          $url = !is_wp_error($link) ? $link : '#';
+          $label = $item->name;
+        } else {
+          $url = $item->url ?? get_permalink($item) ?? '#';
+          $label = $item->title ?? $item->name ?? $item->post_title ?? '';
+        }
+        $children = $item->children ?? [];
+      } else {
+        $label = $item['label'] ?? $item['name'] ?? $item['title'] ?? '';
+        $url = $item['url'] ?? $item['link'] ?? '#';
+        $children = $item['children'] ?? [];
+      }
+
+      return [
+        'label' => $label,
+        'url' => $url,
+        'children' => array_map($normalize, $children),
+      ];
+    };
+
+    return array_map($normalize, $items);
+  }
 }

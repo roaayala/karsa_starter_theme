@@ -1,42 +1,16 @@
 <?php
 
 /**
- * Component: Navigation dropdown for mobile
+ * Component: Navigation menu dropdown for mobile
  * @package KarsaStart
  */
 
-$raw_items = $args['items'] ?? [];
+$items = $args['items'] ?? [];
 $label = $args['label'] ?? __('Label', 'karsa_start');
 
-if (empty($raw_items)) {
+if (empty($items)) {
   return;
 }
-
-$normalize_item = function ($item) use (&$normalize_item) {
-  if (is_object($item)) {
-    if ($item instanceof WP_Term) {
-      $link = get_term_link($item);
-      $url = !is_wp_error($link) ? $link : '#';
-      $label = $item->name;
-    } else {
-      $url = $item->url ?? get_permalink($item) ?? '#';
-      $label = $item->title ?? $item->name ?? $item->post_title ?? '';
-    }
-    $children = $item->children ?? [];
-  } else {
-    $label = $item['label'] ?? $item['name'] ?? $item['title'] ?? '';
-    $url = $item['url'] ?? $item['link'] ?? '#';
-    $children = $item['children'] ?? [];
-  }
-
-  return [
-    'label' => $label,
-    'url' => $url,
-    'children' => array_map($normalize_item, $children),
-  ];
-};
-
-$items = array_map($normalize_item, $raw_items);
 
 ?>
 

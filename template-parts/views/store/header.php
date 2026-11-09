@@ -7,7 +7,6 @@
 use KarsaStart\Helpers;
 $categories = Helpers::get_active_taxonomy_tree('product-category');
 $brands = Helpers::get_active_taxonomy_tree('product-brand');
-
 $nav_items = [
   [
     'type' => 'dropdown',
@@ -23,6 +22,24 @@ $nav_items = [
     'type' => 'link',
     'label' => __('Semua Produk', 'karsa_start'),
     'url' => get_post_type_archive_link('product'),
+  ],
+  [
+    'type' => 'dropdown',
+    'label' => __('Tentang Kami', 'karsa_start'),
+    'items' => [
+      [
+        'label' => __('Tentang Kami', 'karsa_start'),
+        'url' => get_permalink(get_page_by_path('about-us')),
+      ],
+      [
+        'label' => __('Syarat dan Ketentuan', 'karsa_start'),
+        'url' => get_permalink(get_page_by_path('terms-and-conditions')),
+      ],
+      [
+        'label' => __('Kebijakan Privasi', 'karsa_start'),
+        'url' => get_permalink(get_page_by_path('privacy-policy')),
+      ],
+    ],
   ],
 ];
 
