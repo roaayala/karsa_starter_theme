@@ -14,23 +14,14 @@ while (have_posts()):
 
   $slug = get_post_field('post_name', get_post());
 
-  $relative_view_path = "store/{$slug}";
+  $relative_view_path = "store/page-{$slug}";
+
   $full_file_path = get_template_directory() . "/template-parts/views/{$relative_view_path}.php";
-
-  $title = null;
-
-  if ($slug == 'privacy-policy') {
-    $title = __('Kebijakan Privasi', 'karsa_start');
-  } elseif ($slug == 'terms-and-conditions') {
-    $title = __('Syarat dan Ketentuan', 'karsa_start');
-  }
 
   if (file_exists($full_file_path)) {
     Helpers::view($relative_view_path);
   } else {
-    Helpers::view('store/page-default', [
-      'title' => $title
-    ]);
+    Helpers::view('store/page-default');
   }
 
 endwhile;
