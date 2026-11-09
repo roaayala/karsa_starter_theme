@@ -23,7 +23,6 @@ $brands = Helpers::get_active_taxonomy_tree('product-brand');
       </span>
     </a>
 
-
     <nav x-show="open" @click.outside="open = false" class="hidden md:flex flex-row items-center gap-4">
 
       <?php Helpers::component('nav/nav-dropdown-desktop', [

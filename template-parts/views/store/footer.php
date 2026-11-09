@@ -5,8 +5,12 @@
  */
 ?>
 
-<footer id="footer" class="py-8 border-t border-t-outline/20">
+<footer id="footer" class="py-8 bg-surface">
   <div class="container">
-    Footer for store
+    <?php if (is_front_page()): ?>
+      <h1 class="font-bold text-2xl"><?php bloginfo('name'); ?></h1>
+    <?php else: ?>
+      <h2 class="font-bold text-2xl"><?php bloginfo('name'); ?></h2>
+    <?php endif ?>
   </div>
 </footer>
