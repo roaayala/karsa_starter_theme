@@ -34,6 +34,14 @@ class Helpers
     return $svg;
   }
 
+  public static function get_image_placeholder_url(string $name): string
+  {
+    if (!isset($name))
+      return '';
+
+    return get_theme_file_uri("public/images/{$name}.png");
+  }
+
   private static function render(string $path, array $args = []): void
   {
     $clean_path = ltrim($path, '/');

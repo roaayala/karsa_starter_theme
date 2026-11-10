@@ -11,30 +11,30 @@
       @apply hover:opacity-90;
     }
 
-    > .btn-icon {
+    > .icon {
       @apply h-4 w-4 leading-none stroke-2;
     }
 
-    > .btn-label {
+    > .label {
       @apply text-sm/none font-normal shrink-0;
     }
 
-    &:has(.btn-icon):not(:has(.btn-label)) {
+    &:has(.icon):not(:has(.label)) {
       @apply p-2 aspect-square;
     }
 
-    &.btn--primary {
+    &.primary {
       @apply bg-primary
       text-on-primary
       border-primary;
 
-      &.btn--inverse {
+      &.inverse {
         @apply bg-on-primary
         text-primary
         border-on-primary;
       }
 
-      &.btn--outline {
+      &.outline {
         @apply bg-transparent hover:bg-primary text-primary hover:text-on-primary;
       }
     }
