@@ -8,15 +8,15 @@ $show_meta = $args['show_meta'] ?? true;
 
 ?>
 
-<header>
+<header class="flex flex-col gap-2">
   <h1>
     <?= esc_html($title) ?>
   </h1>
 
   <?php if ($show_meta): ?>
     <div>
-      <span>
-        <?= _e('Dipublikasikan', 'karsa_start') ?>: <?= get_the_date() ?>
+      <span class="text-sm text-on-surface-subtle">
+        <?= _e('Dipublikasikan pada', 'karsa_start') ?>   <?= get_the_date() ?>
       </span>
     </div>
   <?php endif ?>
