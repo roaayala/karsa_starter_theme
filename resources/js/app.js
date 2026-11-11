@@ -25,6 +25,9 @@ import {
   ChevronLeft,
   ChevronDown,
   ArrowRight,
+  Component,
+  ChartPie,
+  Lightbulb,
 } from "lucide";
 import Alpine from "alpinejs";
 
@@ -56,6 +59,9 @@ const initLucideIcons = () => {
       ChevronLeft,
       ChevronDown,
       ArrowRight,
+      Component,
+      ChartPie,
+      Lightbulb,
     },
   });
 };
