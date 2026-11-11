@@ -17,7 +17,7 @@ use KarsaStart\Helpers;
     ),
   ]); ?>
 
-  <!--  -->
+  <!-- Visi dan Misi  -->
   <?php
   $vision_mission_contents = [
     [
@@ -52,6 +52,42 @@ use KarsaStart\Helpers;
     'items' => $vision_mission_contents
   ]);
   ?>
-  <!--  -->
+
+  <!-- Layanan Utama -->
+  <?php
+  $main_service_contents = [
+    [
+      'icon' => 'list',
+      'title' => __('Katalog Komponen', 'karsa_start'),
+      'description' => __(
+        'Daftar lengkap Processor, VGA, Motherboard, RAM, Storage, hingga elektronik lain-lain terbaru.',
+        'karsa_start'
+      )
+    ],
+    [
+      'icon' => 'mouse-pointer-click',
+      'title' => __('Simulasi Rakit PC', 'karsa_start'),
+      'description' => __(
+        'Fitur kalkulator simulasi rakitan PC secara interaktif dan real-time.',
+        'karsa_start'
+      )
+    ],
+    [
+      'icon' => 'user-group',
+      'title' => __('Dukungan Komunitas', 'karsa_start'),
+      'description' => __(
+        'Pusat informasi dan panduan teknis seputar dunia IT dan hardware komputer..',
+        'karsa_start'
+      )
+    ]
+  ];
+
+  Helpers::module('feature-default', [
+    'wrapper_classes' => 'py-8 bg-surface-bright',
+    'title' => __('Layanan Utama', 'karsa_start'),
+    'title_classes' => 'text-center',
+    'items' => $main_service_contents
+  ]);
+  ?>
 
 </div>

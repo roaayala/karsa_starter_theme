@@ -28,6 +28,9 @@ import {
   Component,
   ChartPie,
   Lightbulb,
+  UserGroup,
+  MousePointerClick,
+  List,
 } from "lucide";
 import Alpine from "alpinejs";
 
@@ -62,6 +65,9 @@ const initLucideIcons = () => {
       Component,
       ChartPie,
       Lightbulb,
+      UserGroup,
+      MousePointerClick,
+      List,
     },
   });
 };
