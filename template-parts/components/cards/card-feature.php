@@ -1,10 +1,11 @@
 <?php
 /**
  * Component: Card feature
+ * @package KarsaStart
  */
 
 $icon = $args['icon'] ?? null;
-$title = $args['title'] ?? __('Judul', 'karsa_start');
+$title = $args['title'] ?? __('Judul Fitur', 'karsa_start');
 $description = $args['description'] ?? __(
   'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ullam harum omnis.',
   'karsa_start'
@@ -13,16 +14,27 @@ $description = $args['description'] ?? __(
 ?>
 
 <div
-  class="p-4 sm:p-6 flex flex-col gap-4 bg-surface-bright border border-outline/20 hover:border-outline/60 shadow-sm rounded-lg">
-  <?php if ($icon): ?>
-    <div>
-      <i data-lucide="<?= esc_attr($icon) ?>" class="w-8 h-8 text-primary"></i>
-    </div>
-  <?php endif ?>
+  class="p-6 flex flex-col justify-between gap-6 bg-surface-bright rounded-lg shadow-sm border border-primary/20 hover:border-primary/60">
+  <div class="flex flex-col gap-4">
 
-  <div class="flex flex-col gap-2">
-    <h3 class="text-lg"><?= esc_html($title) ?></h3>
-    <p class="text-sm text-on-surface-subtle"><?= esc_html($description) ?></p>
+    <!-- Icon Container / Badge -->
+    <?php if ($icon): ?>
+      <div class="w-fit p-3 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+        <i data-lucide="<?= esc_attr($icon) ?>" class="w-6 h-6" aria-hidden="true"></i>
+      </div>
+    <?php endif; ?>
+
+    <!-- Title & Description -->
+    <div class="flex flex-col gap-1">
+      <h3 class="text-lg">
+        <?= esc_html($title) ?>
+      </h3>
+      <p class="text-sm text-on-surface-subtle">
+        <?= esc_html($description) ?>
+      </p>
+    </div>
+
   </div>
+
 
 </div>

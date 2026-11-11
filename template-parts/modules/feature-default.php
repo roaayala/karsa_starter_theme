@@ -14,11 +14,11 @@ $items = $args['items'] ?? [];
 ?>
 
 <section class="<?= esc_attr($wrapper_classes) ?>">
-  <div class="container">
+  <div class="container flex flex-col gap-6">
     <h2 class="<?= esc_attr($title_classes) ?>"><?= esc_html($title) ?></h2>
 
     <?php if (!empty($items)): ?>
-      <div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <?php foreach ($items as $item): ?>
           <?php Helpers::component('cards/card-feature', [
             'icon' => $item['icon'],
