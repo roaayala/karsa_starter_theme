@@ -3,6 +3,8 @@
  * Module: Default feature
  */
 
+use KarsaStart\Helpers;
+
 $wrapper_classes = $args['wrapper_classes'] ?? 'py-8 bg-surface';
 
 $title = $args['title'] ?? __('Judul', 'karsa_start');
@@ -15,10 +17,16 @@ $items = $args['items'] ?? [];
   <div class="container">
     <h2 class="<?= esc_attr($title_classes) ?>"><?= esc_html($title) ?></h2>
 
-    <?php if (!empty(!$items)): ?>
-      <?php foreach ($items as $item): ?>
-        <div></div>
-      <?php endforeach ?>
+    <?php if (!empty($items)): ?>
+      <div>
+        <?php foreach ($items as $item): ?>
+          <?php Helpers::component('cards/card-feature', [
+            'icon' => $item['icon'],
+            'title' => $item['title'],
+            'description' => $item['description']
+          ]) ?>
+        <?php endforeach ?>
+      </div>
     <?php endif ?>
   </div>
 </section>

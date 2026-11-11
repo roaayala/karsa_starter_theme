@@ -19,12 +19,9 @@ use KarsaStart\Helpers;
 
   <!--  -->
   <?php
-
-  Helpers::module('feature-default', [
-    'title' => __('Visi dan Misi Kami', 'karsa_start'),
-    'title_classes' => 'text-center',
-    'items' => [
-      'icon' => 'idea',
+  $vision_mission_contents = [
+    [
+      'icon' => 'eye',
       'title' => __('Kemudahan Akses Informasi', 'karsa_start'),
       'description' => __(
         'Menyajikan katalog komponen komputer yang lengkap, transparan, dan mudah dinavigasi.',
@@ -47,6 +44,12 @@ use KarsaStart\Helpers;
         'karsa_start'
       )
     ]
+  ];
+
+  Helpers::module('feature-default', [
+    'title' => __('Visi dan Misi Kami', 'karsa_start'),
+    'title_classes' => 'text-center',
+    'items' => $vision_mission_contents
   ]);
   ?>
   <!--  -->
