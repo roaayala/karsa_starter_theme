@@ -63,7 +63,6 @@ $featured_categories = !is_wp_error($product_categories) ? array_slice($product_
 
 // Categories tax
 Helpers::module('store/product-tax-slider', [
-  'section_classes' => 'py-8 bg-surface-bright',
   'tax' => $product_categories,
   'title' => __('Cari berdasarkan kategori!', 'karsa_start')
 ]);
@@ -71,6 +70,7 @@ Helpers::module('store/product-tax-slider', [
 // Discounted products
 $discount_products = new WP_Query($discount_products_args);
 Helpers::module('store/product-slider', [
+  'section_classes' => 'bg-surface-bright',
   'title' => __('Lagi discount!', 'karsa_start'),
   'url_link' => get_post_type_archive_link('product') ?: '#',
   'url_label' => __('Lebih Banyak', 'karsa_start'),
@@ -81,7 +81,6 @@ wp_reset_postdata();
 // Newest products
 $newest_products = new WP_Query($products_args);
 Helpers::module('store/product-slider', [
-  'section_classes' => 'py-8 bg-surface-bright',
   'title' => __('Baru banget di toko!', 'karsa_start'),
   'url_link' => get_post_type_archive_link('product') ?: '#',
   'url_label' => __('Lebih Banyak', 'karsa_start'),
@@ -91,7 +90,7 @@ wp_reset_postdata();
 
 // Brands tax
 Helpers::module('store/product-tax-slider', [
-  'section_classes' => 'py-8 bg-surface',
+  'section_classes' => 'bg-surface-bright',
   'tax' => $product_brands,
   'title' => __('Cari berdasarkan brand!', 'karsa_start')
 ]);
@@ -109,7 +108,7 @@ foreach ($featured_categories as $index => $category) {
   ];
   $product_in_category = new WP_Query($product_in_category_args);
 
-  $bg_class = ($index % 2 == 0) ? 'py-8 bg-surface-bright' : 'py-8 bg-surface';
+  $bg_class = ($index % 2 == 0) ? 'bg-surface' : 'bg-surface-bright';
 
   Helpers::module('store/product-slider', [
     'section_classes' => $bg_class,
@@ -124,5 +123,5 @@ foreach ($featured_categories as $index => $category) {
 // CTA marketplaces
 Helpers::module('store/marketplace-cta', [
   'title' => __('Kami juga ada di marketplace favorit kamu!', 'karsa_start'),
-  'section_classes' => 'py-8 bg-surface-bright border-y border-outline/20'
+  'section_classes' => 'bg-surface-bright'
 ]);

@@ -7,7 +7,7 @@
 
 use KarsaStart\Helpers;
 
-$section_classes = $args['section_classes'] ?? 'py-8 bg-surface';
+$section_classes = $args['section_classes'] ?? 'bg-surface';
 $title = $args['title'] ?? __('Judul Section', 'karsa_start');
 
 $marketplaces = [
@@ -30,7 +30,7 @@ $marketplaces = [
 ];
 ?>
 
-<section class="<?= esc_attr($section_classes) ?>">
+<section class="py-8 md:py-12 <?= esc_attr($section_classes) ?>">
   <div class="container flex flex-col items-center text-center gap-6">
 
     <div class="max-w-md">

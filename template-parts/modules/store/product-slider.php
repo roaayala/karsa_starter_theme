@@ -5,7 +5,7 @@
  * @package KarsaStart
  */
 
-$section_classes = $args['section_classes'] ?? 'py-8 bg-surface';
+$section_classes = $args['section_classes'] ?? 'bg-surface';
 $title = $args['title'] ?? __('Daftar Product', 'karsa_start');
 $url_link = $args['url_link'] ?? null;
 $url_label = $args['url_label'] ?? __('Selengkapnya', 'karsa_start');
@@ -16,7 +16,7 @@ if (!($products instanceof \WP_Query) || !$products->have_posts()) {
 }
 ?>
 
-<section class="<?= esc_attr($section_classes) ?>">
+<section class="py-8 md:py-12 <?= esc_attr($section_classes) ?>">
   <div class="container flex flex-col gap-6">
     <div class="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-2">
       <h2>

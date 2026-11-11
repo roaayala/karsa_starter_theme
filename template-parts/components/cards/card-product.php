@@ -71,7 +71,7 @@ $has_marketplace = $tokopedia_link || $shopee_link || $lazada_link || $blibli_li
     <?php endif ?>
   </div>
 
-  <div class="p-4 flex-1 flex flex-col justify-between">
+  <div class="p-6 flex-1 flex flex-col justify-between">
 
     <div class="flex items-end mb-4">
       <!-- brand  -->
@@ -122,9 +122,9 @@ $has_marketplace = $tokopedia_link || $shopee_link || $lazada_link || $blibli_li
 
     <!-- cta -->
     <div class="flex flex-col gap-4">
-      <a href="#" target="_blank" class="btn btn--primary w-full">
-        <i data-lucide="phone" class="btn-icon"></i>
-        <span class="btn-label"><?php _e('Hubungi kami', 'karsa_start') ?></span>
+      <a href="#" target="_blank" class="btn primary w-full">
+        <i data-lucide="phone" class="icon"></i>
+        <span class="label"><?php _e('Hubungi kami', 'karsa_start') ?></span>
       </a>
 
       <?php if ($has_marketplace): ?>

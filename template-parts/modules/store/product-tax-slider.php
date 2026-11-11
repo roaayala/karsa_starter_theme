@@ -7,13 +7,13 @@ use KarsaStart\Helpers;
  * @package KarsaStart
  */
 
-$section_classes = $args['section_classes'] ?? 'py-8 bg-surface';
+$section_classes = $args['section_classes'] ?? 'bg-surface';
 $tax = $args['tax'] ?? [];
 $title = $args['title'] ?? __('Judul Section', 'karsa_start');
 ?>
 
 <?php if (!empty($tax)): ?>
-  <section class="<?= esc_attr($section_classes) ?>">
+  <section class="py-8 md:py-12  <?= esc_attr($section_classes) ?>">
     <div class="container flex flex-col gap-6">
       <div class="">
         <h2><?= esc_html($title) ?></h2>
