@@ -2,7 +2,7 @@
 
 use KarsaStart\Helpers;
 /**
- * Template: Global Header
+ * Template: Root Header
  * @package KarsaStart
  */
 
@@ -23,6 +23,6 @@ use KarsaStart\Helpers;
   <div id="page" class="min-h-screen flex flex-col">
 
     <!-- Header Template Here -->
-    <?php Helpers::view('store/header'); ?>
+    <?php Helpers::view(); ?>
 
     <main id="content" class="flex-1 flex flex-col">

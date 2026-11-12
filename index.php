@@ -4,11 +4,8 @@
  * @package KarsaStart
  */
 
-?>
+get_header();
 
-<?php get_header(); ?>
+// Index template here
 
-<!-- Index Template Here -->
-<?php ?>
-
-<?php get_footer();
+get_footer();
