@@ -6,17 +6,17 @@
   "license": "MIT",
   "authors": [
     {
-      "name": ".",
-      "email": "mail@mail.com"
+      "name": "Blank",
+      "email": "blank@blank.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "TailPress\\": "inc/src/",
-      "KarsaStart\\": "inc/src/"
+      "TailPress\\": "inc/core/",
+      "KarsaStart\\": "inc/core/"
     },
     "files": [
-      "inc/src/class-tgm-plugin-activation.php"
+      "inc/core/class-tgm-plugin-activation.php"
     ]
   },
   "require": {

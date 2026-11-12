@@ -1,4 +1,7 @@
 <?php
+/**
+ * Core: Helpers class
+ */
 
 namespace KarsaStart;
 
